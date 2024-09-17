@@ -10,17 +10,17 @@ import io.cucumber.java.en.When;
 public class QueueStep {
  WebDriver driver = WebdriverManager.getDriver();
 	
-	@When("The User valid credentials and clicks the login button")
-	public void the_user_valid_credentials_and_clicks_the_login_button() {
-	    
-	    
-	}
-	
-	@Then("The User should be navigated to the Home page and logged in")
-	public void the_user_should_be_navigated_to_the_home_page_and_logged_in() {
-	    
-	    
-	}
+//	@When("The User valid credentials and clicks the login button")
+//	public void the_user_valid_credentials_and_clicks_the_login_button() {
+//	    
+//	    
+//	}
+//	
+//	@Then("The User should be navigated to the Home page and logged in")
+//	public void the_user_should_be_navigated_to_the_home_page_and_logged_in() {
+//	    
+//	    
+//	}
 	
 	@Given("The User is on the DsAlgo Portal Home page")
 	public void the_user_is_on_the_ds_algo_portal_home_page() {
