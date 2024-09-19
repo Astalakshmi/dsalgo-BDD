@@ -12,11 +12,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import driverManager.BrowserDriver;
+import driverManager.WebdriverManager;
 
 public class TreePage {
 
-	WebDriver driver = BrowserDriver.getDriver();
+	WebDriver driver = WebdriverManager.getDriver();
 
 	@FindBy(xpath = "//h5[text()='Tree']/../a[text()='Get Started']")
 	WebElement getStarted;

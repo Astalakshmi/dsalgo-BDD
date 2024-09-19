@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import driverManager.BrowserDriver;
+import driverManager.WebdriverManager;
 
 public class DataStructure_Page {
 	
-	WebDriver driver = BrowserDriver.getDriver();
+	WebDriver driver = WebdriverManager.getDriver();
 
 	@FindBy(xpath = "//h5[text()='Data Structures-Introduction']/../a[text()='Get Started']")
 	WebElement data_struc_getstarted;
