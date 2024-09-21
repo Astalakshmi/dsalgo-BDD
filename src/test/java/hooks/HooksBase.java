@@ -9,11 +9,12 @@ import utilities.ConfigFileReader;
 
 
 public class HooksBase {
-	ConfigFileReader configFileReader = WebdriverManager.configReader();
+
 	
 	@Before
 	public void launchBrowser() {
 		WebDriver driver = WebdriverManager.initializeDriver();
+		ConfigFileReader configFileReader = WebdriverManager.configReader();
 			//driver.get("https://dsportalapp.herokuapp.com");
 			driver.get(configFileReader.getIndexUrl());
 		}
