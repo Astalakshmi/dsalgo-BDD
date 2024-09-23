@@ -1,13 +1,16 @@
 package stepdefinitions;
 
 
+import org.openqa.selenium.WebDriver;
+
+import driverManager.WebdriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class StackStep {
 	
-
+	WebDriver driver = WebdriverManager.getDriver();
 	
 	@Given("the user is in homepage")
 	public void the_user_is_in_homepage() {

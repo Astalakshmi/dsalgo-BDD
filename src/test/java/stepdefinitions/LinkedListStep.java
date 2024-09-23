@@ -1,15 +1,20 @@
 package stepdefinitions;
 
+import org.openqa.selenium.WebDriver;
+
+import driverManager.WebdriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LinkedListStep {
 	
-	@Given("the user is in homepage and logged in")
-	public void the_user_is_in_homepage_and_logged_in() {
-	    
-	}
+	WebDriver driver = WebdriverManager.getDriver();
+	
+//	@Given("the user is in homepage and logged in")
+//	public void the_user_is_in_homepage_and_logged_in() {
+//	    
+//	}
 
 	@When("the user clicks the get started button under linked list section")
 	public void the_user_clicks_the_get_started_button_under_linked_list_section() {
@@ -46,20 +51,20 @@ public class LinkedListStep {
 	    
 	}
 
-	@Then("the User should get navigated to the Try Editor Page")
-	public void the_user_should_get_navigated_to_the_try_editor_page() {
-	    
-	}
+//	@Then("the User should get navigated to the Try Editor Page")
+//	public void the_user_should_get_navigated_to_the_try_editor_page() {
+//	    
+//	}
 
 	@Given("the User is on the Try Editor page")
 	public void the_user_is_on_the_try_editor_page() {
 	    
 	}
 
-	@When("the User enters a sample code as {string} in the Editor section and click Run")
-	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String string) {
-	    
-	}
+//	@When("the User enters a sample code as {string} in the Editor section and click Run")
+//	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String string) {
+//	    
+//	}
 
 	@Then("the User should get the output in the screen")
 	public void the_user_should_get_the_output_in_the_screen() {
@@ -86,10 +91,10 @@ public class LinkedListStep {
 	    
 	}
 
-	@When("the User enters a sample code {string} in the Editor section and click Run")
-	public void the_user_enters_a_sample_code_in_the_editor_section_and_click_run(String string) {
-	    
-	}
+//	@When("the User enters a sample code {string} in the Editor section and click Run")
+//	public void the_user_enters_a_sample_code_in_the_editor_section_and_click_run(String string) {
+//	    
+//	}
 
 	@When("user clicks the Types of linked list link under the topics covered section")
 	public void user_clicks_the_types_of_linked_list_link_under_the_topics_covered_section() {

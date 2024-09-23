@@ -21,25 +21,25 @@ public class ArrayStep {
 //	public ArrayPage ap=new ArrayPage(driver);
 //	
 //	ConfigFileReader configFileReader= new ConfigFileReader();
-	
-	@Given("the User navigates to the login page")
-	public void the_user_navigates_to_the_login_page() {
-//		driver.get(configFileReader.getUrl("url"));
-	}
-
-	@When("the User valid credentials and clicks the login button")
-	public void the_user_valid_credentials_and_clicks_the_login_button() {
-//		sip.signIn();
-//		sip.setUserName();
-//		sip.setPassword();
-//		sip.signInButton();
-	}
-
-	@Then("the User should be navigated to the Home page and logged in")
-	public void the_user_should_be_navigated_to_the_home_page_and_logged_in() {
-//		System.out.println("Logged IN");
-//	    Assert.assertEquals(driver.getTitle(),configFileReader.get_Exp_Title("signInPage_Exp_Title"));
-	}
+//	
+//	@Given("the User navigates to the login page")
+//	public void the_user_navigates_to_the_login_page() {
+////		driver.get(configFileReader.getUrl("url"));
+//	}
+//
+//	@When("the User valid credentials and clicks the login button")
+//	public void the_user_valid_credentials_and_clicks_the_login_button() {
+////		sip.signIn();
+////		sip.setUserName();
+////		sip.setPassword();
+////		sip.signInButton();
+//	}
+//
+//	@Then("the User should be navigated to the Home page and logged in")
+//	public void the_user_should_be_navigated_to_the_home_page_and_logged_in() {
+////		System.out.println("Logged IN");
+////	    Assert.assertEquals(driver.getTitle(),configFileReader.get_Exp_Title("signInPage_Exp_Title"));
+//	}
 
 //----------------@AIP @Array_TC_001---------------------
 	@Given("the User is on the DsAlgo Portal Home page")
@@ -84,10 +84,10 @@ public class ArrayStep {
 //	  ap.tryHereBtn();
 	}
 
-	@Then("the User should get navigated to the Try Editor Page")
-	public void the_user_should_get_navigated_to_the_try_editor_page() {
-//		Assert.assertEquals(driver.getTitle(), configFileReader.get_Exp_Title("tryEditorPage_Exp_Title"));
-	}
+//	@Then("the User should get navigated to the Try Editor Page")
+//	public void the_user_should_get_navigated_to_the_try_editor_page() {
+////		Assert.assertEquals(driver.getTitle(), configFileReader.get_Exp_Title("tryEditorPage_Exp_Title"));
+//	}
 	
 //-----------------@AIPPracQns @Array_TC_004-------------------
 	@When("the User clicks Practice Questions link in the Python Page")

@@ -52,17 +52,17 @@ public class DataStructureStep{
 	    
 	}
 
-	@When("user clicked the Practice Questions")
-	public void user_clicked_the_practice_questions() {
-	    
-	    
-	}
-
-	@Then("user is get navigated to blank page")
-	public void user_is_get_navigated_to_blank_page() {
-	    
-	    
-	}
+//	@When("user clicked the Practice Questions")
+//	public void user_clicked_the_practice_questions() {
+//	    
+//	    
+//	}
+//
+//	@Then("user is get navigated to blank page")
+//	public void user_is_get_navigated_to_blank_page() {
+//	    
+//	    
+//	}
 
 
 
