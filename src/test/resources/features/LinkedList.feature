@@ -29,13 +29,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorIntroduction @LinkedListTC_004  
   Scenario Outline: validate the Try editor from Introduction page
-    Given the User is on the Try Editor page
+    Given the User is on the Try Editor page through the introduction page
     When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            | 
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
     
     
   @CreatingLinkedList @LinkedListTC_005
@@ -52,14 +54,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorCreatingLinkedList @LinkedListTC_007  
   Scenario Outline: validate the Try editor from Creating Linked list page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the creating linked list page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            | 
-    
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
   @TypesOfLinkedList @LinkedListTC_008
   Scenario: validate the Types of linked list page
     Given the user is in linked list page
@@ -74,14 +77,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorTypesOfLinkedList @LinkedListTC_010  
   Scenario Outline: validate the Try editor from Types of Linked List page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the types of linkedlist page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            |
-    
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
   @ImplementLinkedList @LinkedListTC_010
   Scenario: validate the implement linked list in python page
     Given the user is in linked list page
@@ -96,13 +100,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryHereImplementLinkedList @LinkedListTC_012  
   Scenario Outline: validate the Try editor from Implement linked list in python page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the implement linked list in python page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            |
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
     
   @Traversal @LinkedListTC_013
   Scenario: validate the traversal page
@@ -118,14 +124,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorTraversal @LinkedListTC_015  
   Scenario Outline: validate the Try editor from Traversal page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the traversal page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            |
-    
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
     
   @Insertion @LinkedListTC_016 
   Scenario: validate the insertion page
@@ -141,13 +148,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorInsertion @LinkedListTC_018   
   Scenario Outline: validate the Try editor from Insertion page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the insertion page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            |
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
     
   @Deletion @LinkedListTC_019 
   Scenario: validate the deletion page
@@ -163,15 +172,15 @@ Feature: DS Portal Linked List Page Functionality
   
   @TryEditorDeletion @LinkedListTC_021  
   Scenario Outline: validate the Try editor from Deletion page
-    Given the User is on the Try Editor page
-    When the User enters a sample code "<code>" in the Editor section and click Run
-    Then the User should get the output in the screen
+    Given the User is on the Try Editor page through the deletion page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
     
     Examples:
-    | code    | output     | 
-    |         |            |
-    
-    
+    | code        | output     | 
+    |             |            | 
+    |print\"Hello\"|Hello|
+    |hi| |
    @LinkedListPractice @LinkedListTC_022  
    Scenario: validate the Linked list practice questions page from Introduction page
     Given the User is on the Introduction page
