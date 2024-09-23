@@ -1,26 +1,20 @@
 package pageObjects;
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import driverManager.WebdriverManager;
 
 public class LinkedListPage{
 	
-	public LinkedListPage(WebDriver webDriver) {
-		PageFactory.initElements(webDriver, this);
-	}
 	
-//	public static WebDriver driver ;
-//	String URL = "https://dsportalapp.herokuapp.com/login";
+	WebDriver driver = WebdriverManager.getDriver();
 	
-	@FindBy (id = "id_username") 
-	WebElement userName;
-	
-	@FindBy (id= "id_password") 
-	WebElement password;
-	
-	@FindBy (xpath="//input[@type='submit']") 
-	WebElement loginBtn;
 	
 	@FindBy (xpath = "//h5[text()='Linked List']/../a") 
 	WebElement getStartedButton;
@@ -60,20 +54,9 @@ public class LinkedListPage{
 	@FindBy (xpath = "//button") 
 	WebElement runButton;
 	
-	public void setUserName(String uName) {
-		userName.clear();
-		userName.sendKeys(uName);
-    }
-		  
-		   
-	public void setPassword(String pwd) {
-		password.clear();
-		password.sendKeys(pwd);
-	}  
+	@FindBy(xpath = "//*[@id='output']")
+	WebElement output;
 	
-	public void clickLoginBtn() {
-		loginBtn.click();
-    }
 	
 	public void clickGetStartedBtn() {
 		getStartedButton.click();
@@ -118,16 +101,29 @@ public class LinkedListPage{
 		tryEditor.click();
     }
 	
-	public void setCode() {
-		inputCode.sendKeys("print"+"\"Hello\"");
+	public void setCode(String string) {
+		//inputCode.sendKeys("print"+"\"Hello\"");
+		//WebElement elem1 =  new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(inputCode));
+		inputCode.sendKeys(string);
     }
 	
 	public void clickRunBtn() {
 		runButton.click();
     }
 	
+	public String getOutput() {
+		return output.getText();
+	}
+	
 	public void clickPracticeLink() {
 		linkedListPracticeLink.click();
 	}
+	
+	//consructor
+		public LinkedListPage() 
+		{ 
+			PageFactory.initElements(driver, this);
+		}
+		
 	
 }
