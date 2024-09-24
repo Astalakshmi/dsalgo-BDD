@@ -11,7 +11,8 @@ import io.cucumber.testng.CucumberOptions;
     monochrome = true,
     tags= "@Login" ,
     plugin = { "pretty",                      
-               "html:target/cucumber-reports/cucumber.html" } )// HTML report
+               "html:target/cucumber-reports/cucumber.html",
+               "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"} )// HTML report
  
 	
 public class TestRunner extends AbstractTestNGCucumberTests{

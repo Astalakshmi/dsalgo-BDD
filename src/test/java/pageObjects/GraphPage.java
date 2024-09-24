@@ -1,19 +1,19 @@
-package pageObjects;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import driverManager.WebdriverManager;
-
-public class GraphPage {
+	package pageObjects;
 	
-WebDriver driver = WebdriverManager.getDriver();
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.support.FindBy;
+	import org.openqa.selenium.support.PageFactory;
 	
-	//locator
+	import driverManager.WebdriverManager;
 	
-				//Get_Started_Graph
+	public class GraphPage {
+		
+	WebDriver driver = WebdriverManager.getDriver();
+		
+		//locator
+		
+					//Get_Started_Graph
 	
 	@FindBy(xpath="//a[@href='graph']")
 	WebElement graphStarted;
@@ -43,15 +43,19 @@ WebDriver driver = WebdriverManager.getDriver();
 	
 	@FindBy(xpath="//button[normalize-space()='Run']")
 	WebElement graphRepresentRunbtn;
+			   //Practice Questions
+	@FindBy(xpath="//a[normalize-space()='Practice Questions']")
+	WebElement graphPracticeQuestion;
 	         
 	           //Action Methods
 	public void graphStarted() 
 	{
 		graphStarted.click();
 	}
-	public void graphLink() 
+	public boolean graphLink() //1
 	{
 		graphLink.click();
+		return true;
 	}	
 	public void graphTryHere()
 	{
@@ -66,9 +70,10 @@ WebDriver driver = WebdriverManager.getDriver();
 		graphRunbtn.click();
 	}
 	
-	public void  graphRepresent() 
+	public boolean  graphRepresent() //2
 	{
 		 graphRepresent.click();
+		 return true;
 	}	
 	public void graphRepresentTryHere()
 	{
@@ -82,11 +87,13 @@ WebDriver driver = WebdriverManager.getDriver();
 	{
 		graphRepresentRunbtn.click();
 	}
+	public void handleGraphPracticeQuestion() {
+		graphPracticeQuestion.click();
+	}
 	//consructor
 	public GraphPage() 
 	{ 
 		PageFactory.initElements(driver, this);
 	}
 	
-
-}
+	}

@@ -8,7 +8,7 @@ Feature: DS Portal Graph Page Functionality
 
   @GraphPage @GraphTest_001
   Scenario: Validate the Graph Page
-    Given The User is on the DsAlgo Portal Home page
+    Given the user is in homepage and logged in
     When The User clicks Get Started button in the Graph section
     Then The User should get navigated to the DsAlgo Portal Graph Page
 
@@ -18,25 +18,48 @@ Feature: DS Portal Graph Page Functionality
     When The User clicks Graph link
     Then The User should get navigated to first Topic Graph Page
 
-  @GraphTryEditor @GraphEditorTest_003
+  @GraphTryHere @GraphTryHereTest_003
   Scenario: Validate the navigation from the first Topic Graph Page to the Try Editor page
     Given The User is on the first Topic Graph Page
-    When The User clicks Try Here button
-    Then The User Should get navigated to Try Editor Page
+    When The User clicks Try Here button in the first topic Graph Page
+    Then the User should get navigated to the Try Editor Page
 
-  @GraphRepresentations @GraphRepTest_004
+  @GraphTryEditor @GraphEditorTest_004
+  Scenario Outline: validate the Try editor from the first Topic Graph Page
+    Given the User is on the Try Editor page through the first Topic Graph Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
+
+    Examples: 
+      | code             | output |
+      |                  |        |
+      |print\"Hello\"    |Hello   |
+      |hi                |        |
+  @GraphRepresentations @GraphRepTest_005
   Scenario: Validate the Graph Representations page
-    Given The User is on the Graph Page
+    Given The User is on the Graph Page 
     When The User clicks Graph Representations link
     Then The User should get navigated to Graph Representation Page
 
-  @GraphReprTryEditor @GraphReprEditorTest_005
+  @GraphReprTryHere @GraphReprTryHereTest_006
   Scenario: Validate the navigation from the Graph Representation Page to the Try Editor page
     Given The User is on the Graph Representation Page
-    When The User clicks Try Here button
-    Then The User Should get navigated to Try Editor Page
+    When The User clicks Try Here button in the Graph Representation Page
+    Then the User should get navigated to the Try Editor Page
+ 
+  @GraphReprTryEditor @GraphReprEditorTest_007
+  Scenario Outline: validate the Try editor from the Graph Representation Page
+    Given the User is on the Try Editor page through the Graph Representation Page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<output>" in the screen
 
-  @GraphPracticeQuestion @GraphQuestionTest_006
+    Examples: 
+      | code             | output |
+      |                  |        |
+      |print\"Hello\"    |Hello   |
+      |hi                |        |
+
+  @GraphPracticeQuestion @GraphQuestionTest_008
   Scenario: Validate the Practice Questions
     Given The User is on the first Topic Graph Page
     When The User clicks Practice Questions link

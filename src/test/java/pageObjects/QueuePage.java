@@ -1,27 +1,28 @@
-package pageObjects;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import driverManager.WebdriverManager;
-
-public class QueuePage {
+	package pageObjects;
 	
-	WebDriver driver = WebdriverManager.getDriver();
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.support.FindBy;
+	import org.openqa.selenium.support.PageFactory;
 	
-	//locator
+	import driverManager.WebdriverManager;
 	
-				//Get_Started_Queue
+	public class QueuePage {
+		
+		WebDriver driver = WebdriverManager.getDriver();
+		
+		//locator
+		
+	
+		//Get_Started_Queue
 	@FindBy(xpath="//a[@href='queue']")
 	WebElement queueStarted;
 	
-				//Topic covered queueInPython
+		//Topic covered queueInPython
 	@FindBy(xpath="//a[normalize-space()='Implementation of Queue in Python']")
 	WebElement queueInPython;
 	
-	@FindBy(xpath="//a[normalize-space()='Try here>>>']")
+	@FindBy(linkText="Try here>>>")
 	WebElement queueInPythonTryHere;
 	
 	@FindBy(xpath="//div[@class='CodeMirror-scroll']")
@@ -32,7 +33,7 @@ public class QueuePage {
 	
 	@FindBy(xpath="//pre[@id='output']")
 	WebElement outputQueueInPython;
-	             //Topic covered collection.deque
+	     //Topic covered collection.deque
 	@FindBy(xpath="//a[normalize-space()='Implementation using collections.deque']")
 	WebElement deque;
 	
@@ -45,7 +46,7 @@ public class QueuePage {
 	@FindBy(xpath="//button[normalize-space()='Run']")
 	WebElement dequeRunbtn;
 	
-					//Topic covered collection in Array
+			//Topic covered collection in Array
 	@FindBy(xpath="//a[normalize-space()='Implementation using array']")
 	WebElement queueImplArray;
 	
@@ -57,7 +58,7 @@ public class QueuePage {
 	
 	@FindBy(xpath="//button[normalize-space()='Run']")
 	WebElement queueImplArrayRunbtn;
-			//Topic covered Queue Operation
+	//Topic covered Queue Operation
 	@FindBy(xpath="//a[normalize-space()='Queue Operations']")
 	WebElement queueOperation;
 	
@@ -69,50 +70,64 @@ public class QueuePage {
 	
 	@FindBy(xpath="//button[normalize-space()='Run']")
 	WebElement queueOpsRunbtn;
+		//Practice Question
+	@FindBy(xpath="//a[normalize-space()='Practice Questions']")
+	WebElement  queuePracticeQuestion;
+	
 	
 	//Action Methods
 	
 	public void queueStarted()
 	{
-		 queueStarted.click();
+	  queueStarted.click();
 	}
-	public void queueInPython()
+	public boolean queueInPython() //1
 	{
-		queueInPython.click();
+	   queueInPython.click();
+	   return true;
 	}
 	public void queueInPythonTryHere()
 	{
 		queueInPythonTryHere.click();
 	}
-
-	public void deque()
+	
+	public boolean deque()   //2
 	{
 		deque.click();
+		return true;
 	}
 	public void dequeTryHere()
 	{
 		dequeTryHere.click();
 	}
 	
-	public void queueImplArray()
+	public boolean queueImplArray()  //3
 	{
-		queueImplArray.click();
+	queueImplArray.click();
+	return true;
 	}
 	public void queueImplArrayTryHere()
 	{
-		queueImplArrayTryHere.click();
+	queueImplArrayTryHere.click();
 	}
-	public void queueOperation()
+	public boolean queueOperation() //4
 	{
 		queueOperation.click();
+		return true;
 	}
 	public void queueOpsTryHere()
 	{
 		queueOpsTryHere.click();
+	}	
+	public void handlePracticeQuestionClick() {
+	
+		queuePracticeQuestion.click();
+	
 	}
+	
 	
 	//consructor
 	public QueuePage() {
-		PageFactory.initElements(driver, this);
+	PageFactory.initElements(driver, this);
 	}
-}
+	}

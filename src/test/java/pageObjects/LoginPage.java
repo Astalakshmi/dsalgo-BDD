@@ -1,22 +1,24 @@
-package pageObjects;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import driverManager.WebdriverManager;
-
-public class LoginPage {
-  
-	WebDriver driver = WebdriverManager.getDriver();
+	package pageObjects;
 	
-	//Locators
-			  
-				//Sign in link
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.support.FindBy;
+	import org.openqa.selenium.support.PageFactory;
+	
+	import driverManager.WebdriverManager;
+import utilities.ConfigFileReader;
+	
+	public class LoginPage {
+	  
+		WebDriver driver = WebdriverManager.getDriver();
+		ConfigFileReader configFileReader = WebdriverManager.configReader();
+		
+		//Locators
+				  
+		//Sign in link
 	@FindBy(xpath="//a[normalize-space()='Sign in']")
 	WebElement signIn;
-	           //Form Element
+	       //Form Element
 	@FindBy(id="id_username")
 	WebElement usernameLogin;
 	@FindBy(id="id_password")
@@ -24,7 +26,7 @@ public class LoginPage {
 	@FindBy(xpath="//input[@value='Login']")
 	WebElement loginbtn;
 	
-			//Logo
+		//Logo
 	
 	@FindBy(xpath = "//a[text()='NumpyNinja']")
 	WebElement numpyLogo;
@@ -33,30 +35,31 @@ public class LoginPage {
 	
 	public void signIn()
 	{
-		signIn.click();
+	signIn.click();
 	}
 	
 	public void usernameLogin()
 	{
-		usernameLogin.sendKeys("DreamTeam");
+	//usernameLogin.sendKeys("DreamTeam");
+	usernameLogin.sendKeys(configFileReader.getUsername());
 	}
-
+	
 	public void password()
 	{
-		
-		password.sendKeys("Dre@mTe@m123");
+	
+	//password.sendKeys("Dre@mTe@m123");
+	password.sendKeys(configFileReader.getPassword());
 	}
 	public void loginbtn()
 	{
-		loginbtn.click();
+	loginbtn.click();
 	}
 	
 	public void numpyLogo() {
-		numpyLogo.click();
+	numpyLogo.click();
 	}
 	
 	public LoginPage() {
-		PageFactory.initElements(driver, this);
+	PageFactory.initElements(driver, this);
 	}
-	
-}
+	}

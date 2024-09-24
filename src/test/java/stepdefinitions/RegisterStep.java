@@ -1,15 +1,19 @@
 package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
 import pageObjects.IndexPage;
 import pageObjects.RegisterPage;
+import utilities.ConfigFileReader;
+import utilities.LoggerLoad;
 
 public class RegisterStep {
 	
 	WebDriver driver = WebdriverManager.getDriver();
-	
+	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	RegisterPage rp = new RegisterPage();
 	IndexPage ip = new IndexPage();
 	
@@ -30,9 +34,8 @@ public class RegisterStep {
 	@Then("The User should get navigated to Register Page")
 	public void the_user_should_get_navigated_to_register_page() {
 		
-	//	rp.ValidateHomePage();   //Assert home page
-		rp.titlepage();
-	//  Assert.assertEquals(driver.getTitle(), "NumpyNinja");
+		Assert.assertEquals(rp.actualTitle(),configFileReader.getPageTitle("resgisterPage"));
+		LoggerLoad.info("You are in " +driver.getTitle()+" Page.");
 	}
 
 	
