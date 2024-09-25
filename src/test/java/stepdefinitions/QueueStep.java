@@ -1,24 +1,25 @@
-	package stepdefinitions;
-	
-	import org.openqa.selenium.WebDriver;
-	import org.testng.Assert;
-	
-	import driverManager.WebdriverManager;
-	import io.cucumber.java.en.Given;
-	import io.cucumber.java.en.Then;
-	import io.cucumber.java.en.When;
-	import pageObjects.QueuePage;
-	import pageObjects.RegisterPage;
-	import utilities.ConfigFileReader;
-	import utilities.LoggerLoad;
-	
+package stepdefinitions;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import driverManager.WebdriverManager;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pageObjects.QueuePage;
+import pageObjects.RegisterPage;
+import utilities.ConfigFileReader;
+import utilities.LoggerLoad;
+
 	public class QueueStep {
+		
 		WebDriver driver = WebdriverManager.getDriver();
 		ConfigFileReader configFileReader = WebdriverManager.configReader();
 		QueuePage qp = new QueuePage();
 		RegisterPage rp=new RegisterPage();
 		
-	//-------------------@QueuePage @QueueTest_001--------
+//-------------------@QueuePage @QueueTest_001--------
 	
 	@When("The User clicks Get Started button in the Queue section")
 	
@@ -34,9 +35,14 @@
 	}
 	//---------------------  @QueueList @QueueListTest_002------------
 	
+	@Given("The User is on the Queue Page")
+	public void the_user_is_on_the_queue_page() {
+		qp.queueStarted();
+	}
+	
 	@When("The User clicks Implementation of Queue in Python link")
 	public void the_user_clicks_implementation_of_queue_in_python_link() {
-		qp.queueStarted();
+		//qp.queueStarted();
 		qp.queueInPython(); 
 	}
 	
@@ -70,12 +76,12 @@
 		qp.queueInPythonTryHere();
 		
 	}
-	
+
 	
 	//----------------------  @DeQueue @DeQueueTest_005----------
 	@When("The User clicks Implementation Using Collections Dequeue link")
 	public void the_user_clicks_implementation_using_collections_dequeue_link() {
-		qp.queueStarted();
+	//	qp.queueStarted();
 		qp.deque();
 	
 	}	
@@ -99,7 +105,7 @@
 	
 	@When("The User clicks Try Here button in the Implementation collection Page")
 	public void the_user_clicks_try_here_button_in_the_implementation_collection_page() {
-	
+
 		qp.dequeTryHere();	 
 		
 	}
@@ -107,7 +113,7 @@
 	
 	@Given("the User is on the Try Editor page through the Implementation collection Page")
 	public void the_user_is_on_the_try_editor_page_through_the_implementation_collection_page() {
-	
+
 		qp.queueStarted();
 		qp.deque();
 		qp.dequeTryHere();	
@@ -117,7 +123,7 @@
 	//----------------- @QueueArray @QueueArrayTest_008----------
 	@When("The User clicks Implementation using array link")
 	public void the_user_clicks_implementation_using_array_link() {
-	    qp.queueStarted();
+	 //   qp.queueStarted();
 	    qp.queueImplArray();
 	    
 	}
@@ -153,12 +159,12 @@
 		  qp.queueImplArrayTryHere();
 		  
 	}
-	
-	
+
+
 	//---------------------@QueueOperation @QueueOperationTest_011---------
 	@When("The User clicks Queue Operations link")
 	public void the_user_clicks_queue_operations_link() {
-	    qp.queueStarted();
+	  //  qp.queueStarted();
 	    qp.queueOperation(); 
 	}
 	
@@ -176,7 +182,7 @@
 	    qp.queueOperation(); 
 		
 	}
-	
+
 	@When("The User clicks Try Here button in the Queue Operation Page")
 	public void the_user_clicks_try_here_button_in_the_queue_operation_page() {
 	    qp.queueOpsTryHere();
@@ -192,7 +198,7 @@
 	    qp.queueOpsTryHere();
 		
 	}
-	
+
 	
 	//---------------@QueuePracticeQuestion @QueueQuestionTest_014----------
 	@Given("The User is on the Implementation lists")
@@ -217,5 +223,36 @@
 	    LoggerLoad.info("You are in " +driver.getTitle()+" Page.");
 	}
 	
-	
+
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
