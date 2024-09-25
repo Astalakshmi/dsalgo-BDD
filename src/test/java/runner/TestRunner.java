@@ -9,10 +9,10 @@ import io.cucumber.testng.CucumberOptions;
 		 features = {"./src/test/resources/features"},
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
-    tags= "@Login or @Queue or @Graph" ,
+    tags= "@Login" ,
     plugin = { "pretty",                      
                "html:target/cucumber-reports/cucumber.html",
-               "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"} )// HTML report
+               "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"} )
  
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
@@ -27,6 +27,3 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 }
 
 
-
-//   "json:target/cucumber-reports/cucumber.json",// JSON report
-//"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
