@@ -34,10 +34,11 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
     
     
   @CreatingLinkedList @LinkedListTC_005
@@ -59,10 +60,12 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
   @TypesOfLinkedList @LinkedListTC_008
   Scenario: validate the Types of linked list page
     Given the user is in linked list page
@@ -82,10 +85,12 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
   @ImplementLinkedList @LinkedListTC_010
   Scenario: validate the implement linked list in python page
     Given the user is in linked list page
@@ -105,10 +110,12 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
     
   @Traversal @LinkedListTC_013
   Scenario: validate the traversal page
@@ -129,10 +136,12 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
     
   @Insertion @LinkedListTC_016 
   Scenario: validate the insertion page
@@ -153,10 +162,12 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
     
   @Deletion @LinkedListTC_019 
   Scenario: validate the deletion page
@@ -177,10 +188,11 @@ Feature: DS Portal Linked List Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
     
    @PracticeIntroduction @LinkedListTC_022  
    Scenario: validate the Linked list practice questions page from Introduction page

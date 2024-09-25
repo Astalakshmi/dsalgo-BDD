@@ -32,10 +32,12 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi||
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
+    
     #|hi| NameError: name 'hi' is not defined on line 1|
     #|1234| |
     #|System.out.println();|NameError: name 'System' is not defined on line 1|
@@ -60,11 +62,11 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
-    
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
     
     
   @StackApplicationsInStack @StackTC_008   
@@ -86,10 +88,11 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get the "<output>" in the screen
     
     Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    | code         | output     |
+    |print\"Hello\"|Hello       | 
+    |              |            | 
+    |hi            |            |
+    |aer234@$      |            |
     
     
    @PracticeOperations @StackTC_011 
