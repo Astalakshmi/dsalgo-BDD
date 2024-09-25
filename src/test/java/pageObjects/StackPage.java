@@ -18,7 +18,7 @@ public class StackPage {
 	@FindBy (xpath = "//h5[text()='Stack']/../a") 
 	WebElement getStartedButton;
 	
-	@FindBy (partialLinkText = "Operations in stack")
+	@FindBy (partialLinkText = "Operations in Stack")
 	WebElement operationsLink;
 	
 	@FindBy (partialLinkText ="Implementation") 
