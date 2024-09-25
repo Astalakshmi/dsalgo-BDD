@@ -4,15 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import pageObjects.GraphPage;
 import pageObjects.RegisterPage;
 import utilities.ConfigFileReader;
 import utilities.LoggerLoad;
 
 public class GraphStep {
+
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	GraphPage gp = new GraphPage ();
@@ -40,6 +39,7 @@ public class GraphStep {
 	
 	@When("The User clicks Graph link")
 	public void the_user_clicks_graph_link() {
+	//	gp.graphStarted();
 		gp.graphLink();
 	}
 	
@@ -54,12 +54,13 @@ public class GraphStep {
 	public void the_user_is_on_the_first_topic_graph_page() {
 	   
 		gp.graphStarted();
+		gp.graphLink();
 		
 	}
 	
 	@When("The User clicks Try Here button in the first topic Graph Page")
 	public void the_user_clicks_try_here_button_in_the_first_topic_graph_page() {
-		gp.graphLink();
+	//	gp.graphLink();
 		gp.graphTryHere();
 		
 	}
@@ -75,7 +76,7 @@ public class GraphStep {
 	//---------------  @GraphRepresentations @GraphRepTest_005----------
 	@When("The User clicks Graph Representations link")
 	public void the_user_clicks_graph_representations_link() {
-//		gp.graphStarted();
+		//gp.graphStarted();
 		gp.graphRepresent();
 	   
 	}
@@ -112,12 +113,12 @@ public class GraphStep {
 	//---------------- @GraphPracticeQuestion @GraphQuestionTest_008------
 	@When("The User clicks Practice Questions link")
 	public void the_user_clicks_practice_questions_link() {
-		
-	   if (gp.graphLink() || gp.graphRepresent()) 
+			
+	   if (gp.graphRepresent() || gp.graphLink()) 
 	   {
 		   gp.handleGraphPracticeQuestion();
 	   }
-	   
+	  
 	}
 	
 	@Then("The User should navigate to Practice Question Page")

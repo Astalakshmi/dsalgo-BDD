@@ -14,7 +14,8 @@ Feature: DS Portal Queue Page Functionality
 
   @QueueList @QueueListTest_002
   Scenario: Validate the Implementation of the lists page
-    Given the user is in homepage and logged in
+  #  Given the user is in homepage and logged in
+  	Given The User is on the Queue Page
     When The User clicks Implementation of Queue in Python link
     Then The User should get navigated to Implementation lists
 
@@ -33,13 +34,21 @@ Feature: DS Portal Queue Page Functionality
 
     Examples: 
       | code             | output |
-      |                  |        |
       |print\"Hello\"    |Hello   |
+      |									 |	      |
       |hi                |        |
-
+      |aer234@$          |        |
+       
+  @QueuePracticeQuestionLink1  @QueueQuestionlinkTest_014
+  Scenario: Validate the Practice Questions
+    Given The User is on the  Implementation lists Page
+    When The User clicks Practice Questions
+    Then The User should navigate to queue Practice Page
+    
   @DeQueue @DeQueueTest_005
   Scenario: Validate the Implementation Using Collections Dequeue
-    Given the user is in homepage and logged in
+  # Given the user is in homepage and logged in
+  	Given The User is on the Queue Page
     When The User clicks Implementation Using Collections Dequeue link
     Then The User should get navigated to Implementation collection Page
 
@@ -58,14 +67,21 @@ Feature: DS Portal Queue Page Functionality
 
     Examples: 
       | code             | output |
-      |                  |        |
       |print\"Hello\"    |Hello   |
+      |									 |	      |
       |hi                |        |
+      |aer234@$          |        |
 
-  
+  @QueuePracticeQuestionLink2 @QueueQuestionTest_015
+  Scenario: Validate the Practice Questions
+    Given The User is on the Implementation collection Page
+    When The User clicks Practice Questions
+    Then The User should navigate to queue Practice Page
+    
   @QueueArray @QueueArrayTest_008
   Scenario: Validate the Implementation using array
-    Given the user is in homepage and logged in
+   # Given the user is in homepage and logged in
+    Given The User is on the Queue Page
     When The User clicks Implementation using array link
     Then The User should get navigated to Implementation Array
 
@@ -83,13 +99,21 @@ Feature: DS Portal Queue Page Functionality
 
     Examples: 
       | code             | output |
-      |                  |        |
       |print\"Hello\"    |Hello   |
+      |									 |	      |
       |hi                |        |
+      |aer234@$          |        | 
+      
+  @QueuePracticeQuestionLink3 @QueueQuestionTest_016
+  Scenario: Validate the Practice Questions
+    Given The User is on the Implementation collection Array Page
+    When The User clicks Practice Questions
+    Then The User should navigate to queue Practice Page
 
   @QueueOperation @QueueOperationTest_011
   Scenario: Validate the Queue Operations
-    Given the user is in homepage and logged in
+   # Given the user is in homepage and logged in
+   Given The User is on the Queue Page
     When The User clicks Queue Operations link
     Then The User should get navigated to Queue Operation Page
 
@@ -107,12 +131,13 @@ Feature: DS Portal Queue Page Functionality
 
     Examples: 
       | code             | output |
-      |                  |        |
       |print\"Hello\"    |Hello   |
+      |									 |	      |
       |hi                |        |
+      |aer234@$          |        |
 
-  @QueuePracticeQuestion @QueueQuestionTest_014
+  @QueuePracticeQuestionLink4 @QueueQuestionTest_017
   Scenario: Validate the Practice Questions
-    Given The User is on the Implementation lists
+    Given The User is on the Queue Operation Page
     When The User clicks Practice Questions
     Then The User should navigate to queue Practice Page
