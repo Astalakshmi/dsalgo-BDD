@@ -5,12 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import driverManager.WebdriverManager;
+
 public class StackPage {
 	
-	public StackPage(WebDriver webDriver) {
-		PageFactory.initElements(webDriver, this);
-	}
+	WebDriver driver = WebdriverManager.getDriver();
 	
+//	public StackPage(WebDriver webDriver) {
+//		PageFactory.initElements(webDriver, this);
+//	}
+//	
 	@FindBy (xpath = "//h5[text()='Stack']/../a") 
 	WebElement getStartedButton;
 	
@@ -66,6 +70,13 @@ public class StackPage {
 	public void clickPracticeLink() {
 		stackPracticeLink.click();
 	}
+	
+	//consructor
+		public StackPage() 
+		{ 
+			PageFactory.initElements(driver, this);
+		}
+		
 	
 
 }
