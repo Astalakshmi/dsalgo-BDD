@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.decorators.WebDriverDecorator;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
@@ -15,7 +16,7 @@ public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
-	LinkedListPage lp = new LinkedListPage();
+	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")
 	public void the_user_is_in_homepage_and_logged_in() {
@@ -32,16 +33,16 @@ public class CommonStepDefinitions {
 	}
 	
 	@When("the User enters a sample code as {string} in the Editor section and click Run")
-	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String string) {
-		System.out.println(string);
-		
-		lp.setCode(string);
-		lp.clickRunBtn();
+	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String input) {
+		System.out.println(input);
+
+		linkedlistObj.setCode(input);
+		linkedlistObj.clickRunBtn();
 	    
 	}
 
 	@Then("the User should get the {string} in the screen")
-	public void the_user_should_get_the_output_in_the_screen(String string) {
+	public void the_user_should_get_the_output_in_the_screen(String ExpectedOutput) {
 		
 		try {
 			//wait.until(ExpectedConditions.alertIsPresent())
@@ -53,9 +54,9 @@ public class CommonStepDefinitions {
 		}
 		finally {
 			//driver.switchTo().alert().accept();
-			System.out.println(string);
-			String output = lp.getOutput();
-		    Assert.assertEquals(output,string);
+			System.out.println(ExpectedOutput);
+			String actualOutput = linkedlistObj.getOutput();
+		    Assert.assertEquals(actualOutput,ExpectedOutput);
 		}
 		
 	    
