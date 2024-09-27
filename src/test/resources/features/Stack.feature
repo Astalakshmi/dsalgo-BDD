@@ -31,13 +31,13 @@ Feature: DS Portal Stack Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+   Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      
     #|hi| NameError: name 'hi' is not defined on line 1|
     #|1234| |
     #|System.out.println();|NameError: name 'System' is not defined on line 1|
@@ -61,13 +61,13 @@ Feature: DS Portal Stack Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+   Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      
     
   @StackApplicationsInStack @StackTC_008   
   Scenario: validate the Applications in stack page
@@ -87,14 +87,13 @@ Feature: DS Portal Stack Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
-    
+   Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      
    @PracticeOperations @StackTC_011 
    Scenario: validate the Stack practice questions page from Operations in stack page
     Given the User is on the Operations in stack page
