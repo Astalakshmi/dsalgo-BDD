@@ -33,13 +33,13 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+   Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
     
   @CreatingLinkedList @LinkedListTC_005
   Scenario: validate the Creating linked list page
@@ -59,12 +59,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @TypesOfLinkedList @LinkedListTC_008
   Scenario: validate the Types of linked list page
@@ -83,14 +83,13 @@ Feature: DS Portal Linked List Page Functionality
     Given the User is on the Try Editor page through the types of linkedlist page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
-    
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
   @ImplementLinkedList @LinkedListTC_010
   Scenario: validate the implement linked list in python page
     Given the user is in linked list page
@@ -109,13 +108,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Traversal @LinkedListTC_013
   Scenario: validate the traversal page
@@ -135,13 +133,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Insertion @LinkedListTC_016 
   Scenario: validate the insertion page
@@ -161,13 +158,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Deletion @LinkedListTC_019 
   Scenario: validate the deletion page
@@ -187,13 +183,13 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code         | output     |
-    |print\"Hello\"|Hello       | 
-    |              |            | 
-    |hi            |            |
-    |aer234@$      |            |
-    
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
    @PracticeIntroduction @LinkedListTC_022  
    Scenario: validate the Linked list practice questions page from Introduction page
     Given the User is on the Introduction page
