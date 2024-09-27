@@ -3,6 +3,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -60,6 +61,9 @@ public class LinkedListPage{
 	@FindBy(xpath = "//*[@id='output']")
 	WebElement output;
 	
+	@FindBy(id ="answer_form")
+	WebElement formText;
+	
 	
 	public void clickGetStartedBtn() {
 		getStartedButton.click();
@@ -104,33 +108,33 @@ public class LinkedListPage{
 		tryEditor.click();
     }
 	
-	public void setCode(String string) {
+	public void setCode(String input) {
 		//inputCode.sendKeys("print"+"\"Hello\"");
-		
-		
+		 
 		   try {
-			   //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-			   
-//	           new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated
-//					   (By.xpath("//div[contains(@class , 'CodeMirror') and contains(@class,'cm-s-default')]//textarea"))).sendKeys(string);
-			   
-		       inputCode.sendKeys(string);
+			  // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+//			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(10))
+//			       		  .until(ExpectedConditions.elementToBeClickable(inputCode));
+//					
+			   inputCode.sendKeys(input);
 		   }
 		   
 		   catch(ElementNotInteractableException e) {
 				System.out.println("try editor not displayed");
-				LoggerLoad.error("try editor not displayed "+e.getMessage());
-				
+				LoggerLoad.error("Interactable exception try editor not displayed ");
+
 			}
 		
     }
 	
 	public void clickRunBtn() {
-		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(runButton)).click();
-		//runButton.click();
+		//new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(runButton)).click();
+		runButton.click();
     }
 	
 	public String getOutput() {
+		//return new WebDriverWait(driver, Duration.ofSeconds(10))
+			//	.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='output']"))).getText();
 		return output.getText();
 	}
 	
