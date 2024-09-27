@@ -3,6 +3,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -108,33 +109,28 @@ public class LinkedListPage{
 		tryEditor.click();
     }
 	
-	public void setCode(String input) {
-		//inputCode.sendKeys("print"+"\"Hello\"");
-		 
-		   try {
-			  // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-//			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(10))
-//			       		  .until(ExpectedConditions.elementToBeClickable(inputCode));
-//					
+	public void setCode(String input) {	 
+		 try {
+			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+//			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(60))
+//			       		  .until(ExpectedConditions.visibilityOfElementLocated
+//			       				  (By.xpath("//textarea[1]")));	
 			   inputCode.sendKeys(input);
+			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
 		   }
 		   
-		   catch(ElementNotInteractableException e) {
-				System.out.println("try editor not displayed");
+		 catch(Exception e) {
+				//System.out.println("try editor not displayed");
 				LoggerLoad.error("Interactable exception try editor not displayed ");
-
 			}
-		
+		     
     }
 	
 	public void clickRunBtn() {
-		//new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(runButton)).click();
-		runButton.click();
+        runButton.click();
     }
 	
 	public String getOutput() {
-		//return new WebDriverWait(driver, Duration.ofSeconds(10))
-			//	.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='output']"))).getText();
 		return output.getText();
 	}
 	
