@@ -1,7 +1,9 @@
 package stepdefinitions;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.decorators.WebDriverDecorator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
@@ -42,21 +44,21 @@ public class CommonStepDefinitions {
 	}
 
 	@Then("the User should get the {string} in the screen")
-	public void the_user_should_get_the_output_in_the_screen(String ExpectedOutput) {
+	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 		
 		try {
-			//wait.until(ExpectedConditions.alertIsPresent())
-			driver.switchTo().alert().accept();
+			String actualErrorOutput = driver.switchTo().alert().getText();
+			//System.out.println("alert error output "+actualErrorOutput);
+			if(actualErrorOutput.length()>0 ) {
+				Assert.assertEquals(actualErrorOutput, expectedOutput);
+			} else {
+				Assert.fail();
+			}
 		}
-		catch(Exception e) {
-			System.out.println("alert not present");
-			LoggerLoad.error("alert not present in try editor");
-		}
-		finally {
-			//driver.switchTo().alert().accept();
-			System.out.println(ExpectedOutput);
-			String actualOutput = linkedlistObj.getOutput();
-		    Assert.assertEquals(actualOutput,ExpectedOutput);
+		catch(NoAlertPresentException e) {
+			LoggerLoad.info("alert not present in try editor");
+			String actualCodeOutput = linkedlistObj.getOutput();
+		    Assert.assertEquals(actualCodeOutput,expectedOutput);
 		}
 		
 	    
