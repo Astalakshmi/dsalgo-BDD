@@ -156,6 +156,16 @@ public class StackStep {
 	    Assert.assertEquals(configFileReader.getPageTitle("practiceQuestions"), practiceTitle);
 	    
 	}
+	
+	@Then("the User should view the practice questions of stack")
+	public void the_user_should_view_the_practice_questions_of_stack() {
+		int practiceCount = stackPageObj.getPracticeQuestionsCount();
+		if(practiceCount < 1) {
+			Assert.fail("No questions found");
+		}
+		
+	    
+	}
 
 
 }

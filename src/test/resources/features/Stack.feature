@@ -112,5 +112,25 @@ Feature: DS Portal Stack Page Functionality
     When the User clicks the Practice Questions link in Applications in stack Page
     Then the User should get navigated to the Stack Practice Questions Page
     
+    @PracticeQuestionsStackFromOperations @StackTC_014 
+   Scenario: validate the practice questions in Stack practice page through Operations in stack page
+    Given the User is on the Operations in stack page
+    When the User clicks the Practice Questions link in Operations in stack Page
+    Then the User should view the practice questions of stack
+    
+    @PracticeQuestionsStackFromImplementation @StackTC_015 
+   Scenario: validate the practice questions in Stack practice page through Implementation in stack page
+    Given the User is on the Implementation in stack page
+    When the User clicks the Practice Questions link in Implementation in stack Page
+    Then the User should view the practice questions of stack
+    
+    @PracticeQuestionsStackFromApplication @StackTC_016 
+   Scenario: validate the practice questions in Stack practice page through Applications in stack page
+    Given the User is on the Applications in stack page
+    When the User clicks the Practice Questions link in Applications in stack Page
+    Then the User should view the practice questions of stack
+    
+    
+    
     
     
