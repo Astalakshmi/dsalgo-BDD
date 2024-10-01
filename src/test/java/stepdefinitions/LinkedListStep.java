@@ -162,6 +162,7 @@ public class LinkedListStep {
 	public void user_clicks_the_types_of_linked_list_link_under_the_topics_covered_section() {
 		
 		linkedListObject.clickTypesOfLinkedListLink();
+
 	    
 	}
 
@@ -367,6 +368,17 @@ public class LinkedListStep {
 	public void the_user_should_get_navigated_to_the_linked_list_practice_questions_page() {
 		String practiceTitle = driver.getTitle();
 	    Assert.assertEquals(practiceTitle,configFileReader.getPageTitle("practiceQuestions"));
+	    
+	}
+	
+	
+	@Then("the User should view the practice questions of Linked List")
+	public void the_user_should_view_the_practice_questions_of_linked_list() {
+		int practiceCount = linkedListObject.getPracticeQuestionsCount();
+		if(practiceCount < 1) {
+			Assert.fail("No questions found");
+		}
+		
 	    
 	}
 

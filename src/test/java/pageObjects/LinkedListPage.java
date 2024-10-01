@@ -1,5 +1,6 @@
 package pageObjects;
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -7,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -47,6 +49,9 @@ public class LinkedListPage{
 	
 	@FindBy (partialLinkText = "Practice Questions")
 	WebElement linkedListPracticeLink;
+	
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
 	
 	
 	@FindBy (partialLinkText = "Try here>>>") 
@@ -111,7 +116,7 @@ public class LinkedListPage{
 	
 	public void setCode(String input) {	 
 		 try {
-			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 //			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(60))
 //			       		  .until(ExpectedConditions.visibilityOfElementLocated
 //			       				  (By.xpath("//textarea[1]")));	
@@ -136,6 +141,10 @@ public class LinkedListPage{
 	
 	public void clickPracticeLink() {
 		linkedListPracticeLink.click();
+	}
+	
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
 	}
 	
 	//consructor

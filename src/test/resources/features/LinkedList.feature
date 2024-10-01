@@ -233,3 +233,45 @@ Feature: DS Portal Linked List Page Functionality
     When the User clicks the Practice Questions link in Deletion Page
     Then the User should get navigated to the Linked List Practice Questions Page
     
+    @PracticeQuestionsListIntroduction @LinkedListTC_029 
+   Scenario: validate the practice questions in Linked list practice page through Introduction page
+    Given the User is on the Introduction page
+    When the User clicks the Practice Questions link in Introduction Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListCreating @LinkedListTC_030 
+   Scenario: validate the practice questions in Linked list practice page through Creating Linked list page
+    Given the User is on the Creating Linked list page
+    When the User clicks the Practice Questions link in Creating Linked list Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListImplement @LinkedListTC_031 
+   Scenario: validate the practice questions in Linked list practice page through Implement linked lis page
+    Given the User is on the Implement linked list in python page
+    When the User clicks the Practice Questions link in Implement linked list Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListTypes @LinkedListTC_032 
+   Scenario: validate the practice questions in Linked list practice page through Types of Linked List page
+    Given the User is on the Types of Linked List page
+    When the User clicks the Practice Questions link in Types of Linked List Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListTraversal @LinkedListTC_033 
+   Scenario: validate the practice questions in Linked list practice page through Traversal page
+    Given the User is on the Traversal page
+    When the User clicks the Practice Questions link in Traversal Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListInsertion @LinkedListTC_034 
+   Scenario: validate the practice questions in Linked list practice page through Insertion page
+    Given the User is on the Insertion page
+    When the User clicks the Practice Questions link in Insertion Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListDeletion @LinkedListTC_035 
+   Scenario: validate the practice questions in Linked list practice page through Deletion page
+    Given the User is on the Deletion page
+    When the User clicks the Practice Questions link in Deletion Page
+    Then the User should view the practice questions of Linked List
+    
