@@ -20,7 +20,8 @@ public class CommonStepDefinitions {
 	@Given("the user is in homepage and logged in")
 	public void the_user_is_in_homepage_and_logged_in() {
 		driver.get(configFileReader.getHomeUrl());
-		//LoggerLoad.info("You are in" +driver.getTitle());
+		LoggerLoad.info("You are in " +driver.getTitle() +"home page.");
+		
 		
 	}
 	

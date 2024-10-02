@@ -11,27 +11,59 @@ import utilities.ConfigFileReader;
 public class WebdriverManager {
 	
 
-	public static WebDriver driver;
+//	public static WebDriver driver;
+//	public static  ConfigFileReader configFileReader;
+//
+//	public static WebDriver initializeDriver() {
+//		configFileReader= new ConfigFileReader();
+//		String browserName = configFileReader.getBrowser();
+//		if (browserName != null && browserName.equalsIgnoreCase("CHROME")) {
+//			driver = new ChromeDriver();
+//			
+//		} else if (browserName != null && browserName.equalsIgnoreCase("EDGE")) {
+//			driver = new EdgeDriver();
+//			
+//		}
+//
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		return driver;
+//	}
+//
+//	public static WebDriver getDriver() {
+//		return driver;
+//	}
+//	
+//	public static ConfigFileReader configReader() {
+//		return configFileReader;
+//	}
+//		
+//	public static void closeDriver() {
+//			driver.quit();
+//	}
+	
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	public static  ConfigFileReader configFileReader;
 
 	public static WebDriver initializeDriver() {
 		configFileReader= new ConfigFileReader();
 		String browserName = configFileReader.getBrowser();
 		if (browserName != null && browserName.equalsIgnoreCase("CHROME")) {
-			driver = new ChromeDriver();
+			driver.set(new ChromeDriver());
+			//driver = new ChromeDriver();
 			
 		} else if (browserName != null && browserName.equalsIgnoreCase("EDGE")) {
-			driver = new EdgeDriver();
+			driver.set(new EdgeDriver());
 			
 		}
 
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		return driver;
+		driver.get().manage().window().maximize();
+		driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		return driver.get();
 	}
 
 	public static WebDriver getDriver() {
-		return driver;
+		return driver.get();
 	}
 	
 	public static ConfigFileReader configReader() {
@@ -39,6 +71,7 @@ public class WebdriverManager {
 	}
 		
 	public static void closeDriver() {
-			driver.quit();
+			driver.get().quit();
 	}
+
 }

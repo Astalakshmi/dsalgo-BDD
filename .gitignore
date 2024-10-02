@@ -7,3 +7,5 @@
 
 .project
 /bin/
+/test-output/
+

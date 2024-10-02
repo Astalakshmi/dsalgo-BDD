@@ -1,5 +1,7 @@
 package pageObjects;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,55 +10,60 @@ import org.openqa.selenium.support.PageFactory;
 import driverManager.WebdriverManager;
 
 public class LoginPage {
-  
+
 	WebDriver driver = WebdriverManager.getDriver();
-	
-	//Locators
-			  
-				//Sign in link
-	@FindBy(xpath="//a[normalize-space()='Sign in']")
+
+	@FindBy(xpath = "//a[normalize-space()='Sign in']")
 	WebElement signIn;
-	           //Form Element
-	@FindBy(id="id_username")
+	
+	@FindBy(id = "id_username")
 	WebElement usernameLogin;
-	@FindBy(id="id_password")
+	
+	@FindBy(id = "id_password")
 	WebElement password;
-	@FindBy(xpath="//input[@value='Login']")
+	
+	@FindBy(xpath = "//input[@value='Login']")
 	WebElement loginbtn;
 	
-			//Logo
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement alertInvalidcredentials;
 	
-	@FindBy(xpath = "//a[text()='NumpyNinja']")
-	WebElement numpyLogo;
-	
-	//Action Methods
-	
-	public void signIn()
-	{
+
+	public void signInclick() {
 		signIn.click();
 	}
-	
-	public void usernameLogin()
-	{
-		usernameLogin.sendKeys("DreamTeam");
+	// ************************
+//	public void usernameLogin()
+//	{
+//		usernameLogin.sendKeys("DreamTeam");
+//	}
+
+//	public void password()
+//	{
+//		
+//		password.sendKeys("Dre@mTe@m123");
+//	}
+
+	// *********************************
+	public void loginBtnclick() {
+		loginbtn.click();
+		
+		
 	}
 
-	public void password()
-	{
-		
-		password.sendKeys("Dre@mTe@m123");
-	}
-	public void loginbtn()
-	{
-		loginbtn.click();
+	public String getActualmessage() {
+		String alertmessage=alertInvalidcredentials.getText();
+		return alertmessage;
 	}
 	
-	public void numpyLogo() {
-		numpyLogo.click();
+	public String getActualTitle() {
+		String actualTitle = driver.getTitle();
+		System.out.println(actualTitle);
+		return actualTitle;
 	}
 	
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 }

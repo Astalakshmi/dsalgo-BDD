@@ -10,7 +10,6 @@ import utilities.ConfigFileReader;
 
 public class HooksBase {
 
-	
 	@Before
 	public void launchBrowser() {
 		WebDriver driver = WebdriverManager.initializeDriver();
@@ -24,5 +23,5 @@ public class HooksBase {
 			WebdriverManager.closeDriver();
 
 		}
-	
-}
+}		
+

@@ -104,6 +104,7 @@ public class LinkedListPage{
 	public void setCode(String string) {
 		//inputCode.sendKeys("print"+"\"Hello\"");
 		//WebElement elem1 =  new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(inputCode));
+		
 		inputCode.sendKeys(string);
     }
 	
