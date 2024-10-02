@@ -118,8 +118,7 @@ public class LinkedListPage{
 		 try {
 			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 //			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(60))
-//			       		  .until(ExpectedConditions.visibilityOfElementLocated
-//			       				  (By.xpath("//textarea[1]")));	
+//			       		  .until(ExpectedConditions.elementToBeClickable(inputCode));	
 			   inputCode.sendKeys(input);
 			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
 		   }
