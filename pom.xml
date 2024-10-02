@@ -19,6 +19,13 @@
     	      <suiteXmlFiles>
     		     <suiteXmlFile>testng.xml</suiteXmlFile>
     	      </suiteXmlFiles>
+    	      <properties>
+    	      <dataproviderthreadcount>30</dataproviderthreadcount>
+    	      	<parallel>tests</parallel>
+              	<threadCount>5</threadCount>
+    	      </properties>
+    	      
+              
            </configuration>
         </plugin>
  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
@@ -41,7 +48,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.24.0</version>
+    <version>4.25.0</version>
 </dependency>
 
   <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
