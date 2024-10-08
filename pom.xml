@@ -21,11 +21,9 @@
     	      </suiteXmlFiles>
     	      <properties>
     	      <dataproviderthreadcount>30</dataproviderthreadcount>
-    	      	<parallel>tests</parallel>
-              	<threadCount>5</threadCount>
+    	      	<parallel>all</parallel>
+              	<threadCount>7</threadCount>
     	      </properties>
-    	      
-              
            </configuration>
         </plugin>
  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
@@ -85,12 +83,40 @@
      <version>2.20.0</version>
 </dependency>
  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
+       <dependency>
              <groupId>org.testng</groupId>
              <artifactId>testng</artifactId>
              <version>7.10.2</version>
              <scope>test</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+
+<dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi</artifactId>
+
+    <version>5.3.0</version>
+
+</dependency>
+
+ 
+
+ 
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
+<dependency>
+
+    <groupId>org.apache.poi</groupId>
+
+    <artifactId>poi-ooxml</artifactId>
+
+    <version>5.3.0</version>
+
+</dependency>
 
   </dependencies>
 </project>
