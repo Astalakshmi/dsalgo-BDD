@@ -2,10 +2,9 @@
 Feature: DS Portal Linked List Page Functionality
 
 
-  Background: Successful login with valid credentials
-    Given The User navigates to the login page
-    When The User valid credentials and clicks the login button
-    Then The User should be navigated to the Home page and logged in
+    Background: Successful login with valid credentials
+     Given The User is on the login page
+    When The User enters the valid username and password "LoginCredentials"
 
 
   @LikedListGetStarted @LinkedListTC_001

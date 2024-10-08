@@ -34,7 +34,7 @@ public class LinkedListStep {
 	@Then("the user views the linked list page")
 	public void the_user_views_the_linked_list_page() {
 		
-		String linkedListPageTitle = driver.getTitle();
+		String linkedListPageTitle = linkedListObject.getActualTitle();
 		
 		
 	    Assert.assertEquals(linkedListPageTitle,configFileReader.getPageTitle("linkedListPage"));
@@ -57,7 +57,7 @@ public class LinkedListStep {
 	@Then("the user views the Introduction page")
 	public void the_user_views_the_introduction_page() {
 		
-		String introductionPageTitle = driver.getTitle();
+		String introductionPageTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(introductionPageTitle,configFileReader.getPageTitle("introduction"));
 	    
 	}
@@ -93,34 +93,7 @@ public class LinkedListStep {
 	    
 	}
 
-//	@When("the User enters a sample code as {string} in the Editor section and click Run")
-//	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String string) {
-//		System.out.println(string);
-//		lp.setCode(string);
-//		lp.clickRunBtn();
-//	    
-//	}
-//
-//	@Then("the User should get the {string} in the screen")
-//	public void the_user_should_get_the_output_in_the_screen(String string) {
-//		
-//		try {
-//			//wait.until(ExpectedConditions.alertIsPresent())
-//			driver.switchTo().alert().accept();
-//		}
-//		catch(Exception e) {
-//			System.out.println("alert not present");
-//			LoggerLoad.error("alert not present in try editor");
-//		}
-//		finally {
-//			//driver.switchTo().alert().accept();
-//			System.out.println(string);
-//			String output = lp.getOutput();
-//		    Assert.assertEquals(string, output);
-//		}
-//		
-//	    
-//	}
+
 
 	@When("user clicks the creating linked list link under the topics covered section")
 	public void user_clicks_the_creating_linked_list_link_under_the_topics_covered_section() {
@@ -132,7 +105,7 @@ public class LinkedListStep {
 	@Then("user views the creating linked list page")
 	public void user_views_the_creating_linked_list_page() {
 		
-		String creatingLinkedListTitle = driver.getTitle();
+		String creatingLinkedListTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(creatingLinkedListTitle,configFileReader.getPageTitle("creatingLinkList"));
 	    
 	}
@@ -168,7 +141,7 @@ public class LinkedListStep {
 
 	@Then("user views the types of linked list page")
 	public void user_views_the_types_of_linked_list_page() {
-		String typesOfLinkedListTitle = driver.getTitle();
+		String typesOfLinkedListTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("typesOfLinkedList"), typesOfLinkedListTitle);
 	}
 
@@ -201,7 +174,7 @@ public class LinkedListStep {
 
 	@Then("user views the implement linked list in python  page")
 	public void user_views_the_implement_linked_list_in_python_page() {
-		String implementTitle = driver.getTitle();
+		String implementTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("implementLinkedList"), implementTitle);
 	}
 
@@ -234,7 +207,7 @@ public class LinkedListStep {
 
 	@Then("user views the traversal page")
 	public void user_views_the_traversal_page() {
-		String traversalTitle = driver.getTitle();
+		String traversalTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("traversal"), traversalTitle);
 	}
 
@@ -268,7 +241,7 @@ public class LinkedListStep {
 
 	@Then("user views the insertion page")
 	public void user_views_the_insertion_page() {
-		String insertionTitle = driver.getTitle();
+		String insertionTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("insertion"), insertionTitle);
 	}
 
@@ -301,7 +274,7 @@ public class LinkedListStep {
 
 	@Then("user views the deletion page")
 	public void user_views_the_deletion_page() {
-		String deletionTitle = driver.getTitle();
+		String deletionTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(deletionTitle,configFileReader.getPageTitle("deletion"));
 	}
 
@@ -366,7 +339,7 @@ public class LinkedListStep {
 
 	@Then("the User should get navigated to the Linked List Practice Questions Page")
 	public void the_user_should_get_navigated_to_the_linked_list_practice_questions_page() {
-		String practiceTitle = driver.getTitle();
+		String practiceTitle = linkedListObject.getActualTitle();
 	    Assert.assertEquals(practiceTitle,configFileReader.getPageTitle("practiceQuestions"));
 	    
 	}
