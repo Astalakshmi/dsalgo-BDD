@@ -1,10 +1,9 @@
 @Stack
 Feature: DS Portal Stack Page Functionality
   
-  Background: Successful login with valid credentials
-    Given The User navigates to the login page
-    When The User valid credentials and clicks the login button
-    Then The User should be navigated to the Home page and logged in
+    Background: Successful login with valid credentials
+     Given The User is on the login page
+    When The User enters the valid username and password "LoginCredentials"
 
 
   @StackGetStarted @StackTC_001
@@ -36,13 +35,9 @@ Feature: DS Portal Stack Page Functionality
       | print\"Hello\"   | Hello                                            |
       |                  |                                                  |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
       
-    #|hi| NameError: name 'hi' is not defined on line 1|
-    #|1234| |
-    #|System.out.println();|NameError: name 'System' is not defined on line 1|
-    #
-    #
+   
   @StackImplementationInStack @StackTC_005   
   Scenario: validate the Implementation in stack page
     Given the user is in stack page
@@ -66,7 +61,7 @@ Feature: DS Portal Stack Page Functionality
       | print\"Hello\"   | Hello                                            |
       |                  |                                                  |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
       
     
   @StackApplicationsInStack @StackTC_008   
@@ -92,7 +87,7 @@ Feature: DS Portal Stack Page Functionality
       | print\"Hello\"   | Hello                                            |
       |                  |                                                  |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on line 1                 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
       
    @PracticeOperations @StackTC_011 
    Scenario: validate the Stack practice questions page from Operations in stack page

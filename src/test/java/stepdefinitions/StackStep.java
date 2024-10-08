@@ -23,7 +23,7 @@ public class StackStep {
 
 	@Then("user views the stack page")
 	public void user_views_the_stack_page() {
-		String stackPageTitle = driver.getTitle();
+		String stackPageTitle = stackPageObj.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("stackPage"), stackPageTitle);
 	    
 	}
@@ -42,7 +42,7 @@ public class StackStep {
 
 	@Then("user views the Operations in stack page")
 	public void user_views_the_operations_in_stack_page() {
-		String operationsTitle = driver.getTitle();
+		String operationsTitle = stackPageObj.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("operInStack"), operationsTitle);
 	    
 	}
@@ -78,7 +78,7 @@ public class StackStep {
 
 	@Then("user views the Implementation in stack page")
 	public void user_views_the_implementation_in_stack_page() {
-		String implementStackTitle = driver.getTitle();
+		String implementStackTitle = stackPageObj.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("implementationStack"), implementStackTitle);
 	    
 	}
@@ -109,7 +109,7 @@ public class StackStep {
 
 	@Then("user views the Applications in stack page")
 	public void user_views_the_applications_in_stack_page() {
-		String applicationTitle = driver.getTitle();
+		String applicationTitle = stackPageObj.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("applicationsStack"), applicationTitle);
 	    
 	}
@@ -152,7 +152,7 @@ public class StackStep {
 
 	@Then("the User should get navigated to the Stack Practice Questions Page")
 	public void the_user_should_get_navigated_to_the_stack_practice_questions_page() {
-		String practiceTitle = driver.getTitle();
+		String practiceTitle = stackPageObj.getActualTitle();
 	    Assert.assertEquals(configFileReader.getPageTitle("practiceQuestions"), practiceTitle);
 	    
 	}

@@ -85,6 +85,10 @@ public class StackPage {
 		return practiceQuestions.size();
 	}
 	
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+	
 	//consructor
 		public StackPage() 
 		{ 
