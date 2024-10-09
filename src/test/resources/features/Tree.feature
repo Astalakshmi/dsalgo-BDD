@@ -2,7 +2,7 @@
 Feature: Ds Portal Tree Page Functionality
 
   Background: Successful login with valid credentials
-     Given The User is on the login page
+    Given The User is on the login page
     When The User enters the valid username and password "LoginCredentials"
 
   @TreeGetStarted @TreeTC_001
@@ -15,7 +15,6 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Tree Module Page Overview of Trees link
     Given user is on the Tree module page
     When user clicked the overview of Trees link
-  
 
   @OverviewTreesTryhere @TreeTC_003
   Scenario: Validate  the Overview of Trees Try here
@@ -29,15 +28,12 @@ Feature: Ds Portal Tree Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-   Examples: 
-      | code             | output |
-      | print\\"Hello\\" | Hello  |
-      |                  |        |
-      | hi               |        |
-      | aer234@$         |        |
-      
-      #| print hello      | NameError: name 'hello' is not defined on line 1 |
-      #| aer234@$         | SyntaxError: bad input on line 1                 |
+    Examples: 
+      | code             | output                                           |
+      | print\\"Hello\\" | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad input on line 1                 |
 
   @OverviewTreesPracques @TreeTC_005
   Scenario: Validate the Overview of Trees page Practice Questions
@@ -63,12 +59,12 @@ Feature: Ds Portal Tree Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-    Examples: 
-      | code             | output |
-      | print\\"Hello\\" | Hello  |
-      |                  |        |
-      | hi               |        |
-      | aer234@$         |        |
+     Examples: 
+      | code             | output                                           |
+      | print\\"Hello\\" | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad input on line 1                 |
 
   @TerminologiesPracQues @TreeTC_009
   Scenario: Validate the Terminologies page Practice Questions
@@ -94,12 +90,12 @@ Feature: Ds Portal Tree Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-    Examples: 
-      | code             | output |
-      | print\\"Hello\\" | Hello  |
-      |                  |        |
-      | hi               |        |
-      | aer234@$         |        |
+     Examples: 
+      | code             | output                                           |
+      | print\\"Hello\\" | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad input on line 1                 |
 
   @TypeTreesPracQues @TreeTC_013
   Scenario: Validate the Type of Trees page Practice Questions
@@ -125,12 +121,12 @@ Feature: Ds Portal Tree Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
-    Examples: 
-      | code             | output |
-      | print\\"Hello\\" | Hello  |
-      |                  |        |
-      | hi               |        |
-      | aer234@$         |        |
+   Examples: 
+      | code             | output                                           |
+      | print\\"Hello\\" | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad input on line 1                 |
 
   @TreeTraversalsPracQues @TreeTC_017
   Scenario: Validate the Tree Traversals page Practice Questions

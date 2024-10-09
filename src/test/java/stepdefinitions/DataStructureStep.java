@@ -1,10 +1,11 @@
 package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
 import pageObjects.DataStructurePage;
-import pageObjects.RegisterPage;
 import utilities.ConfigFileReader;
 import utilities.ExcelFileReader;
 import utilities.LoggerLoad;
@@ -14,7 +15,6 @@ public class DataStructureStep{
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	DataStructurePage dataStructureObj = new DataStructurePage();
-	RegisterPage registerObj = new RegisterPage();
 	ExcelFileReader reader = new ExcelFileReader();
 	
 	//--------------------------- @DataIntro @DataTC_001----------------
@@ -29,8 +29,8 @@ public class DataStructureStep{
 	@Then("user is able view the Data Structure Introduction Page")
 	public void user_is_able_view_the_data_structure_introduction_page() {
 		
-		//Ask Asta about the login need to add the actualTitle()
-	//	Assert.assertEquals(rp.actualTitle(), configFileReader.getPageTitle("dataStructures"));
+		
+		Assert.assertEquals(dataStructureObj.getActualTitle(), configFileReader.getPageTitle("dataStructures"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	   
 	}
@@ -50,7 +50,7 @@ public class DataStructureStep{
 
 	@Then("user is able to view the Time Complexity Page")
 	public void user_is_able_to_view_the_time_complexity_page() {
-	//	Assert.assertEquals(rp.actualTitle(), configFileReader.getPageTitle("timeComplexity"));
+		Assert.assertEquals(dataStructureObj.getActualTitle(), configFileReader.getPageTitle("timeComplexity"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	   
 	}
@@ -94,7 +94,7 @@ public class DataStructureStep{
 	@Then("user is get navigated to the Time Complexity link Practice Questions Page")
 	public void user_is_get_navigated_to_the_Time_Complexity_link_Practice_Questions_Page()
 	{	
-	//	Assert.assertEquals(rp.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(dataStructureObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 	

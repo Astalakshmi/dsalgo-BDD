@@ -20,7 +20,7 @@ public class RegisterStep {
 
 	@When("The User clicks on the Register link")
 	public void the_user_clicks_on_the_register_link() {
-		registerObj.registerLink();
+		registerObj.registerLinkclick();
 	//	registerObj.setUsername();
 		//registerObj.setPassword();
 	//	registerObj.setConfirmPassword();

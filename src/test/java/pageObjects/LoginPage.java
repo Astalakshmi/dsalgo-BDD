@@ -1,7 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,22 +14,41 @@ public class LoginPage {
 	@FindBy(xpath = "//a[normalize-space()='Sign in']")
 	WebElement signIn;
 	
-	@FindBy(id = "id_username")
-	WebElement usernameLogin;
+	@FindBy(xpath = "//input[@id='id_username']")
+	WebElement username;
 	
-	@FindBy(id = "id_password")
-	WebElement password;
+	@FindBy(xpath = "//input[@id='id_password']")
+	WebElement loginPassword;
 	
+//	@FindBy(id = "id_username")
+//	WebElement usernameLogin;
+
+//	@FindBy(id = "id_password")
+//	WebElement password;
+
 	@FindBy(xpath = "//input[@value='Login']")
 	WebElement loginbtn;
-	
+
 	@FindBy(xpath = "//div[@class='alert alert-primary']")
 	WebElement alertInvalidcredentials;
+	
+	@FindBy(xpath = "//a[text()='Register!']")
+	WebElement loginpageRegisterlink;
+	
 	
 
 	public void signInclick() {
 		signIn.click();
 	}
+	
+	public void setUsername(String userName) {
+		username.sendKeys(userName);
+	}
+	
+	public void setLoginPassword(String passWord) {
+		loginPassword.sendKeys(passWord); // i changed to login
+			}
+	
 	// ************************
 //	public void usernameLogin()
 //	{
@@ -47,19 +64,26 @@ public class LoginPage {
 	// *********************************
 	public void loginBtnclick() {
 		loginbtn.click();
-		
-		
 	}
 
-	public String getActualmessage() {
-		String alertmessage=alertInvalidcredentials.getText();
-		return alertmessage;
+	public String getInvalidLoginValidationMessage() {
+		return alertInvalidcredentials.getText();
+	}
+
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+
+	public void loginpageRegisterlink() {
+		loginpageRegisterlink.click();
 	}
 	
-	public String getActualTitle() {
-		String actualTitle = driver.getTitle();
-		System.out.println(actualTitle);
-		return actualTitle;
+	public String getUserNameValidationMessage() {
+		return username.getAttribute("validationMessage");
+	}
+	
+	public String getPasswordNameValidationMessage() {
+		return loginPassword.getAttribute("validationMessage");
 	}
 	
 	public LoginPage() {

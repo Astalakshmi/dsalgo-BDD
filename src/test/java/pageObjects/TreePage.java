@@ -158,9 +158,7 @@ public class TreePage {
 //	}
 
 	public String getActualTitle() {
-		String actualTitle = driver.getTitle();
-		System.out.println(actualTitle);
-		return actualTitle;
+		return driver.getTitle();
 	}
 
 	public TreePage() {

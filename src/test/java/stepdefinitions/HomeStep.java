@@ -197,13 +197,37 @@ public class HomeStep {
 		// Check the alert message
 		for(WebElement link : homeObj.getAnylinkofGetStarted()) {
 			homeObj.clickspecificGetStartedlink(link);
-
-			homeObj.getalertMessage();
-			// Assert that the alert message is displayed with the correct text
-
 			Assert.assertEquals(homeObj.getActualMessage(), configFileReader.getAlert("homepageGetStartedAlert"));
 			LoggerLoad.info("The User is seeing the alert message " + homeObj.getActualMessage());
 		}
 
+	}
+	
+	@When("the user views the navigation menu")
+	public void the_user_views_the_navigation_menu()
+	{
+		homeObj.accountHoldernameclick();
+		
+			}
+	
+	@Then("The account holdername should be displayed in the hompage")
+	public void The_account_holdername_should_be_displayed_in_the_hompage()
+	{
+		Assert.assertEquals(homeObj.getAccountholdername(), configFileReader.getFunctionalityMessage("accountholdername"));
+		LoggerLoad.info("The User can able to view the account hoidername  " + homeObj.getAccountholdername());
+	}
+	
+	@When("The user click the sign out in home page")
+	//public void The_user_click_the_sign_out_in_home_page()
+	public void The_user_click_()
+	{
+		homeObj.logoutClick();
+	}
+	
+	@Then("The user should logged out of the user account")
+	public void The_user_should_logged_out_of_the_user_account()
+	{
+		Assert.assertEquals(homeObj.alertSignout(), configFileReader.getFunctionalityMessage("signout"));
+		LoggerLoad.info("The User can succefully loggedout of the application " + homeObj.alertSignout());
 	}
 }

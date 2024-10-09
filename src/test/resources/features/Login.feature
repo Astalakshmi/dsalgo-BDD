@@ -19,6 +19,7 @@ Feature: DsAlgo Portal Login Functionality
       | LoginCredentials |         2 |
       | LoginCredentials |         3 |
       | LoginCredentials |         4 |
+      | LoginCredentials |         5 |
 
   @WithoutLogin @WithoutloginTC_003
   Scenario: Validate the Get Started Click button on Home page  without Login

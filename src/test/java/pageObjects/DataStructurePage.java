@@ -38,6 +38,10 @@ public class DataStructurePage {
 		practice_ques.click();
 	}
 
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+	
 	public DataStructurePage() {
 		PageFactory.initElements(driver, this);
 	}

@@ -30,12 +30,12 @@ public class HomePage {
 	@FindBy(xpath = "//div[@class='dropdown-menu show']/a[text()='Arrays']")
 	WebElement dropDownarrays;
 
-	@FindBy(xpath = "div[@class='dropdown-menu show']/a[text()='Linked List']")
-			//a[text()='Linked List']")
+	@FindBy(xpath = "//div[@class='dropdown-menu show']/a[text()='Linked List']")
+
 	WebElement dropDownlinked;
 
-	@FindBy(xpath = "div[@class='dropdown-menu show']/a[text()='Stack']")
-			//a[text()='Stack']")
+	@FindBy(xpath = "//div[@class='dropdown-menu show']/a[text()='Stack']")
+
 	WebElement dropDownstack;
 
 	@FindBy(xpath = "//div[@class='dropdown-menu show']/a[text()='Queue']")
@@ -46,9 +46,6 @@ public class HomePage {
 
 	@FindBy(xpath = "//div[@class='dropdown-menu show']/a[text()='Graph']")
 	WebElement dropDowngraph;
-
-	@FindBy(xpath = "//a[text()=' DreamTeam ']")
-	WebElement accountHoldername;
 
 	@FindBy(xpath = "//h5[text()='Data Structures-Introduction']")
 	WebElement datastructureGetstarted;
@@ -74,9 +71,23 @@ public class HomePage {
 	@FindBy(xpath = "//div[contains(text(),'You are not logged in')]")
 	WebElement alertMessage;
 
+	@FindBy(xpath = "//a[contains(text(),'DreamTeam')]")
+	WebElement accountHoldername;
+
+	@FindBy(xpath = "//a[text()='Sign out']")
+	WebElement logOut;
+
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement alertSignout;
+
 	public void getStartedhomeclick() {
+		getStartedhome.click();
+	}
+
+	public void getStartedhomeclickwithoutlogin() {
 		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		w1.until(ExpectedConditions.elementToBeClickable(getStartedhome)).click();
+		// getStartedhome.click();
 	}
 
 	public void numpyLogoclick() {
@@ -100,54 +111,6 @@ public class HomePage {
 		return getActualString;
 
 	}
-//
-//	public String getArraysActualString()
-//
-//	{
-//		String getActualString = dropDownarrays.getText();
-//		return getActualString;
-//
-//	}
-//
-//	public String getLinkedActualString()
-//
-//	{
-//		String getActualString = dropDownlinked.getText();
-//		return getActualString;
-//
-//	}
-//
-//	public String getStackActualString()
-//
-//	{
-//		String getActualString = dropDownstack.getText();
-//		return getActualString;
-//
-//	}
-//
-//	public String getQueueActualString()
-//
-//	{
-//		String getActualString = dropDownqueue.getText();
-//		return getActualString;
-//
-//	}
-//
-//	public String getTreeActualString()
-//
-//	{
-//		String getActualString = dropDowntree.getText();
-//		return getActualString;
-//
-//	}
-//
-//	public String getGraphActualString()
-//
-//	{
-//		String getActualString = dropDowngraph.getText();
-//		return getActualString;
-//
-//	}
 
 	public List<WebElement> dropdownWithoutLogin() {
 		List<WebElement> dropdownListNames = new ArrayList<>();
@@ -232,9 +195,7 @@ public class HomePage {
 	}
 
 	public String getActualTitle() {
-		String actualTitle = driver.getTitle();
-		System.out.println(actualTitle);
-		return actualTitle;
+		return driver.getTitle();
 	}
 
 	// Method to return all Get Started elements as a list
@@ -257,14 +218,28 @@ public class HomePage {
 		// link.click();
 	}
 
-	public void getalertMessage() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		alertMessage = wait.until(ExpectedConditions.visibilityOf(alertMessage));
-	}
+//	public boolean getalertMessage() {
+////		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+////		alertMessage = wait.until(ExpectedConditions.visibilityOf(alertMessage));
+//		return alertMessage.getText() != null;
+//		
+//	}
 
 	public String getActualMessage() {
 		String actualMessage = alertMessage.getText();
 		return actualMessage;
+	}
+
+	public String getAccountholdername() {
+		return accountHoldername.getText();
+	}
+
+	public void logoutClick() {
+		logOut.click();
+	}
+
+	public String alertSignout() {
+		return alertSignout.getText();
 	}
 
 	public HomePage() {
