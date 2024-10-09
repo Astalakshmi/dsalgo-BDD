@@ -85,7 +85,7 @@ public class LoginStep {
 
 	@Then("The User get navigated to home page and successfully logged in")
 	public void the_user_get_navigated_to_home_page_and_successfully_logged_in() {
-		Assert.assertEquals(loginObj.getActualTitle(), configFileReader.getPageTitle("homePage"));
+		Assert.assertEquals(loginObj.getLoginValidationMessage(), ExpectedResultsValidcred);
 		LoggerLoad.info("The user is on the " + driver.getTitle() + " home page and successfully logged in.");
 	}
 

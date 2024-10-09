@@ -1,11 +1,7 @@
 package stepdefinitions;
 
-import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
 import pageObjects.HomePage;
@@ -104,9 +100,6 @@ public class TreeStep {
 
 	}
 	
-
-	// **************************************************************
-
 	// -------------------- @TreeTerminologies @TreeTC_006------------
 
 	@When("user clicked Terminologies link on the Tree Module page")
@@ -155,12 +148,9 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Terminologies Practice Questions Page")
 	public void user_is_get_navigated_to_the_terminologies_practice_questions_page() {
-		// Assert.assertEquals(homeObj.getActualTitle(),
-		// configFileReader.getPageTitle("practiceQuestions"));
+		 Assert.assertEquals(homeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
-
-	// *********************************************************************************
 
 	// -------------------- @TreeTypesTrees @TreeTC_010-----------
 	@When("user clicked Types of Trees link in the Tree Modulepage")
@@ -212,11 +202,10 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Type of Trees Practice Questions Page")
 	public void user_is_get_navigated_to_the_type_of_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+	Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
-	// ***********************************************************************************8
 	// --------------------@Tree_TreeTraversals @TreeTC_014------------
 
 	@When("user clicked Tree Traversals link in the Tree Module page")
@@ -227,12 +216,8 @@ public class TreeStep {
 
 	@Then("user is able to view the Tree Traversals linked page")
 	public void user_is_able_to_view_the_tree_traversals_linked_page() {
-		// Assert.assertEquals(treeObj.actualTitle(),
-		// configFileReader.getPageTitle("treeTraversal"));
-		// "Tree Traversals");
-
+		 Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("treeTraversal"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
-
 	}
 
 	// --------------------@Tree_Traversals_Tryhere @TreeTC_015------------
@@ -248,12 +233,6 @@ public class TreeStep {
 	public void user_clicked_the_try_here_on_the_tree_traversals_page() {
 		treeObj.tryHereclick();
 	}
-//------------------duplicate-----------
-//	@Then("user is able to view the  Try here Editor page")
-//	public void user_is_able_to_view_the_try_here_editor_page() {
-//		
-//		
-//	}
 
 	// ------------------@TreeTraversalsTryEditor @TreeTC_016------------
 	@Given("the User is on the Try Editor page from Tree Traversals link")
@@ -273,7 +252,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Tree Traversals Practice Questions Page")
 	public void user_is_get_navigated_to_the_tree_traversals_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -289,7 +268,7 @@ public class TreeStep {
 	@Then("user is able to view the Traversals Illustration linked page")
 	public void user_is_able_to_view_the_traversals_illustration_linked_page() {
 
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("traversalIllustration"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("traversalIllustration"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -333,7 +312,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Traversals Illustration Practice Questions Page")
 	public void user_is_get_navigated_to_the_traversals_illustration_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -350,7 +329,7 @@ public class TreeStep {
 	@Then("user is able to view the Binary Trees page")
 	public void user_is_able_to_view_the_binary_trees_page() {
 
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("binaryTrees"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("binaryTrees"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -386,7 +365,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the BinaryTrees Practice Questions Page")
 	public void user_is_get_navigated_to_the_binary_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -401,7 +380,7 @@ public class TreeStep {
 
 	@Then("user is able to view the  Types of Binary Tree linked page")
 	public void user_is_able_to_view_the_types_of_binary_tree_linked_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("typesBinTree"));
+	Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("typesBinTree"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 
 	}
@@ -438,13 +417,10 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Types of Binary Trees Practice Questions Page")
 	public void user_is_get_navigated_to_the_types_of_binary_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
-//******************************************************************************************88888
-
-	// ******************************************************************************888
 	// -------------------- @Imp_Python @TreeTC_030------------
 
 	@When("user clicked Implementations in Python link in the Tree Module page")
@@ -456,7 +432,7 @@ public class TreeStep {
 	@Then("user is able to view the  Implementations in Python link page")
 	public void user_is_able_to_view_the_implementations_in_python_link_page() {
 
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("implementTreePython"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("implementTreePython"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -473,8 +449,7 @@ public class TreeStep {
 		treeObj.tryHereclick();
 	}
 
-	// ---------------@Imp_PythonTryEditor
-	// @TreeTC_032-----------------------------------
+	// ---------------@Imp_PythonTryEditor	// @TreeTC_032-----------------------------------
 
 	@Given("the User is on the Try Editor page from Implementations in Python link")
 	public void the_user_is_on_the_try_editor_page_from_implementations_in_python_link() {
@@ -493,10 +468,10 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Implementations in Python Practice Questions Page")
 	public void user_is_get_navigated_to_the_implementations_in_python_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+	Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
-//**************************************************************************************
+
 	// -------------------- @Tree_BinaryTraversals @TreeTC_034------------
 
 	@When("user clicked Binary Tree Traversals link in the Tree Module page")
@@ -507,7 +482,7 @@ public class TreeStep {
 
 	@Then("user is able to view the Binary Tree Traversals linked page")
 	public void user_is_able_to_view_the_binary_tree_traversals_linked_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("binTreeTraversal"));
+	Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("binTreeTraversal"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 
 	}
@@ -548,7 +523,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Binary Tree Traversals Practice Questions Page")
 	public void user_is_get_navigated_to_the_binary_tree_traversals_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -564,7 +539,7 @@ public class TreeStep {
 	@Then("user is able to view the Implementation of Binary Trees link page")
 	public void user_is_able_to_view_the_implementation_of_binary_trees_link_page() {
 
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("implementBinTree"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("implementBinTree"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -603,11 +578,9 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Implementation of Binary Trees Practice Questions Page")
 	public void user_is_get_navigated_to_the_implementation_of_binary_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
-
-	// ********************************************************************888888888
 
 	// ------------- @Tree_AppBinarytrees @TreeTC_042--------------------------
 
@@ -619,7 +592,7 @@ public class TreeStep {
 	@Then("user is able to view the Applications of Binary trees link page")
 	public void user_is_able_to_view_the_applications_of_binary_trees_link_page() {
 
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("appBinTree"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("appBinTree"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -656,7 +629,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Applications of Binary trees Practice Questions Page")
 	public void user_is_get_navigated_to_the_applications_of_binary_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -673,7 +646,7 @@ public class TreeStep {
 
 	@Then("user is able to view the  Binary Search Trees linked page")
 	public void user_is_able_to_view_the_binary_search_trees_linked_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("binSearchTree"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("binSearchTree"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -711,7 +684,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Binary Search Trees Practice Questions Page")
 	public void user_is_get_navigated_to_the_binary_search_trees_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -725,7 +698,7 @@ public class TreeStep {
 
 	@Then("user is able to view the  Implementation Of BST linked page")
 	public void user_is_able_to_view_the_implementation_of_bst_linked_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("implementBst"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("implementBst"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
 
@@ -763,7 +736,7 @@ public class TreeStep {
 
 	@Then("user is get navigated to the Implementation Of BST Practice Questions Page")
 	public void user_is_get_navigated_to_the_implementation_of_bst_practice_questions_page() {
-//*		Assert.assertEquals(treeObj.actualTitle(), configFileReader.getPageTitle("practiceQuestions"));
+		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("practiceQuestions"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 
 	}

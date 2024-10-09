@@ -32,6 +32,9 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='alert alert-primary']")
 	WebElement alertInvalidcredentials;
 	
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement validcredentialstext;
+	
 	@FindBy(xpath = "//a[text()='Register!']")
 	WebElement loginpageRegisterlink;
 	
@@ -65,6 +68,10 @@ public class LoginPage {
 	public void loginBtnclick() {
 		loginbtn.click();
 	}
+	public String getLoginValidationMessage() {
+		return validcredentialstext.getText();
+	}
+	
 
 	public String getInvalidLoginValidationMessage() {
 		return alertInvalidcredentials.getText();
