@@ -17,7 +17,7 @@ import utilities.LoggerLoad;
 public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
-	ConfigFileReader configFileReader = WebdriverManager.configReader();
+	ConfigFileReader configFileReader = new ConfigFileReader();
 	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")
@@ -29,7 +29,7 @@ public class CommonStepDefinitions {
 	
 	@Then("the User should get navigated to the Try Editor Page")
 	public void the_user_should_get_navigated_to_the_try_editor_page() {
-		String tryEditorPageTitle = driver.getTitle();
+		String tryEditorPageTitle = linkedlistObj.getActualTitle();
 	    Assert.assertEquals(tryEditorPageTitle,configFileReader.getPageTitle("tryEditor"));
 	    
 	}
