@@ -13,20 +13,13 @@ import utilities.ConfigFileReader;
 		 features = {"./src/test/resources/features"},
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
-<<<<<<< HEAD
-    tags= "@Login or @Queue or @Graph" ,
-    plugin = { "pretty",                      
-               "html:target/cucumber-reports/cucumber.html",
-               "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"} )
-=======
+
     tags= "@Login" ,
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
     		})
-//    plugin = { "pretty",                      
-//               "html:target/cucumber-reports/cucumber.html" } )// HTML report
->>>>>>> 68207fc8a8ff180225eb706952b5793b2dbb9b93
+
  
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
@@ -45,8 +38,3 @@ public class TestRunner extends AbstractTestNGCucumberTests{
     }	
 }
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 68207fc8a8ff180225eb706952b5793b2dbb9b93

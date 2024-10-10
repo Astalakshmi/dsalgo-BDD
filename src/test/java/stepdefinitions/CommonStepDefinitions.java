@@ -17,11 +17,9 @@ import utilities.LoggerLoad;
 public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
-<<<<<<< HEAD
+
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
-=======
-	ConfigFileReader configFileReader = new ConfigFileReader();
->>>>>>> 68207fc8a8ff180225eb706952b5793b2dbb9b93
+
 	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")
