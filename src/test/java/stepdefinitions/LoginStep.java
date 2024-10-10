@@ -41,14 +41,6 @@ public class LoginStep {
 		LoggerLoad.info("The user is on the " + driver.getTitle() + " page.");
 	}
 
-//	@When("The User valid credentials and clicks the login button")
-//	public void the_user_valid_credentials_and_clicks_the_login_button() {
-//		loginObj.signIn();
-//		registerObj.username();
-//		registerObj.signInPassword();
-//		loginObj.loginBtnclick();
-//	}
-
 	@Then("The User should get navigated to the Home page and logged in")
 	public void the_user_should_get_navigated_to_the_home_page_and_logged_in() {
 		homeObj.getActualTitle();
@@ -98,14 +90,11 @@ public class LoginStep {
 		username = testdata.get(RowNumber).get("username");
 		password = testdata.get(RowNumber).get("password");
 		ExpectedMessage = testdata.get(RowNumber).get("Expected Message");
-
-		userNameValidationMessage = registerObj.getUserNameValidationMessage();
+		userNameValidationMessage = loginObj.getUserNameValidationMessage();
 		// System.out.println("userNameValidationMessage:" + userNameValidationMessage);
-
-		passwordValidationMessage = registerObj.getPasswordNameValidationMessage();
+		passwordValidationMessage = loginObj.getPasswordNameValidationMessage();
 		// System.out.println("passwordValidationMessage:" + passwordValidationMessage);
 		System.out.println("Expected message: " + ExpectedMessage);
-
 		if (username != null || password != null) {
 			loginObj.setUsername(username);
 			loginObj.setLoginPassword(password);
@@ -115,7 +104,6 @@ public class LoginStep {
 
 	@Then("The User gets suggested to enter the valid credentials")
 	public void The_User_gets_suggested_to_enter_the_valid_credentials() {
-
 		LoggerLoad.info("User Enter Login credential with username as \" " + username + "\" and password as\" "
 				+ password + "\" ");
 		try {
@@ -131,7 +119,7 @@ public class LoginStep {
 
 			} else if ((username.isEmpty() && password.isEmpty())) {
 				Assert.assertEquals(userNameValidationMessage, ExpectedMessage);
-				System.out.println(userNameValidationMessage + ExpectedMessage);
+			//	System.out.println(userNameValidationMessage + ExpectedMessage);
 				LoggerLoad.error("The username textfield alert :" + userNameValidationMessage + ExpectedMessage);
 			} else {
 				invalidgetMessage = loginObj.getInvalidLoginValidationMessage();
@@ -143,7 +131,7 @@ public class LoginStep {
 					loginObj.loginpageRegisterlink();
 				} else {
 					LoggerLoad.info("User is suggested to click to the Register Link");
-					registerObj.registerLinkclick();
+					loginObj.registerLink();
 				}
 			}
 		} catch (NoAlertPresentException e) {

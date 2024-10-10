@@ -52,6 +52,10 @@ public class LoginPage {
 		loginPassword.sendKeys(passWord); // i changed to login
 			}
 	
+	@FindBy(xpath = "//a[normalize-space()='Register']")
+	WebElement registerLink;
+
+	
 	// ************************
 //	public void usernameLogin()
 //	{
@@ -85,6 +89,12 @@ public class LoginPage {
 		loginpageRegisterlink.click();
 	}
 	
+	public void registerLinkclick() {
+		registerLink.isDisplayed();
+	}
+	public void registerLink() {
+		registerLink.click();
+	}
 	public String getUserNameValidationMessage() {
 		return username.getAttribute("validationMessage");
 	}
