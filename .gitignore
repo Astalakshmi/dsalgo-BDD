@@ -8,6 +8,6 @@
 .project
 /bin/
 
-test-output/
+/test-output/
 
 .DS_Store
