@@ -1,6 +1,9 @@
 package stepdefinitions;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.decorators.WebDriverDecorator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
@@ -14,8 +17,8 @@ import utilities.LoggerLoad;
 public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
-	ConfigFileReader configFileReader = WebdriverManager.configReader();
-	LinkedListPage lp = new LinkedListPage();
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")
 	public void the_user_is_in_homepage_and_logged_in() {
@@ -26,36 +29,36 @@ public class CommonStepDefinitions {
 	
 	@Then("the User should get navigated to the Try Editor Page")
 	public void the_user_should_get_navigated_to_the_try_editor_page() {
-		String tryEditorPageTitle = driver.getTitle();
+		String tryEditorPageTitle = linkedlistObj.getActualTitle();
 	    Assert.assertEquals(tryEditorPageTitle,configFileReader.getPageTitle("tryEditor"));
 	    
 	}
 	
 	@When("the User enters a sample code as {string} in the Editor section and click Run")
-	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String string) {
-		System.out.println(string);
-		
-		lp.setCode(string);
-		lp.clickRunBtn();
+	public void the_user_enters_a_sample_code_as_in_the_editor_section_and_click_run(String input) {
+		System.out.println(input);
+
+		linkedlistObj.setCode(input);
+		linkedlistObj.clickRunBtn();
 	    
 	}
 
 	@Then("the User should get the {string} in the screen")
-	public void the_user_should_get_the_output_in_the_screen(String string) {
+	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 		
 		try {
-			//wait.until(ExpectedConditions.alertIsPresent())
-			driver.switchTo().alert().accept();
+			String actualErrorOutput = driver.switchTo().alert().getText();
+			//System.out.println("alert error output "+actualErrorOutput);
+			if(actualErrorOutput.length()>0 ) {
+				Assert.assertEquals(actualErrorOutput, expectedOutput);
+			} else {
+				Assert.fail();
+			}
 		}
-		catch(Exception e) {
-			System.out.println("alert not present");
-			LoggerLoad.error("alert not present in try editor");
-		}
-		finally {
-			//driver.switchTo().alert().accept();
-			System.out.println(string);
-			String output = lp.getOutput();
-		    Assert.assertEquals(output,string);
+		catch(NoAlertPresentException e) {
+			LoggerLoad.info("alert not present in try editor");
+			String actualCodeOutput = linkedlistObj.getOutput();
+		    Assert.assertEquals(actualCodeOutput,expectedOutput);
 		}
 		
 	    

@@ -2,10 +2,9 @@
 Feature: DS Portal Linked List Page Functionality
 
 
-  Background: Successful login with valid credentials
-    Given The User navigates to the login page
-    When The User valid credentials and clicks the login button
-    Then The User should be navigated to the Home page and logged in
+    Background: Successful login with valid credentials
+     Given The User is on the login page
+    When The User enters the valid username and password "LoginCredentials"
 
 
   @LikedListGetStarted @LinkedListTC_001
@@ -33,12 +32,13 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
-    
+   Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
     
   @CreatingLinkedList @LinkedListTC_005
   Scenario: validate the Creating linked list page
@@ -58,11 +58,13 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+    
   @TypesOfLinkedList @LinkedListTC_008
   Scenario: validate the Types of linked list page
     Given the user is in linked list page
@@ -80,12 +82,13 @@ Feature: DS Portal Linked List Page Functionality
     Given the User is on the Try Editor page through the types of linkedlist page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
-    
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
   @ImplementLinkedList @LinkedListTC_010
   Scenario: validate the implement linked list in python page
     Given the user is in linked list page
@@ -104,11 +107,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Traversal @LinkedListTC_013
   Scenario: validate the traversal page
@@ -128,11 +132,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Insertion @LinkedListTC_016 
   Scenario: validate the insertion page
@@ -152,11 +157,12 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
     
   @Deletion @LinkedListTC_019 
   Scenario: validate the deletion page
@@ -176,14 +182,95 @@ Feature: DS Portal Linked List Page Functionality
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
     
-    Examples:
-    | code        | output     | 
-    |             |            | 
-    |print\"Hello\"|Hello|
-    |hi| |
-   @LinkedListPractice @LinkedListTC_022  
+    Examples: 
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
+   @PracticeIntroduction @LinkedListTC_022  
    Scenario: validate the Linked list practice questions page from Introduction page
     Given the User is on the Introduction page
     When the User clicks the Practice Questions link in Introduction Page
     Then the User should get navigated to the Linked List Practice Questions Page
+    
+   @PracticeCreatingList @LinkedListTC_023  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Creating Linked list page
+    When the User clicks the Practice Questions link in Creating Linked list Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+   @PracticeImplementList @LinkedListTC_024  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Implement linked list in python page
+    When the User clicks the Practice Questions link in Implement linked list Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+   @PracticeTypesOfList @LinkedListTC_025  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Types of Linked List page
+    When the User clicks the Practice Questions link in Types of Linked List Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+    
+   @PracticeTraversal @LinkedListTC_026  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Traversal page
+    When the User clicks the Practice Questions link in Traversal Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+   @PracticeInsertion @LinkedListTC_027  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Insertion page
+    When the User clicks the Practice Questions link in Insertion Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+   @PracticeDeletion @LinkedListTC_028  
+   Scenario: validate the Linked list practice questions page from Introduction page
+    Given the User is on the Deletion page
+    When the User clicks the Practice Questions link in Deletion Page
+    Then the User should get navigated to the Linked List Practice Questions Page
+    
+    @PracticeQuestionsListIntroduction @LinkedListTC_029 
+   Scenario: validate the practice questions in Linked list practice page through Introduction page
+    Given the User is on the Introduction page
+    When the User clicks the Practice Questions link in Introduction Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListCreating @LinkedListTC_030 
+   Scenario: validate the practice questions in Linked list practice page through Creating Linked list page
+    Given the User is on the Creating Linked list page
+    When the User clicks the Practice Questions link in Creating Linked list Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListImplement @LinkedListTC_031 
+   Scenario: validate the practice questions in Linked list practice page through Implement linked lis page
+    Given the User is on the Implement linked list in python page
+    When the User clicks the Practice Questions link in Implement linked list Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListTypes @LinkedListTC_032 
+   Scenario: validate the practice questions in Linked list practice page through Types of Linked List page
+    Given the User is on the Types of Linked List page
+    When the User clicks the Practice Questions link in Types of Linked List Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListTraversal @LinkedListTC_033 
+   Scenario: validate the practice questions in Linked list practice page through Traversal page
+    Given the User is on the Traversal page
+    When the User clicks the Practice Questions link in Traversal Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListInsertion @LinkedListTC_034 
+   Scenario: validate the practice questions in Linked list practice page through Insertion page
+    Given the User is on the Insertion page
+    When the User clicks the Practice Questions link in Insertion Page
+    Then the User should view the practice questions of Linked List
+    
+    @PracticeQuestionsListDeletion @LinkedListTC_035 
+   Scenario: validate the practice questions in Linked list practice page through Deletion page
+    Given the User is on the Deletion page
+    When the User clicks the Practice Questions link in Deletion Page
+    Then the User should view the practice questions of Linked List
     
