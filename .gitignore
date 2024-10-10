@@ -7,3 +7,7 @@
 
 .project
 /bin/
+
+/test-output/
+
+.DS_Store

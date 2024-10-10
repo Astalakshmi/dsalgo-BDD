@@ -2,6 +2,8 @@ package stepdefinitions;
 
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.decorators.WebDriverDecorator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
@@ -15,7 +17,11 @@ import utilities.LoggerLoad;
 public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
+<<<<<<< HEAD
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
+=======
+	ConfigFileReader configFileReader = new ConfigFileReader();
+>>>>>>> 68207fc8a8ff180225eb706952b5793b2dbb9b93
 	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")
@@ -27,7 +33,7 @@ public class CommonStepDefinitions {
 	
 	@Then("the User should get navigated to the Try Editor Page")
 	public void the_user_should_get_navigated_to_the_try_editor_page() {
-		String tryEditorPageTitle = driver.getTitle();
+		String tryEditorPageTitle = linkedlistObj.getActualTitle();
 	    Assert.assertEquals(tryEditorPageTitle,configFileReader.getPageTitle("tryEditor"));
 	    
 	}
