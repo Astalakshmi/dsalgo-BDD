@@ -105,6 +105,11 @@
     	<suiteXmlFiles>
     		<suiteXmlFile>testng.xml</suiteXmlFile>
     	</suiteXmlFiles>
+    	 <properties>
+    	      <dataproviderthreadcount>10</dataproviderthreadcount>
+    	      	<parallel>tests</parallel>
+              	<threadCount>5</threadCount>
+    	      </properties>
     </configuration>
  </plugin>
  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->

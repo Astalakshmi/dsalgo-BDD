@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 		 features = {"./src/test/resources/features"},
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
-    tags= "@Login" ,
+    tags= "@Login or @Queue or @Graph" ,
     plugin = { "pretty",                      
                "html:target/cucumber-reports/cucumber.html",
                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"} )
@@ -17,7 +17,7 @@ import io.cucumber.testng.CucumberOptions;
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
 	@Override
-    @DataProvider(parallel = false)//true means execute parallely false mean not execute parallely
+    @DataProvider(parallel = true)//true means execute parallely false mean not execute parallely
 	
     public Object[][] scenarios() {
 				

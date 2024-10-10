@@ -213,6 +213,7 @@ import utilities.LoggerLoad;
 		 if (qp.queueInPython() || qp.deque() || qp.queueImplArray() || qp.queueOperation())
 		 {
 			 qp.handlePracticeQuestionClick();
+			   
 		 }
 	}
 	

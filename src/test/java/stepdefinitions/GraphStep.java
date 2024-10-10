@@ -117,6 +117,7 @@ public class GraphStep {
 	   if (gp.graphRepresent() || gp.graphLink()) 
 	   {
 		   gp.handleGraphPracticeQuestion();
+	
 	   }
 	  
 	}
