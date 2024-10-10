@@ -1,21 +1,14 @@
 package stepdefinitions;
 
-import java.time.Duration;
-import utilities.LoggerLoad;
-
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import utilities.ConfigFileReader;
 
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.LinkedListPage;
+import utilities.ConfigFileReader;
 
 public class LinkedListStep {
 	
