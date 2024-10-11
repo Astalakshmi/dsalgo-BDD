@@ -87,7 +87,6 @@ public class HomePage {
 	public void getStartedhomeclickwithoutlogin() {
 		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		w1.until(ExpectedConditions.elementToBeClickable(getStartedhome)).click();
-		// getStartedhome.click();
 	}
 
 	public void numpyLogoclick() {
@@ -95,8 +94,7 @@ public class HomePage {
 	}
 
 	public String getActualLogoMessage() {
-		String logo = numpyLogo.getText();
-		return logo;
+		return numpyLogo.getText();
 	}
 
 	public void dataStructureclick() {
@@ -104,12 +102,8 @@ public class HomePage {
 
 	}
 
-	public String getDatastrucActualString()
-
-	{
-		String getActualString = datastructure.getText();
-		return getActualString;
-
+	public String getDatastrucActualString() {
+		return datastructure.getText();
 	}
 
 	public List<WebElement> dropdownWithoutLogin() {
@@ -198,7 +192,6 @@ public class HomePage {
 		return driver.getTitle();
 	}
 
-	// Method to return all Get Started elements as a list
 	public List<WebElement> getAnylinkofGetStarted() {
 		List<WebElement> getStartedLinks = new ArrayList<>();
 		getStartedLinks.add(datastructureGetstarted);
@@ -211,23 +204,13 @@ public class HomePage {
 		return getStartedLinks;
 	}
 
-	// Method to click on specific Get Started buttons
 	public void clickspecificGetStartedlink(WebElement link) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(link)).click();
-		// link.click();
 	}
 
-//	public boolean getalertMessage() {
-////		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-////		alertMessage = wait.until(ExpectedConditions.visibilityOf(alertMessage));
-//		return alertMessage.getText() != null;
-//		
-//	}
-
 	public String getActualMessage() {
-		String actualMessage = alertMessage.getText();
-		return actualMessage;
+		return alertMessage.getText();
 	}
 
 	public String getAccountholdername() {
@@ -245,5 +228,4 @@ public class HomePage {
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
-
 }

@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import driverManager.WebdriverManager;
-import io.cucumber.core.logging.Logger;
 import io.cucumber.java.en.*;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
@@ -44,12 +42,10 @@ public class LoginStep {
 	@Then("The User should get navigated to the Home page and logged in")
 	public void the_user_should_get_navigated_to_the_home_page_and_logged_in() {
 		homeObj.getActualTitle();
-
 	}
 
 	@Given("The User navigates to the Home page")
 	public void the_user_navigates_to_the_home_page() {
-
 		homeObj.getActualTitle();
 	}
 
@@ -57,11 +53,8 @@ public class LoginStep {
 	public void the_user_enters_the_valid_username_and_password(String LoginCredentials)
 			throws EncryptedDocumentException, IOException {
 		excelFilepath = "./src/test/resources/Excel/TestData.xlsx";
-		// System.out.println("File Path :" + excelFilepath);
 		ExcelFileReader reader = new ExcelFileReader();
-
 		List<Map<String, String>> testdata = reader.getData(excelFilepath, LoginCredentials);
-		// System.out.println("# of Rows:" + reader.countRow());
 		username = testdata.get(0).get("username");
 		password = testdata.get(0).get("password");
 		ExpectedResultsValidcred = testdata.get(0).get("Expected Message");
@@ -91,9 +84,7 @@ public class LoginStep {
 		password = testdata.get(RowNumber).get("password");
 		ExpectedMessage = testdata.get(RowNumber).get("Expected Message");
 		userNameValidationMessage = loginObj.getUserNameValidationMessage();
-		// System.out.println("userNameValidationMessage:" + userNameValidationMessage);
 		passwordValidationMessage = loginObj.getPasswordNameValidationMessage();
-		// System.out.println("passwordValidationMessage:" + passwordValidationMessage);
 		System.out.println("Expected message: " + ExpectedMessage);
 		if (username != null || password != null) {
 			loginObj.setUsername(username);
@@ -106,36 +97,29 @@ public class LoginStep {
 	public void The_User_gets_suggested_to_enter_the_valid_credentials() {
 		LoggerLoad.info("User Enter Login credential with username as \" " + username + "\" and password as\" "
 				+ password + "\" ");
-		try {
-			if (username.isEmpty()) {
-				Assert.assertEquals(userNameValidationMessage, ExpectedMessage);
-				System.out.println(userNameValidationMessage + ExpectedMessage);
-				LoggerLoad.error("The username textfield alert :" + userNameValidationMessage + ExpectedMessage);
-
-			} else if (password.isEmpty()) {
-				Assert.assertEquals(passwordValidationMessage, ExpectedMessage);
-				System.out.println(passwordValidationMessage + ExpectedMessage);
-				LoggerLoad.error("The password textfield alert :" + passwordValidationMessage + ExpectedMessage);
-
-			} else if ((username.isEmpty() && password.isEmpty())) {
-				Assert.assertEquals(userNameValidationMessage, ExpectedMessage);
-			//	System.out.println(userNameValidationMessage + ExpectedMessage);
-				LoggerLoad.error("The username textfield alert :" + userNameValidationMessage + ExpectedMessage);
-			} else {
-				invalidgetMessage = loginObj.getInvalidLoginValidationMessage();
-				Assert.assertEquals(invalidgetMessage, ExpectedMessage);
-				System.out.println(invalidgetMessage + ExpectedMessage);
-
-				if (ExpectedMessage.equals("Invalid Username and Password")) {
-					LoggerLoad.info("User is suggested to click to the Register Link");
-					loginObj.loginpageRegisterlink();
-				} else {
-					LoggerLoad.info("User is suggested to click to the Register Link");
-					loginObj.registerLink();
-				}
+		if (username.isEmpty() && password.isEmpty()) {
+			Assert.assertEquals(userNameValidationMessage, ExpectedMessage);
+			LoggerLoad.error("The username textfield alert : " + ExpectedMessage);
+		} else if (username.isEmpty() && !password.isEmpty()) {
+			Assert.assertEquals(userNameValidationMessage, ExpectedMessage);
+			LoggerLoad.error("The username textfield alert : " + ExpectedMessage);
+		} else if (!username.isEmpty() && password.isEmpty()) {
+			Assert.assertEquals(passwordValidationMessage, ExpectedMessage);
+			LoggerLoad.error("The password textfield alert : " + ExpectedMessage);
+		} else if (!username.isEmpty() && !password.isEmpty()) {
+			invalidgetMessage = loginObj.getInvalidLoginValidationMessage();
+			Assert.assertEquals(invalidgetMessage, ExpectedMessage);
+			if (ExpectedMessage.equals("Invalid Username and Password")) {
+				LoggerLoad.info("If you don't have an account, please Register");
+				loginObj.loginpageRegisterlinkclick();
+				driver.navigate().back();
 			}
-		} catch (NoAlertPresentException e) {
-			LoggerLoad.info("User is able to login");
+			if (ExpectedMessage.equals("Invalid Username and Password")) {
+				LoggerLoad.info("If you don't have an account, please Register");
+				registerObj.registerLinkclick();
+			}
+		} else {
+			LoggerLoad.info("User can able to register");
 		}
 	}
 

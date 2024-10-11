@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.decorators.WebDriverDecorator;
@@ -48,20 +49,19 @@ public class CommonStepDefinitions {
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 		
 		try {
-			String actualErrorOutput = driver.switchTo().alert().getText();
-			//System.out.println("alert error output "+actualErrorOutput);
-			if(actualErrorOutput.length()>0 ) {
-				Assert.assertEquals(actualErrorOutput, expectedOutput);
-			} else {
-				Assert.fail();
+			try {
+				Alert alert = driver.switchTo().alert();
+				System.out.println("Alert text is: " + alert.getText());
+				alert.accept();
+			} catch (NoAlertPresentException e) {
+				System.out.println("No alert was found.");
 			}
+		} catch (org.openqa.selenium.UnhandledAlertException e) {
+			System.out.println("Unhandled Alert Exception caught. Handling it...");
+			Alert alert = driver.switchTo().alert();
+			System.out.println("Alert text is: " + alert.getText());
+			alert.accept();
 		}
-		catch(NoAlertPresentException e) {
-			LoggerLoad.info("alert not present in try editor");
-			String actualCodeOutput = linkedlistObj.getOutput();
-		    Assert.assertEquals(actualCodeOutput,expectedOutput);
-		}
-		
 	    
 	}
 

@@ -1,4 +1,4 @@
-@Loginpage
+@Login
 Feature: DsAlgo Portal Login Functionality
 
   @LoginCredentials @LoginTC_001

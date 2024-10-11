@@ -39,7 +39,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Overview of Trees page Practice Questions
     Given user is on the Overview of Trees Page
     When user clicked the Practice Questions from Overview of Trees page
-    Then user is get navigated to the Overview of Trees link Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @TreeTerminologies @TreeTC_006
   Scenario: Validate the Tree Module Page Terminologies link
@@ -70,7 +70,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Terminologies page Practice Questions
     Given user is on the Terminologies page
     When user clicked the Practice Questions from Terminologies page
-    Then user is get navigated to the Terminologies Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @TreeTypesTrees @TreeTC_010
   Scenario: Validate the Tree Module Page Types of Trees link
@@ -101,7 +101,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Type of Trees page Practice Questions
     Given user is on the Type of Trees page
     When user clicked the Practice Questions from Type of Trees page
-    Then user is get navigated to the Type of Trees Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @TreeTraversals @TreeTC_014
   Scenario: Validate the Tree Module Page Tree Traversals link
@@ -132,7 +132,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Tree Traversals page Practice Questions
     Given user is on the Tree Traversals page
     When user clicked the Practice Questions from Tree Traversals page
-    Then user is get navigated to the Tree Traversals Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @TraversalsIllustration @TreeTC_018
   Scenario: Validate the Tree Module Page Traversals Illustration link
@@ -163,7 +163,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Traversals Illustration page Practice Questions
     Given user is on the Traversals Illustration page
     When user clicked the Practice Questions from Traversals Illustration page
-    Then user is get navigated to the Traversals Illustration Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @Tree_BinaryTrees @TreeTC_022
   Scenario: Validate the Tree Module Page-Binary Trees link
@@ -194,7 +194,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the BinaryTrees page Practice Questions
     Given user is on the Binary Trees page
     When user clicked the Practice Questions from BinaryTrees page
-    Then user is get navigated to the BinaryTrees Practice Questions Page
+   Then user should view the Practice Questions of Tree
 
   @TypesBinaryTrees @TreeTC_026
   Scenario: Validate the Tree Module Page Types of Binary Trees link
@@ -225,7 +225,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Types of Binary Trees page Practice Questions
     Given user is on the Types of Binary Trees page
     When user clicked the Practice Questions from Types of Binary Trees page
-    Then user is get navigated to the Types of Binary Trees Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @ImpPython @TreeTC_030
   Scenario: Validate the Tree Module Page Implementations in Python link
@@ -256,7 +256,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Implementations in Python page Practice Questions
     Given user is on the Implementations in Python page
     When user clicked the Practice Questions from Implementations in Python page
-    Then user is get navigated to the Implementations in Python Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @TreeBinaryTraversals @TreeTC_034
   Scenario: Validate the Tree Module Page Binary Tree Traversals link
@@ -287,7 +287,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Binary Tree Traversals page Practice Questions
     Given user is on the Binary Tree Traversals page
     When user clicked the Practice Questions from Binary Tree Traversals page
-    Then user is get navigated to the Binary Tree Traversals Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @ImpBinaryTrees @TreeTC_038
   Scenario: Validate the Tree Module Page Implementation of Binary Trees link
@@ -318,7 +318,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Implementation of Binary Trees page Practice Questions
     Given user is on the Implementation of Binary Trees
     When user clicked the Practice Questions from Implementation of Binary Treespage
-    Then user is get navigated to the Implementation of Binary Trees Practice Questions Page
+   Then user should view the Practice Questions of Tree
 
   @TreeAppBinarytrees @TreeTC_042
   Scenario: Validate the Tree Module Page Applications of Binary trees link
@@ -349,7 +349,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Applications of Binary trees page Practice Questions
     Given user is on the Applications of Binary trees
     When user clicked the Practice Questions from Applications of Binary trees page
-    Then user is get navigated to the Applications of Binary trees Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @BinarySearchTrees @TreeTC_046
   Scenario: Validate the Tree Module Page Binary Search Trees link
@@ -380,7 +380,7 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Binary Search Trees Practice Questions
     Given user is on the Binary Search Trees
     When user clicked the Practice Questions from Binary Search Trees page
-    Then user is get navigated to the Binary Search Trees Practice Questions Page
+    Then user should view the Practice Questions of Tree
 
   @ImpBST @TreeTC_050
   Scenario: Validate the Tree Module Page Implementation Of BST link
@@ -411,4 +411,4 @@ Feature: Ds Portal Tree Page Functionality
   Scenario: Validate the Implementation Of BST Practice Questions
     Given user is on the Implementation Of BST
     When user clicked the Practice Questions from Implementation Of BST page
-    Then user is get navigated to the Implementation Of BST Practice Questions Page
+    Then user should view the Practice Questions of Tree

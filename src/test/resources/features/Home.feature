@@ -1,4 +1,4 @@
-@Homepage
+@Home
 Feature: DsAlgo Homepage Functionality
 
   Background: Successful login with valid credentials

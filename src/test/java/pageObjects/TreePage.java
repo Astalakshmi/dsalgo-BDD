@@ -1,8 +1,11 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -64,11 +67,14 @@ public class TreePage {
 	@FindBy(xpath = "//a[text()='Implementation Of BST']")
 	WebElement impBst;
 
-	@FindBy(xpath = "//a[contains(text(),'Practice Questions')]")
-	WebElement practiceQuestions;
-
 	@FindBy(xpath = "//div[@align='left']/pre[@id='output']")
 	WebElement runOutputvalue;
+	
+	@FindBy (partialLinkText = "Practice Questions")
+	WebElement treePracticeLink;
+	
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
 
 	public void getStartedclick() {
 		getStarted.click();
@@ -139,23 +145,17 @@ public class TreePage {
 		impBst.click();
 	}
 
-	public void pracQuestionsclick() {
-		practiceQuestions.click();
+	public void practiceQuestionslink() {
+		treePracticeLink.click();
 	}
-
-//	public void clickRun() {
-//		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(30));
-//		w1.until(ExpectedConditions.elementToBeClickable(run)).click();
-//	}
 
 	public void backward() {
 		driver.navigate().back();
 	}
 
-//	public String runOutputvalue() {
-//		String outputTextdata = runOutputvalue.getText();
-//		return outputTextdata;
-//	}
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
+	}
 
 	public String getActualTitle() {
 		return driver.getTitle();
