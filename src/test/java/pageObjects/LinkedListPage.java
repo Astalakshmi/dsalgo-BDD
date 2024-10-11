@@ -115,21 +115,7 @@ public class LinkedListPage{
     }
 	
 	public void setCode(String input) {	 
-		 try {
-			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(70));
-//			   WebElement enterText = new WebDriverWait(driver, Duration.ofSeconds(60))
-//			       		  .until(ExpectedConditions.elementToBeClickable(inputCode));
-                         
-//			   enterText.click();
-			   inputCode.sendKeys(input);
-			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
-		   }
-		   
-		 catch(Exception e) {
-				//System.out.println("try editor not displayed");
-				LoggerLoad.error("Interactable exception try editor not displayed ");
-			}
-		     
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='input';", inputCode);
     }
 	
 	public void clickRunBtn() {

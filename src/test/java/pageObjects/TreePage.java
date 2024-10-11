@@ -1,17 +1,15 @@
 package pageObjects;
 
-import static org.testng.Assert.assertEquals;
-
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import driverManager.WebdriverManager;
 
 public class TreePage {
@@ -21,11 +19,9 @@ public class TreePage {
 	@FindBy(xpath = "//h5[text()='Tree']/../a[text()='Get Started']")
 	WebElement getStarted;
 
-	// @FindBy(xpath = "//a[text()='Overview of Trees']")
 	@FindBy(xpath = "//h4[@class='bg-secondary text-white']/../ul/a[text()='Overview of Trees']")
 	WebElement overviewTrees;
 
-	// @FindBy(xpath ="//div[@class='CodeMirror cm-s-default']")
 	@FindBy(xpath = "//div[@class='container']/div/form/div/div/div/textarea")
 	WebElement editorText;
 
@@ -54,121 +50,120 @@ public class TreePage {
 	WebElement typesOfBinaryTrees;
 
 	@FindBy(xpath = "//a[text()='Implementation in Python']")
-	WebElement implemetationInPython;
+	WebElement impInpython;
 
-	@FindBy(xpath = "//a[text()='Binary Tree Traversals']']")
-	WebElement binaryTreesTraversals;
+	@FindBy(xpath = "//a[contains(text(),'Binary Tree Traversals')]")
+	WebElement binTreestraversal;
 
 	@FindBy(xpath = "//a[text()='Implementation of Binary Trees']")
-	WebElement implementationBinaryTrees;
+	WebElement impBinaryTrees;
 
 	@FindBy(xpath = "//a[text()='Applications of Binary trees']")
-	WebElement applicationBinaryTrees;
+	WebElement appBinTree;
 
 	@FindBy(xpath = "//a[text()='Binary Search Trees']")
 	WebElement binarySearchTrees;
 
 	@FindBy(xpath = "//a[text()='Implementation Of BST']")
-	WebElement implementationBst;
+	WebElement impBst;
 
-	@FindBy(xpath = "//a[text()='Practice Questions']")
-	WebElement practiceQuestions;
+	@FindBy(xpath = "//div[@align='left']/pre[@id='output']")
+	WebElement runOutputvalue;
+	
+	@FindBy (partialLinkText = "Practice Questions")
+	WebElement treePracticeLink;
+	
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
 
-	public void getStarted() {
+	public void getStartedclick() {
 		getStarted.click();
 	}
-	
-	public void overviewTrees() {
+
+	public void overviewTreesclick() {
 		WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		w1.until(ExpectedConditions.elementToBeClickable(overviewTrees)).click();
 	}
-	
-	public void editorText() {
-		String print = "print" + "\"Hello\"" + ";";
-		editorText.sendKeys(print);
+
+	public void editorText(String inputCode) {
+		editorText.sendKeys(inputCode);
 	}
-	
-	public void tryHere() {
+
+	public void tryHereclick() {
 		tryHere.click();
 	}
-	
-	public void run() {
+
+	public void runClick() {
 		run.click();
 	}
 
-	public void terminologies() {
+	public void terminologiesClick() {
 		terminologies.click();
 	}
 
-	public void typesOfTrees() {
+	public void typesOfTreesclick() {
 		typesOfTrees.click();
 	}
 
-	public void treeTraversals() {
+	public void treeTraversalsclick() {
 		treeTraversals.click();
 	}
 
-	public void traversalsIllustrations() {
+	public void traIllustrationsclick() {
 		traversalsIllustrations.click();
 	}
 
-	public void binaryTrees() {
+	public void binTreesclick() {
 		binaryTrees.click();
 	}
 
-	public void typesOfBinaryTrees() {
+	public void typesofBintreesclick() {
 		typesOfBinaryTrees.click();
 	}
 
-	public void implemetationInPython() {
-		implemetationInPython.click();
+	public void impInpythonclick() {
+		impInpython.click();
 	}
 
-	public void binaryTreesTraversals() {
-		binaryTreesTraversals.click();
+	public void bintreesTraversalclick() {
+		binTreestraversal.click();
 	}
 
-	public void implementationBinaryTrees() {
-		implementationBinaryTrees.click();
+	public void impBintreesclick() {
+		impBinaryTrees.click();
 	}
 
-	public void applicationBinaryTrees() {
-		applicationBinaryTrees.click();
+	public void appBintreeclick() {
+		appBinTree.click();
 	}
 
-	public void binarySearchTrees() {
+	public void binarySearchtreesclick() {
 		binarySearchTrees.click();
 	}
 
-	public void implementationBst() {
-		implementationBst.click();
+	public void impBstclick() {
+		impBst.click();
 	}
 
-	public void practiceQuestions() {
-		practiceQuestions.click();
+	public void practiceQuestionslink() {
+		treePracticeLink.click();
 	}
 
 	public void backward() {
 		driver.navigate().back();
-
 	}
 
-	public String titlePage() {
-		String title = driver.getTitle();
-		System.out.println(title);
-		return title;
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
 	}
 
-	public void ValidateTreeTitle() {
-		Assert.assertEquals(titlePage(), "Tree");
-	}
-
-	public void ValidateOverviewTrees() {
-		Assert.assertEquals(titlePage(), "Tree");
+	public String getActualTitle() {
+		return driver.getTitle();
 	}
 
 	public TreePage() {
 		PageFactory.initElements(driver, this);
 	}
 
+	
 }

@@ -14,7 +14,7 @@ import org.testng.Assert;
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
 import pageObjects.HomePage;
-import pageObjects.IndexPage;
+
 import pageObjects.LoginPage;
 import pageObjects.RegisterPage;
 import utilities.ConfigFileReader;
@@ -26,10 +26,10 @@ public class RegisterStep {
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	RegisterPage registerObj = new RegisterPage();
-	IndexPage indexObj = new IndexPage();
 	LoginPage loginObj = new LoginPage();
 	HomePage homeObj = new HomePage();
 	
+
 
 	ExcelFileReader reader = new ExcelFileReader();
 	
@@ -45,16 +45,14 @@ public class RegisterStep {
 	int rowNumber;
 	public static final int maxLengthOfRow = 8; 
 	
-	
 	@Given("The User navigates to the Registration page")
 	public void the_user_navigates_to_the_registration_page() {
-	
+	//	indexObj.getStarted();
 		homeObj.getStartedhomeclickwithoutlogin();
 		registerObj.registerLink();
-	
+	//	System.out.println("file path:"+ excelFilePath);
 		
 	}
-	
 	@When("The User enter valid username and password then confirmPassword from sheet {string}")
 	public void the_user_enter_valid_username_and_password_then_confirm_password_from_sheet(String RegisterPage) throws EncryptedDocumentException, IOException {
 		

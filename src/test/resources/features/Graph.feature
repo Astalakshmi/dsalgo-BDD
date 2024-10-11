@@ -2,10 +2,9 @@
 Feature: DS Portal Graph Page Functionality
 
   Background: Successful login with valid credentials
-    Given The User navigates to the login page
-    When The User valid credentials and clicks the login button
-		Then The User should be navigated to the Home page and logged in
-		
+    Given The User is on the login page
+    When The User enters the valid username and password "LoginCredentials"
+
   @GraphPage @GraphTest_001
   Scenario: Validate the Graph Page
     Given the user is in homepage and logged in
@@ -31,12 +30,12 @@ Feature: DS Portal Graph Page Functionality
     Then the User should get the "<output>" in the screen
 
     Examples: 
-      | code              | output                                           |
-      | print \"Hello\"   | Hello                                            |
-      #|									 |	      |
-      | print hello       | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$          | SyntaxError: bad token T_OP on line 1            |
-
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
+      
   @GraphPracticeQuestionLink1 @GraphQuestionTest_009
   Scenario: Validate the Practice Questions
     Given The User is on the first Topic Graph Page
@@ -62,12 +61,12 @@ Feature: DS Portal Graph Page Functionality
     Then the User should get the "<output>" in the screen
 
     Examples: 
-      | code              | output                                           |
-      | print \"Hello\"   | Hello                                            |
-      #|									 |	      |
-      | print hello       | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$          | SyntaxError: bad token T_OP on line 1            |
-
+      | code             | output                                           |
+      | print\"Hello\"   | Hello                                            |
+      |                  |                                                  |
+      | print hello      | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            | 
+      
   @GraphPracticeQuestionLink2 @GraphQuestionTest_010
   Scenario: Validate the Practice Questions
     Given The User is on the Graph Representation Page

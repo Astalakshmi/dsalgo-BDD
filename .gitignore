@@ -9,5 +9,6 @@
 /bin/
 
 /test-output/
+/allure-results/
 
 .DS_Store

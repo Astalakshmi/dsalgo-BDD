@@ -1,65 +1,86 @@
-	package pageObjects;
-	
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.support.FindBy;
-	import org.openqa.selenium.support.PageFactory;
-	
-	import driverManager.WebdriverManager;
-import utilities.ConfigFileReader;
-	
-	public class LoginPage {
-	  
-		WebDriver driver = WebdriverManager.getDriver();
-		ConfigFileReader configFileReader = WebdriverManager.configReader();
-		
-		//Locators
-				  
-		//Sign in link
-	@FindBy(xpath="//a[normalize-space()='Sign in']")
+package pageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import driverManager.WebdriverManager;
+
+public class LoginPage {
+
+	WebDriver driver = WebdriverManager.getDriver();
+
+	@FindBy(xpath = "//a[normalize-space()='Sign in']")
 	WebElement signIn;
-	       //Form Element
-	@FindBy(id="id_username")
-	WebElement usernameLogin;
-	@FindBy(id="id_password")
-	WebElement password;
-	@FindBy(xpath="//input[@value='Login']")
+
+	@FindBy(xpath = "//input[@id='id_username']")
+	WebElement username;
+
+	@FindBy(xpath = "//input[@id='id_password']")
+	WebElement loginPassword;
+
+	@FindBy(xpath = "//input[@value='Login']")
 	WebElement loginbtn;
-	
-		//Logo
-	
-	@FindBy(xpath = "//a[text()='NumpyNinja']")
-	WebElement numpyLogo;
-	
-	//Action Methods
-	
-	public void signIn()
-	{
-	signIn.click();
+
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement alertInvalidcredentials;
+
+	@FindBy(xpath = "//div[@class='alert alert-primary']")
+	WebElement validcredentialstext;
+
+	@FindBy(xpath = "//a[text()='Register!']")
+	WebElement loginpageRegisterlink;
+
+	@FindBy(xpath = "//a[normalize-space()='Register']")
+	WebElement registerLink;
+
+	public void signInclick() {
+		signIn.click();
 	}
-	
-	public void usernameLogin()
-	{
-	//usernameLogin.sendKeys("DreamTeam");
-	usernameLogin.sendKeys(configFileReader.getUsername());
+
+	public void setUsername(String userName) {
+		username.sendKeys(userName);
 	}
-	
-	public void password()
-	{
-	
-	//password.sendKeys("Dre@mTe@m123");
-	password.sendKeys(configFileReader.getPassword());
+
+	public void setLoginPassword(String passWord) {
+		loginPassword.sendKeys(passWord); 
 	}
-	public void loginbtn()
-	{
-	loginbtn.click();
+
+	public void loginBtnclick() {
+		loginbtn.click();
 	}
-	
-	public void numpyLogo() {
-	numpyLogo.click();
+
+	public String getLoginValidationMessage() {
+		return validcredentialstext.getText();
 	}
-	
+
+	public String getInvalidLoginValidationMessage() {
+		return alertInvalidcredentials.getText();
+	}
+
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+
+	public void loginpageRegisterlinkclick() {
+		loginpageRegisterlink.click();
+	}
+
+	public void registerLinkclick() {
+		registerLink.click();
+	}
+
+	public String getUserNameValidationMessage() {
+		return username.getAttribute("validationMessage");
+	}
+
+	public String getPasswordNameValidationMessage() {
+		return loginPassword.getAttribute("validationMessage");
+	}
+
 	public LoginPage() {
-	PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);
 	}
-	}
+
+}
