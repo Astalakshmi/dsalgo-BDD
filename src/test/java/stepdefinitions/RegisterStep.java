@@ -181,7 +181,7 @@ public class RegisterStep {
 			 LoggerLoad.info("clicked login link");
 			 driver.navigate().back();
 			 LoggerLoad.info("Back to Register page");
-			 loginObj.setSignIn();
+			 loginObj.signInclick();
 			 System.out.println("clicked sign in  nav link");
 			 LoggerLoad.info("We are in Register Page ,Navigate to login page using Menubar 'Sign-in' link");
 	      }
