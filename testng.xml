@@ -22,5 +22,15 @@
     </classes>
   </test> -->
   
+  <!--
+  <test name="EdgeTest" >
+  	<parameter name="browser" value="EDGE"></parameter>
+    <classes>
+      <class name="runner.TestRunner">
+
+      </class>
+    </classes>
+  </test> -->
+  
 
 </suite> <!-- Suite -->
