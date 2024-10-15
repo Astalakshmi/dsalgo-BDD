@@ -115,7 +115,7 @@ public class LinkedListPage{
     }
 	
 	public void setCode(String input) {	 
-		((JavascriptExecutor) driver).executeScript("arguments[0].value='input';", inputCode);
+		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
     }
 	
 	public void clickRunBtn() {
