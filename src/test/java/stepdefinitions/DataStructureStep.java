@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import driverManager.WebdriverManager;
 import io.cucumber.java.en.*;
 import pageObjects.DataStructurePage;

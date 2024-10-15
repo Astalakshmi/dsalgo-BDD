@@ -35,7 +35,6 @@ public class TreeStep {
 	public void user_is_on_the_tree_module_page() {
 		treeObj.getStartedclick();
 		LoggerLoad.info("You are in " + driver.getTitle() + " page.");
-
 	}
 
 	@When("user clicked the overview of Trees link")
@@ -54,14 +53,11 @@ public class TreeStep {
 		treeObj.getStartedclick();
 		treeObj.overviewTreesclick();
 		LoggerLoad.info("You are in " + driver.getTitle() + " page.");
-
 	}
 
 	@When("user clicked the Try here link from the Overview of Trees Page")
 	public void user_clicked_the_try_here_link_from_the_overview_of_trees_page() {
-
 		treeObj.tryHereclick();
-
 	}
 
 	@Given("the User is on the Try Editor page from Overview of Trees link")
@@ -123,7 +119,6 @@ public class TreeStep {
 
 	@When("user clicked Types of Trees link in the Tree Modulepage")
 	public void user_clicked_types_of_trees_link_in_the_tree_modulepage() {
-
 		treeObj.typesOfTreesclick();
 	}
 
@@ -131,7 +126,6 @@ public class TreeStep {
 	public void user_is_able_to_view_the_types_of_trees_linked_page() {
 		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("typesOfTrees"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
-
 	}
 
 	@Given("user is on the Type of Trees page")
@@ -139,7 +133,6 @@ public class TreeStep {
 		treeObj.getStartedclick();
 		treeObj.typesOfTreesclick();
 		LoggerLoad.info("You are in " + driver.getTitle() + " page.");
-
 	}
 
 	@When("user clicked the Try here on the Types of Trees page")
@@ -153,20 +146,15 @@ public class TreeStep {
 		treeObj.typesOfTreesclick();
 		treeObj.tryHereclick();
 		LoggerLoad.info("You are in " + driver.getTitle() + " page.");
-
 	}
-
-	// -----------------@TypeTreesPractQues @TreeTC_013------------------
 
 	@When("user clicked the Practice Questions from Type of Trees page")
 	public void user_clicked_the_practice_questions_from_type_of_trees_page() {
 		treeObj.practiceQuestionslink();
-
 	}
 
 	@When("user clicked Tree Traversals link in the Tree Module page")
 	public void user_clicked_tree_traversals_link_in_the_tree_module_page() {
-
 		treeObj.treeTraversalsclick();
 	}
 
@@ -204,12 +192,10 @@ public class TreeStep {
 	@When("user clicked Traversals Illustration link in the Tree Module page")
 	public void user_clicked_traversals_illustration_link_in_the_tree_module_page() {
 		treeObj.traIllustrationsclick();
-
 	}
 
 	@Then("user is able to view the Traversals Illustration linked page")
 	public void user_is_able_to_view_the_traversals_illustration_linked_page() {
-
 		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("traversalIllustration"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
@@ -321,7 +307,6 @@ public class TreeStep {
 
 	@When("user clicked Implementations in Python link in the Tree Module page")
 	public void user_clicked_implementations_in_python_link_in_the_tree_module_page() {
-
 		treeObj.impInpythonclick();
 	}
 
@@ -366,7 +351,6 @@ public class TreeStep {
 	public void user_is_able_to_view_the_binary_tree_traversals_linked_page() {
 		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("binTreeTraversal"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
-
 	}
 
 	@Given("user is on the Binary Tree Traversals page")
@@ -438,7 +422,6 @@ public class TreeStep {
 
 	@Then("user is able to view the Applications of Binary trees link page")
 	public void user_is_able_to_view_the_applications_of_binary_trees_link_page() {
-
 		Assert.assertEquals(treeObj.getActualTitle(), configFileReader.getPageTitle("appBinTree"));
 		LoggerLoad.info("You are viewing the " + driver.getTitle() + " page.");
 	}
@@ -538,6 +521,5 @@ public class TreeStep {
 	@When("user clicked the Practice Questions from Implementation Of BST page")
 	public void user_clicked_the_practice_questions_from_implementation_of_bst_page() {
 		treeObj.practiceQuestionslink();
-
 	}
 }
