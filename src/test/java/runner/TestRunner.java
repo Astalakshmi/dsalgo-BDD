@@ -13,13 +13,13 @@ import utilities.ConfigFileReader;
 		 features = {"./src/test/resources/features"},
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
-    tags= "@Login" ,
+
+    tags= "@Login or @RegisterInvalidCredentials or @Queue or @Graph or @Stack or @LinkedList or @Tree or @DataStructure or @Home or @Array" ,
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
     		})
-//    plugin = { "pretty",                      
-//               "html:target/cucumber-reports/cucumber.html" } )// HTML report
+
  
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
@@ -37,6 +37,5 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		return super.scenarios();
     }	
 }
-	
 
 

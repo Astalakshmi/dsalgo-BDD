@@ -1,7 +1,10 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,6 +13,7 @@ import driverManager.WebdriverManager;
 public class QueuePage {
 	
 	WebDriver driver = WebdriverManager.getDriver();
+	
 	
 	//locator
 	
@@ -21,7 +25,7 @@ public class QueuePage {
 	@FindBy(xpath="//a[normalize-space()='Implementation of Queue in Python']")
 	WebElement queueInPython;
 	
-	@FindBy(xpath="//a[normalize-space()='Try here>>>']")
+	@FindBy(linkText="Try here>>>")
 	WebElement queueInPythonTryHere;
 	
 	@FindBy(xpath="//div[@class='CodeMirror-scroll']")
@@ -69,46 +73,64 @@ public class QueuePage {
 	
 	@FindBy(xpath="//button[normalize-space()='Run']")
 	WebElement queueOpsRunbtn;
+				//Practice Question
+	@FindBy(xpath="//a[normalize-space()='Practice Questions']")
+	WebElement  queuePracticeQuestion;
+	
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
 	
 	//Action Methods
 	
-	public void queueStarted()
+	public void clickQueueStarted()
 	{
 		 queueStarted.click();
 	}
-	public void queueInPython()
+	public boolean clickQueueInPythonLink() //1
 	{
 		queueInPython.click();
+		return true;
 	}
-	public void queueInPythonTryHere()
+	public void clickQueueInPythonTryHere()
 	{
 		queueInPythonTryHere.click();
 	}
 
-	public void deque()
+	public boolean clickDequeLink()   //2
 	{
 		deque.click();
+		return true;
 	}
-	public void dequeTryHere()
+	public void clickDequeTryHere()
 	{
 		dequeTryHere.click();
 	}
-	
-	public void queueImplArray()
+
+	public boolean clickQueueImplArrayLink()  //3
 	{
 		queueImplArray.click();
+		return true;
 	}
-	public void queueImplArrayTryHere()
+	public void clickQueueImplArrayTryHere()
 	{
 		queueImplArrayTryHere.click();
 	}
-	public void queueOperation()
+	public boolean clickQueueOperationLink() //4
 	{
 		queueOperation.click();
+		return true;
 	}
-	public void queueOpsTryHere()
+	public void clickQueueOpsTryHere()
 	{
 		queueOpsTryHere.click();
+	}	
+	public void handlePracticeQuestionClick() {
+ 
+		queuePracticeQuestion.click();
+	
+	}
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
 	}
 	
 	//consructor

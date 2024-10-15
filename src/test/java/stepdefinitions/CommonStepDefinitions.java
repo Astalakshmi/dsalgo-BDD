@@ -3,8 +3,6 @@ package stepdefinitions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.decorators.WebDriverDecorator;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
@@ -18,7 +16,9 @@ import utilities.LoggerLoad;
 public class CommonStepDefinitions {
 	
 	WebDriver driver = WebdriverManager.getDriver();
-	ConfigFileReader configFileReader = new ConfigFileReader();
+
+	ConfigFileReader configFileReader = WebdriverManager.configReader();
+
 	LinkedListPage linkedlistObj = new LinkedListPage();
 	
 	@Given("the user is in homepage and logged in")

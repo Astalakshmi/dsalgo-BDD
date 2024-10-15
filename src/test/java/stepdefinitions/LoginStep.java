@@ -116,7 +116,7 @@ public class LoginStep {
 			}
 			if (ExpectedMessage.equals("Invalid Username and Password")) {
 				LoggerLoad.info("If you don't have an account, please Register");
-				registerObj.registerLinkclick();
+				registerObj.registerLink();
 			}
 		} else {
 			LoggerLoad.info("User can able to register");
