@@ -135,6 +135,11 @@
     <artifactId>maven-surefire-plugin</artifactId>
     <version>3.5.0</version>
     <configuration>
+    <properties>
+    <dataproviderthreadcount>5</dataproviderthreadcount>
+    <parallel>tests</parallel>
+    <threadcount>5</threadcount>
+    </properties>
     	<suiteXmlFiles>
     		<suiteXmlFile>testng.xml</suiteXmlFile>
     	</suiteXmlFiles>

@@ -1,24 +1,29 @@
-
 package pageObjects;
- 
 
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 import driverManager.WebdriverManager;
-//import driverManager.WebDriverManager;
+import utilities.ConfigFileReader;
+import utilities.ExcelFileReader;
+import utilities.LoggerLoad;
 
 public class ArrayPage {
+	
 
 WebDriver driver=WebdriverManager.getDriver();
-	
-	
-	//Array Index page
-	@FindBy(xpath="//div[@class='alert alert-primary']")
-	WebElement Arr_IndexPage;
-	
-	
+
 	//Array Page
 	@FindBy(xpath="//div[@class='card-body d-flex flex-column']/*[contains(text(),'Array')]/../a")
 	WebElement arrGetStarted;
@@ -26,32 +31,11 @@ WebDriver driver=WebdriverManager.getDriver();
 	WebElement arrArrInPy;
 	@FindBy(xpath="//a[text()='Arrays Using List']")
 	WebElement arrArrUseList;
-	@FindBy(xpath="//a[text()='Basic Operations in Lists]")
+	@FindBy(xpath="//a[text()='Basic Operations in Lists']")
 	WebElement arrBaseOperInList;
 	@FindBy(xpath="//a[text()='Applications of Array']")
 	WebElement arrAppOfArr;
 	
-	//Array Page_DataStructure
-	@FindBy(xpath="//a[text()='Data Structures']")
-	WebElement arrDataStruc;
-	@FindBy(xpath="//a[text()='Arrays']")
-	WebElement arrArrays;
-	@FindBy(xpath="//a[text()='Linked List']")
-	WebElement arrLinkedList;
-	@FindBy(xpath="//a[text()='Stack']")
-	WebElement arrStack;
-	@FindBy(xpath="//a[text()='Queue']")
-	WebElement arrQueue;
-	@FindBy(xpath="//a[text()='Tree']")
-	WebElement arrTree;
-	@FindBy(xpath="//a[text()='Graph']")
-	WebElement arrGraph;
-	
-	//ArrayPage_Links
-	@FindBy(xpath="//a[text()=' DreamTeam ']")
-	WebElement arrDreamTeam;
-	@FindBy(xpath="//a[text()='Sign out']")
-	WebElement arrSignOut;
 	@FindBy(xpath="//a[text()='Practice Questions']")
 	WebElement practiceQnsLink;
 	@FindBy(xpath="//a[text()='Search the array']")
@@ -64,91 +48,100 @@ WebDriver driver=WebdriverManager.getDriver();
 	WebElement pracQnsQn4;
 	@FindBy(xpath="//a[text()='Try here>>>']")
 	WebElement tryHereBtn;
-	@FindBy(xpath="//div[@class='container']/div/form/div/div/div/textarea")
+	@FindBy(xpath="//div[contains(@class,'CodeMirror') and contains(@class,'cm-s-default')]//textarea")
 	WebElement tryHereEditor;
 	@FindBy(xpath="//button[text()='Run']")
 	WebElement tryHereRun;
 	@FindBy(id="output")
 	WebElement tryHereOutput;
 
-	public void Arr_IndexPage() {
-		String Arr_IndexPageTitle=Arr_IndexPage.getText();
-		System.out.println(Arr_IndexPageTitle);
-	}
-	public void arrGetStarted() {
+	@FindBy(xpath="//input[@class='button']")
+	WebElement clickSubmitBtn;
+	@FindBy(id="answer_form")
+	WebElement answerForm;
+	
+	public void clickArrGetStartedBtn() {
 		arrGetStarted.click();
 	}
-	public void arrArrInPy() {
+	public void clickArrAIPLink() {
 		arrArrInPy.click();
 	}
-	public void arrArrUseList() {
+	public void clickArrAULLink() {
 		arrArrUseList.click();
 	}
-	public void arrBaseOperInList() {
+	public void clickArrBOLLink() {
 		arrBaseOperInList.click();
 	}
-	public void arrAppOfArr() {
+	public void clickArrAOALink() {
 		arrAppOfArr.click();
 	}
-	public void arrDataStruc() {
-		arrDataStruc.click();
-	}
-	public void arrArrays() {
-		arrArrays.click();
-	}
-	public void arrLinkedList() {
-		arrLinkedList.click();
-	}
-	public void arrStack() {
-		arrStack.click();
-	}
-	public void arrQueue() {
-		arrQueue.click();
-	}
-	public void arrTree() {
-		arrTree.click();
-	}
-	public void arrGraph() {
-		arrGraph.click();
-	}
-	public void arrDreamTeam() {
-		arrDreamTeam.click();
-	}
-	public void Arr_SignOut() {
-		arrSignOut.click();
-	}
-	public void practiceQnsLink() {
+
+	public void clickArrPracticeQnsLink() {
 		practiceQnsLink.click();
 	}
-	public void pracQnsQn1() {
+	public void clickArrPracQnsQn1() {
 		pracQnsQn1.click();
 	}
 	
-	public void pracQnsQn2() {
+	public void clickArrPracQnsQn2() {
 		pracQnsQn2.click();
 	}
 	
-	public void pracQnsQn3() {
+	public void clickArrPracQnsQn3() {
 		pracQnsQn3.click();
 	}
 	
-	public void pracQnsQn4() {
+	public void clickArrPracQnsQn4() {
 		pracQnsQn4.click();
 	}
 	
-	public void tryHereBtn() {
+	public void clickArrTryHereBtn() {
 		tryHereBtn.click();
 	}
-	public void tryHereEditor() {
-		tryHereEditor.sendKeys("print"+"\"Hello\"");
+	public void clickSubmitBtn() {
+		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(40));
+		w1.until(ExpectedConditions.elementToBeClickable(clickSubmitBtn));
+		clickSubmitBtn.click();
 	}
-	public void tryHereRun() {
+
+	public String getTryHereEditorValue() {
+		return tryHereEditor.getText();
+	}
+	
+	public void enterCodePractice(String code) {
+		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(20));
+		w1.until(ExpectedConditions.visibilityOf(answerForm));
+		String[] str1 = code.split("\\\\n");
+
+		tryHereEditor.sendKeys(Keys.CONTROL+"a");
+		tryHereEditor.sendKeys(Keys.DELETE);
+		
+		for (int i = 0; i < str1.length; i++) {
+			if (str1[i].contains("\\b")) {
+
+				tryHereEditor.sendKeys(Keys.BACK_SPACE);
+			} else {
+				tryHereEditor.sendKeys(str1[i]);
+				
+				tryHereEditor.sendKeys(Keys.ENTER);
+				
+			}
+		}
+		
+	}
+	
+
+	public void clickTryHereRunBtn() {
+		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(40));
+		w1.until(ExpectedConditions.elementToBeClickable(tryHereRun));
 		tryHereRun.click();
 	}
-	public void tryHereOutput() {
-		tryHereOutput.getText();
+	public String getTryHereOutputText() {
+		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(40));
+		w1.until(ExpectedConditions.visibilityOf(tryHereOutput));
+		return tryHereOutput.getText().trim();
 	}
-		
+	
 
 	public ArrayPage() {
 	PageFactory.initElements(driver, this);
