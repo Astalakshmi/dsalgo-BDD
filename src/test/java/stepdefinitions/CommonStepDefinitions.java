@@ -47,16 +47,18 @@ public class CommonStepDefinitions {
 
 	@Then("the User should get the {string} in the screen")
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
+			
+		String actualCodeOutput = linkedlistObj.getOutput();
+	    Assert.assertEquals(actualCodeOutput,expectedOutput);
+	    
+	}
+	
+	@Then("the User should get the {string} in the alert")
+	public void the_user_should_get_the_in_the_alert(String errorOutput) {
+		Alert alert = driver.switchTo().alert();
+		Assert.assertEquals(alert.getText(), errorOutput);
+		alert.accept();
 		
-		try {
-			Alert alert = driver.switchTo().alert();
-			Assert.assertEquals(alert.getText(), expectedOutput);
-			alert.accept();
-			LoggerLoad.error("Try editor python code have error: " + expectedOutput);
-		} catch (NoAlertPresentException e) {
-			Assert.assertEquals(linkedlistObj.getOutput(), expectedOutput);
-			LoggerLoad.info("Try editor python code output : " + expectedOutput);
-		}
 	    
 	}
 
