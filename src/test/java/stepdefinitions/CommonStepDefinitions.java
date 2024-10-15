@@ -49,18 +49,13 @@ public class CommonStepDefinitions {
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 		
 		try {
-			try {
-				Alert alert = driver.switchTo().alert();
-				System.out.println("Alert text is: " + alert.getText());
-				alert.accept();
-			} catch (NoAlertPresentException e) {
-				System.out.println("No alert was found.");
-			}
-		} catch (org.openqa.selenium.UnhandledAlertException e) {
-			System.out.println("Unhandled Alert Exception caught. Handling it...");
 			Alert alert = driver.switchTo().alert();
-			System.out.println("Alert text is: " + alert.getText());
+			Assert.assertEquals(alert.getText(), expectedOutput);
 			alert.accept();
+			LoggerLoad.error("Try editor python code have error: " + expectedOutput);
+		} catch (NoAlertPresentException e) {
+			Assert.assertEquals(linkedlistObj.getOutput(), expectedOutput);
+			LoggerLoad.info("Try editor python code output : " + expectedOutput);
 		}
 	    
 	}
