@@ -35,7 +35,7 @@ Feature: DS Portal Linked List Page Functionality
    Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorIntroductionNegative @LinkedListTC_005  
   Scenario Outline: validate the Try editor for negative input from Introduction page
@@ -70,7 +70,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorCreatingLinkedListNegative @LinkedListTC_009  
   Scenario Outline: validate the Try editor for negative input from Creating Linked list page
@@ -105,7 +105,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
   @TryEditorTypesOfLinkedListNegative @LinkedListTC_013  
   Scenario Outline: validate the Try editor for negative input from Types of Linked List page
@@ -140,7 +140,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryHereImplementLinkedListNegative @LinkedListTC_017  
    Scenario Outline: validate the Try editor for negative input from Implement linked list in python page
@@ -175,7 +175,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorTraversalNegative @LinkedListTC_021  
    Scenario Outline: validate the Try editor for negative input from Traversal page
@@ -210,7 +210,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorInsertionNegative @LinkedListTC_025  
    Scenario Outline: validate the Try editor for negative input from Insertion page
@@ -246,7 +246,7 @@ Feature: DS Portal Linked List Page Functionality
     Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorDeletionNegative @LinkedListTC_029  
    Scenario Outline: validate the Try editor for negative input from Deletion page

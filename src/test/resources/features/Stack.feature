@@ -33,7 +33,7 @@ Feature: DS Portal Stack Page Functionality
    Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorOperationsInStackNegative @StackTC_005  
   Scenario Outline: validate the Try editor for negative input from Operations in stack page
@@ -68,7 +68,7 @@ Feature: DS Portal Stack Page Functionality
    Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
     @TryEditorImplementationInStackNegative @StackTC_009   
   Scenario Outline: validate the Try editor for negative input from Implementation in stack page
@@ -103,7 +103,7 @@ Feature: DS Portal Stack Page Functionality
    Examples: 
       | code             | output                                           |
       | print\"Hello\"   | Hello                                            |
-      |                  |                                                  |
+      | print 1234       | 1234                                             |
       
    @TryEditorApplicationsInStackNegative @StackTC_013  
   Scenario Outline: validate the Try editor for negative input from Applications in stack page
