@@ -49,5 +49,4 @@ Feature: Ds Portal DataStructure-Introduction Page Functionality
   Scenario: Validate the Time Complexity page Practice Questions
     Given user is on the time complexity page
     When user clicked the Practice Questions from the time complexity Page
-   # Then user is get navigated to the Time Complexity link Practice Questions Page
     Then user should view the Practice Questions of DataStructure
