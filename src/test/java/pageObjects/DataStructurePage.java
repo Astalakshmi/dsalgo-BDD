@@ -1,7 +1,10 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import driverManager.WebdriverManager;
@@ -22,6 +25,9 @@ public class DataStructurePage {
 	@FindBy(xpath = "//a[contains(text(),'Practice Questions')]")
 	WebElement practice_ques;
 
+	@FindAll (value = { @FindBy (className = "list-group") })
+	List<WebElement> practiceQuestions;
+	
 	public void getStartedclick() {
 		getstarted.click();
 	}
@@ -36,6 +42,10 @@ public class DataStructurePage {
 
 	public void pracQuesclick() {
 		practice_ques.click();
+	}
+	
+	public int getPracticeQuestionsCount() {
+		return practiceQuestions.size();
 	}
 
 	public String getActualTitle() {

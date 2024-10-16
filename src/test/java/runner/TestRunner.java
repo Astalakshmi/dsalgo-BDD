@@ -14,7 +14,7 @@ import utilities.ConfigFileReader;
     glue = {"stepdefinitions","hooks"},
     monochrome = true,
 
-    tags= "@Login or @Stack" ,
+    tags= "@Tree or @DataStructure" ,
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

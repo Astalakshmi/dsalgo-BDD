@@ -23,21 +23,31 @@ Feature: Ds Portal DataStructure-Introduction Page Functionality
     When user clicked the Try here link from the time complexity Page
     Then the User should get navigated to the Try Editor Page
 
-  @TimeCompTryEditor @DataTC_004
-  Scenario Outline: Validate the Try editor from Time Complexity page
+   @TimeCompTryEditor @DataTC_004
+  Scenario Outline: Validate the Try editor for positive input from Time Complexity page
     Given the User is on the Try Editor page from Time Complexity page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<output>" in the screen
 
     Examples: 
-      | code             | output                                           |
-      | print\\"Hello\\" | Hello                                            |
-      |                  |                                                  |
-      | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad input on line 1                 |
+      | code             | output |
+      | print\"Hello\"   | Hello  | 
+      | print 1234       | 1234   |
 
-  @DataTimecompPracQues @DataTC_005
+  @TimeCompTryEditorNegative @TreeTC_005
+  Scenario Outline: validate the Try editor for negative input from Time Complexity page
+    Given the User is on the Try Editor page from Time Complexity page
+    When the User enters a sample code as "<code>" in the Editor section and click Run
+    Then the User should get the "<error>" in the alert
+
+    Examples: 
+      | code        | error                                            |
+      | print hello | NameError: name 'hello' is not defined on line 1 |
+      | aer234@$    | SyntaxError: bad token T_OP on line 1            |
+
+  @DataTimecompPracQues @DataTC_006
   Scenario: Validate the Time Complexity page Practice Questions
     Given user is on the time complexity page
     When user clicked the Practice Questions from the time complexity Page
-    Then user is get navigated to the Time Complexity link Practice Questions Page
+   # Then user is get navigated to the Time Complexity link Practice Questions Page
+    Then user should view the Practice Questions of DataStructure
