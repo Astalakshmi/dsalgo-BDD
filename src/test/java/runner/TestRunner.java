@@ -18,7 +18,7 @@ import utilities.ConfigFileReader;
     plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
     		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
     		 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-    		 "rerun:target/rerun.txt",
+    		// "rerun:target/rerun.txt",
     		})
 
  
