@@ -1,9 +1,13 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driverManager.WebdriverManager;
 
@@ -36,7 +40,8 @@ public class LoginPage {
 	WebElement registerLink;
 
 	public void signInclick() {
-		signIn.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(signIn)).click();
 	}
 
 	public void setUsername(String userName) {
@@ -44,7 +49,7 @@ public class LoginPage {
 	}
 
 	public void setLoginPassword(String passWord) {
-		loginPassword.sendKeys(passWord); 
+		loginPassword.sendKeys(passWord);
 	}
 
 	public void loginBtnclick() {
