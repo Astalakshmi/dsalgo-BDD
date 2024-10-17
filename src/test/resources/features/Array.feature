@@ -45,7 +45,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
 
   @AIPPracQns @Array_TC_006
   Scenario: Validating Practice Questions link in Array in Python Page
@@ -109,7 +109,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |  
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
 
   @AULPracQns @AULPracQnsTC_015
   Scenario: Validating Practice Questions link in Arrays using List Page
@@ -149,7 +149,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            | 
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            | 
        
   @BOLPracQns @BOLPracQnsTC_020
   Scenario: Validating Practice Questions link in Basic Operations in Lists Page
@@ -189,7 +189,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |  
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
       
   @AOAPracQns @AOAPracQnsTC_025
   Scenario: Validating Practice Questions link in Applications of Array Page
