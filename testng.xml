@@ -8,6 +8,9 @@
       <class name="runner.TestRunner">
 
       </class>
+      <class name="runner.RetryRunner">
+
+      </class>
     </classes>
   </test>
 
