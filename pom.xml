@@ -137,7 +137,7 @@
     <configuration>
     <properties>
     <dataproviderthreadcount>5</dataproviderthreadcount>
-    <parallel>tests</parallel>
+    <parallel>all</parallel>
     <threadcount>5</threadcount>
     </properties>
     	<suiteXmlFiles>
