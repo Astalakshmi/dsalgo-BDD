@@ -1,21 +1,14 @@
 package pageObjects;
-import java.time.Duration;
-import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
+import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driverManager.WebdriverManager;
-import utilities.LoggerLoad;
 
 public class LinkedListPage{
 	
@@ -115,15 +108,11 @@ public class LinkedListPage{
     }
 	
 	public void setCode(String input) {	 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(inputCode)).click();
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
 		
     }
 	
 	public void clickRunBtn() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(runButton)).click();
         runButton.click();
     }
 	
