@@ -115,9 +115,10 @@ public class LinkedListPage{
     }
 	
 	public void setCode(String input) {	 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(inputCode)).click();
 		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
     }
 	
 	public void clickRunBtn() {
