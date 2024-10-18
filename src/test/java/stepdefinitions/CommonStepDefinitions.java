@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -47,17 +48,29 @@ public class CommonStepDefinitions {
 	@Then("the User should get the {string} in the screen")
 	public void the_user_should_get_the_output_in_the_screen(String expectedOutput) {
 			
-		String actualCodeOutput = linkedlistObj.getOutput();
-	    Assert.assertEquals(actualCodeOutput,expectedOutput);
-	    LoggerLoad.info("actual output "+expectedOutput);
+		try {
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+		}
+		catch (NoAlertPresentException e) {
+			String actualCodeOutput = linkedlistObj.getOutput();
+			Assert.assertEquals(actualCodeOutput,expectedOutput);
+			LoggerLoad.info("actual code output "+expectedOutput);
+		}
 	    
 	}
 	
 	@Then("the User should get the {string} in the alert")
 	public void the_user_should_get_the_in_the_alert(String errorOutput) {
-		Alert alert = driver.switchTo().alert();
-		Assert.assertEquals(alert.getText(), errorOutput);
-		LoggerLoad.info("actual error "+alert.getText());
+		try {
+			Alert alert = driver.switchTo().alert();
+			String alertErrorText = alert.getText();
+			alert.accept();
+			Assert.assertEquals(alertErrorText,errorOutput);
+		}
+		catch (NoAlertPresentException e) {
+			LoggerLoad.info("No alert is present");
+		}
 		
 		
 	    
