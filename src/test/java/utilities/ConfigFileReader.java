@@ -8,7 +8,6 @@ import java.util.Properties;
 
 public class ConfigFileReader {
 	private Properties properties;
-	private static ConfigFileReader configReader;
 
 	private final String propertyFilePath = "src//test//resources//config//Configuration.properties";
 
@@ -30,13 +29,6 @@ public class ConfigFileReader {
 
 	}
 
-	public static ConfigFileReader getInstance() {
-		if (configReader == null) {
-			configReader = new ConfigFileReader();
-		}
-		return configReader;
-	}
-
 	private static String browserType = null;
 
 	public static void setBrowserType(String browser) {
@@ -51,7 +43,6 @@ public class ConfigFileReader {
 			throw new RuntimeException("browser not specified in the testng.xml");
 
 	}
-
 
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");
@@ -101,30 +92,6 @@ public class ConfigFileReader {
 			throw new RuntimeException(" register url not specified in the Configuration.properties file.");
 	}
 
-	public String geWaitTime(String wait) {
-		String waitTime = properties.getProperty(wait);
-		if (waitTime != null)
-			return wait;
-		else
-			throw new RuntimeException(wait + " not specified in the Configuration.properties file.");
-	}
-
-	public String getUsername() {
-		String username = properties.getProperty("username");
-		if (username != null)
-			return username;
-		else
-			throw new RuntimeException("username  not specified in the Configuration.properties file.");
-	}
-
-	public String getPassword() {
-		String password = properties.getProperty("password");
-		if (password != null)
-			return password;
-		else
-			throw new RuntimeException("password not specified in the Configuration.properties file.");
-
-	}
 
 	public String getAlert(String alertNames) {
 		String alertName = properties.getProperty(alertNames);

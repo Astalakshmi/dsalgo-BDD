@@ -23,8 +23,7 @@ public class StackStep {
 
 	@Then("user views the stack page")
 	public void user_views_the_stack_page() {
-		String stackPageTitle = stackPageObj.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("stackPage"), stackPageTitle);
+	    Assert.assertEquals(stackPageObj.getActualTitle(),configFileReader.getPageTitle("stackPage"));
 	    
 	}
 
@@ -42,8 +41,7 @@ public class StackStep {
 
 	@Then("user views the Operations in stack page")
 	public void user_views_the_operations_in_stack_page() {
-		String operationsTitle = stackPageObj.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("operInStack"), operationsTitle);
+	    Assert.assertEquals(stackPageObj.getActualTitle(),configFileReader.getPageTitle("operInStack"));
 	    
 	}
 
@@ -78,8 +76,7 @@ public class StackStep {
 
 	@Then("user views the Implementation in stack page")
 	public void user_views_the_implementation_in_stack_page() {
-		String implementStackTitle = stackPageObj.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("implementationStack"), implementStackTitle);
+	    Assert.assertEquals(stackPageObj.getActualTitle(),configFileReader.getPageTitle("implementationStack"));
 	    
 	}
 
@@ -109,8 +106,7 @@ public class StackStep {
 
 	@Then("user views the Applications in stack page")
 	public void user_views_the_applications_in_stack_page() {
-		String applicationTitle = stackPageObj.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("applicationsStack"), applicationTitle);
+	    Assert.assertEquals(stackPageObj.getActualTitle(),configFileReader.getPageTitle("applicationsStack"));
 	    
 	}
 
@@ -152,8 +148,7 @@ public class StackStep {
 
 	@Then("the User should get navigated to the Stack Practice Questions Page")
 	public void the_user_should_get_navigated_to_the_stack_practice_questions_page() {
-		String practiceTitle = stackPageObj.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("practiceQuestions"), practiceTitle);
+	    Assert.assertEquals(stackPageObj.getActualTitle(),configFileReader.getPageTitle("practiceQuestions"));
 	    
 	}
 	

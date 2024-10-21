@@ -25,11 +25,7 @@ public class LinkedListStep {
 
 	@Then("the user views the linked list page")
 	public void the_user_views_the_linked_list_page() {
-		
-		String linkedListPageTitle = linkedListObject.getActualTitle();
-		
-		
-	    Assert.assertEquals(linkedListPageTitle,configFileReader.getPageTitle("linkedListPage"));
+		Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("linkedListPage"));
 	    
 	}
 
@@ -37,7 +33,6 @@ public class LinkedListStep {
 	public void the_user_is_in_linked_list_page() {
 		
 		linkedListObject.clickGetStartedBtn();
-		//LoggerLoad.info("You are in" +driver.getTitle());
 	    
 	}
 
@@ -50,7 +45,7 @@ public class LinkedListStep {
 	public void the_user_views_the_introduction_page() {
 		
 		String introductionPageTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(introductionPageTitle,configFileReader.getPageTitle("introduction"));
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("introduction"));
 	    
 	}
 
@@ -58,7 +53,6 @@ public class LinkedListStep {
 	public void the_user_is_on_the_introduction_page() {
 		linkedListObject.clickGetStartedBtn();
 		linkedListObject.clickIntroductionLink();
-		//LoggerLoad.info("You are in" +driver.getTitle());
 	}
 
 	@When("the User clicks the Try here in Introduction Page")
@@ -68,19 +62,12 @@ public class LinkedListStep {
 	    
 	}
 
-//	@Then("the User should get navigated to the Try Editor Page")
-//	public void the_user_should_get_navigated_to_the_try_editor_page() {
-//		String tryEditorPageTitle = BrowserDriver.getTitle();
-//	    Assert.assertEquals("Assessment", tryEditorPageTitle);
-//	    
-//	}
 
 	@Given("the User is on the Try Editor page through the introduction page")
 	public void the_user_is_on_the_try_editor_page_through_the_introduction_page() {
 		linkedListObject.clickGetStartedBtn();
 		linkedListObject.clickIntroductionLink();
 		linkedListObject.clicktryEditor();
-		//LoggerLoad.info("You are in" +driver.getTitle());
 		
 	    
 	}
@@ -96,9 +83,7 @@ public class LinkedListStep {
 
 	@Then("user views the creating linked list page")
 	public void user_views_the_creating_linked_list_page() {
-		
-		String creatingLinkedListTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(creatingLinkedListTitle,configFileReader.getPageTitle("creatingLinkList"));
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("creatingLinkList"));
 	    
 	}
 
@@ -133,8 +118,7 @@ public class LinkedListStep {
 
 	@Then("user views the types of linked list page")
 	public void user_views_the_types_of_linked_list_page() {
-		String typesOfLinkedListTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("typesOfLinkedList"), typesOfLinkedListTitle);
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("typesOfLinkedList"));
 	}
 
 	@Given("the User is on the Types of Linked List page")
@@ -166,8 +150,7 @@ public class LinkedListStep {
 
 	@Then("user views the implement linked list in python  page")
 	public void user_views_the_implement_linked_list_in_python_page() {
-		String implementTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("implementLinkedList"), implementTitle);
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("implementLinkedList"));
 	}
 
 	@Given("the User is on the Implement linked list in python page")
@@ -199,8 +182,7 @@ public class LinkedListStep {
 
 	@Then("user views the traversal page")
 	public void user_views_the_traversal_page() {
-		String traversalTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("traversal"), traversalTitle);
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("traversal"));
 	}
 
 	@Given("the User is on the Traversal page")
@@ -233,8 +215,7 @@ public class LinkedListStep {
 
 	@Then("user views the insertion page")
 	public void user_views_the_insertion_page() {
-		String insertionTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(configFileReader.getPageTitle("insertion"), insertionTitle);
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("insertion"));
 	}
 
 	@Given("the User is on the Insertion page")
@@ -266,8 +247,7 @@ public class LinkedListStep {
 
 	@Then("user views the deletion page")
 	public void user_views_the_deletion_page() {
-		String deletionTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(deletionTitle,configFileReader.getPageTitle("deletion"));
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("deletion"));
 	}
 
 	@Given("the User is on the Deletion page")
@@ -331,8 +311,7 @@ public class LinkedListStep {
 
 	@Then("the User should get navigated to the Linked List Practice Questions Page")
 	public void the_user_should_get_navigated_to_the_linked_list_practice_questions_page() {
-		String practiceTitle = linkedListObject.getActualTitle();
-	    Assert.assertEquals(practiceTitle,configFileReader.getPageTitle("practiceQuestions"));
+	    Assert.assertEquals(linkedListObject.getActualTitle(),configFileReader.getPageTitle("practiceQuestions"));
 	    
 	}
 	
