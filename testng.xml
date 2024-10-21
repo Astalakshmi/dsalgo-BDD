@@ -8,11 +8,15 @@
       <class name="runner.TestRunner">
 
       </class>
+    <!-- <class name="runner.RetryRunner">
+
+      </class>
+      -->
     </classes>
   </test>
 
 
-  <!--
+ <!-- 
   <test name="FirefoxTest" >
   	<parameter name="browser" value="FIREFOX"></parameter>
     <classes>
@@ -20,9 +24,9 @@
 
       </class>
     </classes>
-  </test> -->
+  </test> 
   
-  <!--
+  
   <test name="EdgeTest" >
   	<parameter name="browser" value="EDGE"></parameter>
     <classes>
@@ -30,7 +34,7 @@
 
       </class>
     </classes>
-  </test> -->
-  
+  </test> 
+  -->
 
 </suite> <!-- Suite -->
