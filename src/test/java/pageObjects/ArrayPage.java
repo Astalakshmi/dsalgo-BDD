@@ -1,10 +1,7 @@
 package pageObjects;
 
-import java.io.IOException;
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,11 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import driverManager.WebdriverManager;
-import utilities.ConfigFileReader;
-import utilities.ExcelFileReader;
-import utilities.LoggerLoad;
 
 public class ArrayPage {
 	
@@ -109,8 +102,8 @@ WebDriver driver=WebdriverManager.getDriver();
 	}
 	
 	public void enterCodePractice(String code) {
-		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(20));
-		w1.until(ExpectedConditions.visibilityOf(answerForm));
+			
+		answerForm.click();
 		String[] str1 = code.split("\\\\n");
 
 		tryHereEditor.sendKeys(Keys.CONTROL+"a");
