@@ -26,15 +26,14 @@ Feature: DsPortal Array Page Functionality
 
 
   @AIPTryEditorPagePositive @Array_TC_004
-  Scenario Outline: Validating Try here Page for positive input through the Arrays in Python Page
+  Scenario: Validating Try here Page for positive input through the Arrays in Python Page
     Given the User is on the Try Editor page through the Arrays in Python Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
       
   @AIPTryEditorPageNegative @Array_TC_005
   Scenario Outline: Validating Try here Page for negative input through the Arrays in Python Page
@@ -45,7 +44,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |
 
   @AIPPracQns @Array_TC_006
   Scenario: Validating Practice Questions link in Array in Python Page
@@ -90,15 +89,14 @@ Feature: DsPortal Array Page Functionality
     Then the User should get navigated to the Try Editor Page from Arrays using List
                                            |
   @AULTryEditorPagePositive @Array_TC_013
-  Scenario Outline: Validating Try here Page for positive input through the Arrays using List Page
+  Scenario: Validating Try here Page for positive input through the Arrays using List Page
     Given the User is on the Try Editor page through the Arrays using List
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
     
   @AULTryEditorPageNegative @Array_TC_014
   Scenario Outline: Validating Try here Page for negative input through the Arrays using List Page
@@ -109,7 +107,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |  
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
 
   @AULPracQns @AULPracQnsTC_015
   Scenario: Validating Practice Questions link in Arrays using List Page
@@ -130,15 +128,13 @@ Feature: DsPortal Array Page Functionality
     Then the User should get navigated to the Try Editor Page from the Basic Operations in Lists
                                            |
   @BOLTryEditorPagePositive @Array_TC_018
-  Scenario Outline: Validating Try here Page for positive input through the Basic Operations in Lists Page
+  Scenario: Validating Try here Page for positive input through the Basic Operations in Lists Page
     Given the User is on the Try Editor page through the Basic Operations in Lists Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
 	@BOLTryEditorPageNegative @Array_TC_019
   Scenario Outline: Validating Try here Page for negative input through the Arrays using List Page
@@ -149,7 +145,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            | 
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            | 
        
   @BOLPracQns @BOLPracQnsTC_020
   Scenario: Validating Practice Questions link in Basic Operations in Lists Page
@@ -170,15 +166,14 @@ Feature: DsPortal Array Page Functionality
     Then the User should get navigated to the Try Editor Page from Applications of Array
 
   @AOATryEditorPagePositive @Array_TC_023
-  Scenario Outline: Validating Try here Page for positive input through the Applications of Array Page
+  Scenario: Validating Try here Page for positive input through the Applications of Array Page
     Given the User is on the Try Editor page through the Applications of Array Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-   Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
       
   @AOATryEditorPageNegative @Array_TC_024
   Scenario Outline: Validating Try here Page for negative input through the Applications of Array Page
@@ -189,7 +184,7 @@ Feature: DsPortal Array Page Functionality
     Examples: 
       | code             | error                                           |
       | print hello      | NameError: name 'hello' is not defined on line 1 |
-      | aer234@$         | SyntaxError: bad token T_OP on   line 1            |  
+      | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
       
   @AOAPracQns @AOAPracQnsTC_025
   Scenario: Validating Practice Questions link in Applications of Array Page
@@ -197,7 +192,6 @@ Feature: DsPortal Array Page Functionality
     When the User clicks Practice Questions link in the Applications of Array Page
     Then the User should get navigated to the Practice Questions Page from the Applications of Array
 
-  #----------------------------PracQns----------------------------
   @PracQns1RunButton @Array_TC_026
   Scenario Outline: Validating Run button with valid and invalid code in Search the Array Page
     Given the User is on the Search the Array Page

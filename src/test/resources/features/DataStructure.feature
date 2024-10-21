@@ -24,15 +24,14 @@ Feature: Ds Portal DataStructure-Introduction Page Functionality
     Then the User should get navigated to the Try Editor Page
 
    @TimeCompTryEditor @DataTC_004
-  Scenario Outline: Validate the Try editor for positive input from Time Complexity page
+  Scenario: Validate the Try editor for positive input from Time Complexity page
     Given the User is on the Try Editor page from Time Complexity page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @TimeCompTryEditorNegative @TreeTC_005
   Scenario Outline: validate the Try editor for negative input from Time Complexity page

@@ -133,7 +133,10 @@ public class QueuePage {
 		return practiceQuestions.size();
 	}
 	
-	//consructor
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+	//constructor
 	public QueuePage() {
 		PageFactory.initElements(driver, this);
 	}

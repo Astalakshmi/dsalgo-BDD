@@ -23,15 +23,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @OverviewTreesTryeditor @TreeTC_004
-  Scenario Outline: validate the Try editor for positive input from Overview of Trees page
+  Scenario: validate the Try editor for positive input from Overview of Trees page
     Given the User is on the Try Editor page from Overview of Trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @OverviewTreesTryeditorNegative @TreeTC_005
   Scenario Outline: validate the Try editor for negative input from Overview of Trees page
@@ -63,15 +62,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
    @TerminologiesTryEditor @TreeTC_009
-  Scenario Outline: validate the Try editor for positive input from Terminologies page
+  Scenario: validate the Try editor for positive input from Terminologies page
     Given the User is on the Try Editor page from Terminologies link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @TerminologiesTryEditorNegative @TreeTC_010
   Scenario Outline: validate the Try editor for negative input from Terminologies page
@@ -103,15 +101,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
  @TypesTreesTryEditor @TreeTC_014
-  Scenario Outline: Validate the Try editor for positive input from Type of Trees page
+  Scenario: Validate the Try editor for positive input from Type of Trees page
     Given the User is on the Try Editor page from Type of Trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @TypesTreesTryEditorNegative @TreeTC_015
   Scenario Outline: validate the Try editor for negative input from Type of Trees page
@@ -143,15 +140,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @TreeTraversalsTryEditor @TreeTC_019
-  Scenario Outline: Validate the Try editor for positive input from Tree Traversals page
+  Scenario: Validate the Try editor for positive input from Tree Traversals page
     Given the User is on the Try Editor page from Tree Traversals link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @TreeTraversalsTryEditorNegative @TreeTC_020
   Scenario Outline: validate the Try editor for negative input from Tree Traversals page
@@ -183,15 +179,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @IllustrationTryEditor @TreeTC_024
-  Scenario Outline: Validate the Try editor for positive input from Traversals Illustration page
+  Scenario: Validate the Try editor for positive input from Traversals Illustration page
     Given the User is on the Try Editor page from Traversals Illustration link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @IllustrationTryEditorNegative @TreeTC_025
   Scenario Outline: validate the Try editor for negative input from Traversals Illustration page
@@ -223,15 +218,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @BinaryTreesTryEditor @TreeTC_029
-  Scenario Outline: Validate the Try editor for positive input from BinaryTrees page
+  Scenario: Validate the Try editor for positive input from BinaryTrees page
     Given the User is on the Try Editor page from BinaryTrees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @BinaryTreesTryEditorNegative @TreeTC_030
   Scenario Outline: validate the Try editor for negative input from BinaryTrees page
@@ -263,15 +257,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
    @TypesBinaryTryEditor @TreeTC_034
-  Scenario Outline: Validate the Try editor for positive input from Types of Binary Trees page
+  Scenario: Validate the Try editor for positive input from Types of Binary Trees page
     Given the User is on the Try Editor page from Types of Binary Trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @TypesBinaryTryEditorNegative @TreeTC_035
   Scenario Outline: validate the Try editor for negative input from Types of Binary Trees page
@@ -303,15 +296,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @ImpPythonTryEditor @TreeTC_039
-  Scenario Outline: Validate the Try editor for positive input from Implementations in Python page
+  Scenario: Validate the Try editor for positive input from Implementations in Python page
     Given the User is on the Try Editor page from Implementations in Python link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\\"Hello\\" | Hello  |
-      |                  |        |
 
   @ImpPythonTryEditorNegative @TreeTC_40
   Scenario Outline: validate the Try editor for negative input from Implementations in Python page
@@ -343,15 +335,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
    @BinaryTraversalsTryEditor @TreeTC_044
-  Scenario Outline: Validate the Try editor for positive input from Binary Tree Traversals page
+  Scenario: Validate the Try editor for positive input from Binary Tree Traversals page
     Given the User is on the Try Editor page from Binary Tree Traversals link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @BinaryTraversalsTryEditorNegative @TreeTC_45
   Scenario Outline: validate the Try editor for negative input from Binary Tree Traversals page
@@ -383,15 +374,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @ImpBinaryTreesTryEditor @TreeTC_049
-  Scenario Outline: Validate the Try editor for positive input from Implementation of Binary Trees page
+  Scenario: Validate the Try editor for positive input from Implementation of Binary Trees page
     Given the User is on the Try Editor page from Implementation of Binary Trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @ImpBinaryTreesTryEditorNegative @TreeTC_50
   Scenario Outline: validate the Try editor for negative input from Implementation of Binary Trees page
@@ -423,15 +413,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @AppBinaryTryEditor @TreeTC_054
-  Scenario Outline: Validate the Try editor for positive input from Applications of Binary trees page
+  Scenario: Validate the Try editor for positive input from Applications of Binary trees page
     Given the User is on the Try Editor page from Applications of Binary trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @AppBinaryTryEditorNegative @TreeTC_055
   Scenario Outline: validate the Try editor for negative input from Applications of Binary trees page
@@ -463,15 +452,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @BinarySearchTreesTryEditor @TreeTC_059
-  Scenario Outline: Validate the Try editor for positive input from Binary Search Trees page
+  Scenario: Validate the Try editor for positive input from Binary Search Trees page
     Given the User is on the Try Editor page from Binary Search Trees link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-    Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @BinarySearchTreesTryEditorNegative @TreeTC_060
   Scenario Outline: validate the Try editor for negative input from Binary Search Trees page
@@ -503,15 +491,14 @@ Feature: Ds Portal Tree Page Functionality
     Then the User should get navigated to the Try Editor Page
 
  @ImpBSTTryEditor @TreeTC_064
-  Scenario Outline: Validate the Try editor for positive input from Implementation Of BST page
+  Scenario: Validate the Try editor for positive input from Implementation Of BST page
     Given the User is on the Try Editor page from Implementation Of BST link
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
 
-     Examples: 
-      | code             | output |
-      | print\"Hello\"   | Hello  | 
-      | print 1234       | 1234   |
 
   @ImpBSTTryEditorNegative @TreeTC_065
   Scenario Outline: validate the Try editor for negative input from Implementation Of BST page

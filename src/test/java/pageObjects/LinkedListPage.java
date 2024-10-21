@@ -2,12 +2,10 @@ package pageObjects;
 import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driverManager.WebdriverManager;
-import utilities.LoggerLoad;
 
 public class LinkedListPage{
 	
@@ -60,7 +57,7 @@ public class LinkedListPage{
 	
 	@FindBy (xpath = "//div[contains(@class , 'CodeMirror') and contains(@class,'cm-s-default')]//textarea") 
 	WebElement inputCode;
-	
+
 	@FindBy (xpath = "//button") 
 	WebElement runButton;
 	
@@ -68,7 +65,7 @@ public class LinkedListPage{
 	WebElement output;
 	
 	@FindBy(id ="answer_form")
-	WebElement formText;
+	WebElement answerForm;
 	
 	
 	public void clickGetStartedBtn() {
@@ -114,16 +111,39 @@ public class LinkedListPage{
 		tryEditor.click();
     }
 	
-	public void setCode(String input) {	 
-		((JavascriptExecutor) driver).executeScript("arguments[0].value='"+input+"';", inputCode);
-    }
+	public void setCodePositive(String code) 
+	{	    
+		answerForm.click();
+		inputCode.sendKeys(code); 
+		
 	
+	}
+	public void setCodeNegative(String input) 
+	{	   
+		 answerForm.click();
+		 inputCode.sendKeys(input); 
+	
+	}
+
 	public void clickRunBtn() {
-        runButton.click();
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    wait.until(ExpectedConditions.elementToBeClickable(runButton));  
+		    runButton.click();
+        
     }
-	
-	public String getOutput() {
-		return output.getText();
+	public void clearFormText() 
+	{
+		  Actions actions = new Actions(driver);
+		    actions.moveToElement(inputCode).click()
+		        .keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL)  
+		        .sendKeys(Keys.BACK_SPACE)  
+		        .perform();
+    }
+	public String getOutput() 
+	{
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		    WebElement outputElement = wait.until(ExpectedConditions.visibilityOf(output));  // Wait for output visibility
+		    return outputElement.getText();
 	}
 	
 	public void clickPracticeLink() {
@@ -138,7 +158,7 @@ public class LinkedListPage{
 		return driver.getTitle();
 	}
 	
-	//consructor
+	//constructor
 		public LinkedListPage() 
 		{ 
 			PageFactory.initElements(driver, this);

@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,9 +13,7 @@ public class RegisterPage {
 
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	
-	boolean isRequired ;
-	
-	
+
 	// locators
 	@FindBy(xpath="//a[normalize-space()='Register']")
 	WebElement registerLink;
@@ -44,37 +41,19 @@ public class RegisterPage {
 	
 	registerLink.click();
 	}
-	public boolean setUsername(String Username) {
+	public void setUsername(String Username) {
 	
-	//username.clear();
 	username.sendKeys(Username);
-	
-	if (Username.isBlank()) {
-		JavascriptExecutor js_user = (JavascriptExecutor) driver;
-		isRequired = (Boolean)js_user.executeScript("return arguments[0].required;",username);
-		return isRequired;
-	}
-	
-	return isRequired;
 	
 	}
 	public String setUsernameMsgAttribute() {
-	return username.getAttribute("validationMessage");
+		
+	 return username.getAttribute("validationMessage");
 	}
 	
-	public boolean setPassword(String Password) {
+	public void setPassword(String Password) {
 	
-	//	password.clear();
 	password.sendKeys(Password);	
-	
-	if (Password.isBlank()) {
-		JavascriptExecutor js_password = (JavascriptExecutor) driver;
-		isRequired = (Boolean)js_password.executeScript("return arguments[0].required;",password);
-		return isRequired;
-	}
-	
-	return isRequired;
-	
 	
 	}
 	public String setPasswordMsgAttribute() {
@@ -82,27 +61,17 @@ public class RegisterPage {
 	return password.getAttribute("validationMessage");
 	}
 	
-	public boolean setConfirmPassword(String ConfirmPwd) {
+	public void setConfirmPassword(String ConfirmPwd) {
 	
-	//	confirmPassword.clear();
 	confirmPassword.sendKeys(ConfirmPwd);	
-	
-	if (ConfirmPwd.isBlank()) {
-		JavascriptExecutor js_confirmpassword = (JavascriptExecutor) driver;
-		isRequired = (Boolean)js_confirmpassword.executeScript("return arguments[0].required;",confirmPassword);
-		return isRequired;
-	}
-	
-	return isRequired;
-	
-	
-	}
+
+	   }
 	public String setConfirmPwdMsgAttribute() {
 	
-	return confirmPassword.getAttribute("validationMessage");
+	 return confirmPassword.getAttribute("validationMessage");
 	}
 	
-	public void registerBtn() {
+	public void clickRegisterBtn() {
 	
 	registerBtn.click();
 	}
@@ -110,12 +79,8 @@ public class RegisterPage {
 	clickLoginLink.click();
 	}
 	
-	public void signInPassword() {
-	signInPassword.sendKeys("Dre@mTe@m123");
-	}
-	public String actualTitle() {
+	public String getActualTitle() {
 	String actualTitle = driver.getTitle();
-	System.out.println(actualTitle);
 	return actualTitle;
 	}
 	

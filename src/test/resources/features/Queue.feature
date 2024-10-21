@@ -24,15 +24,13 @@ Feature: DS Portal Queue Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @QueueListTryEditorPositive @QueueListEditorTest_004
-  Scenario Outline: validate the Try editor for positive input from the Implementation Lists page
+  Scenario: validate the Try editor for positive input from the Implementation Lists page
     Given the User is on the Try Editor page through the Implementation Lists page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
      
    @QueueListTryEditorNegative @QueueListEditorTest_018
    Scenario Outline: validate the Try editor for negative input from the Implementation Lists page
@@ -65,16 +63,14 @@ Feature: DS Portal Queue Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @DeQueueTryEditorPositive @DeQueueEditorTest_007
-  Scenario Outline: validate the Try editor for positive input from the Implementation collection Page
+  Scenario: validate the Try editor for positive input from the Implementation collection Page
     Given the User is on the Try Editor page through the Implementation collection Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-     Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
-
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
+    
   @DeQueueTryEditorNegative @DeQueueEditorTest_019
   Scenario Outline: validate the Try editor for negative input from the Implementation collection Page
     Given the User is on the Try Editor page through the Implementation collection Page
@@ -106,16 +102,14 @@ Feature: DS Portal Queue Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @QueueArrayTryEditorPositive @QueueArrayEditorTest_010
-  Scenario Outline: validate the Try editor for positive input from the Implementation Array Page
+  Scenario: validate the Try editor for positive input from the Implementation Array Page
     Given the User is on the Try Editor page through the Implementation Array Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-     Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
-
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
+    
 	@QueueArrayTryEditorNegative @QueueArrayEditorTest_020
   Scenario Outline: validate the Try editor for negative input from the Implementation Array Page
     Given the User is on the Try Editor page through the Implementation Array Page
@@ -146,15 +140,13 @@ Feature: DS Portal Queue Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @QueueOperationTryEditorPositive @QueueOperEditorTest_013
-  Scenario Outline: validate the Try editor for positive input from the Queue Operation Page
+  Scenario: validate the Try editor for positive input from the Queue Operation Page
     Given the User is on the Try Editor page through Queue Operation Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
       
    @QueueOperationTryEditorNegative @QueueOperEditorTest_021
    Scenario Outline: validate the Try editor for negative input from the Queue Operation Page

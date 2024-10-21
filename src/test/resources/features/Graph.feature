@@ -24,15 +24,13 @@ Feature: DS Portal Graph Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @GraphTryEditorPositive @GraphEditorTest_004
-  Scenario Outline: validate the Try editor for positive input from the first Topic Graph Page
+  Scenario: validate the Try editor for positive input from the first Topic Graph Page
     Given the User is on the Try Editor page through the first Topic Graph Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-
-    Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
       
    @GraphTryEditorNegative @GraphEditorTest_011
    Scenario Outline: validate the Try editor for negative input from the first Topic Graph Page
@@ -65,15 +63,13 @@ Feature: DS Portal Graph Page Functionality
     Then the User should get navigated to the Try Editor Page
 
   @GraphReprTryEditorPositive @GraphReprEditorTest_007
-  Scenario Outline: validate the Try editor for positive input from the Graph Representation Page
+  Scenario: validate the Try editor for positive input from the Graph Representation Page
     Given the User is on the Try Editor page through the Graph Representation Page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
- 
-   Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
     
    @GraphReprTryEditorNegative @GraphReprEditorTest_012
    Scenario Outline: validate the Try editor for negative input from the Graph Representation Page

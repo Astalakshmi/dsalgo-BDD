@@ -29,13 +29,8 @@ public class RegisterStep {
 	LoginPage loginObj = new LoginPage();
 	HomePage homeObj = new HomePage();
 	
-
-
 	ExcelFileReader reader = new ExcelFileReader();
 	
-	
-//	String excelFilePath= "./src/test/resources/Excel/userData.xlsx";
-
 	String excelFilePath= "./src/test/resources/Excel/TestData.xlsx";
 	
 	String username,password,confirmPassword;
@@ -47,11 +42,10 @@ public class RegisterStep {
 	
 	@Given("The User navigates to the Registration page")
 	public void the_user_navigates_to_the_registration_page() {
-	//	indexObj.getStarted();
+	
 		homeObj.getStartedhomeclickwithoutlogin();
 		registerObj.registerLink();
-	//	System.out.println("file path:"+ excelFilePath);
-		
+			
 	}
 	@When("The User enter valid username and password then confirmPassword from sheet {string}")
 	public void the_user_enter_valid_username_and_password_then_confirm_password_from_sheet(String RegisterPage) throws EncryptedDocumentException, IOException {
@@ -72,7 +66,7 @@ public class RegisterStep {
 				   registerObj.setUsername(username);
 				   registerObj.setPassword(password);
 				   registerObj.setConfirmPassword(confirmPassword);	   
-				   registerObj.registerBtn();
+				   registerObj.clickRegisterBtn();
 			   }
 			   else {
 				   LoggerLoad.warn("Invalid data in sheet for username, password, or confirm password");
@@ -90,8 +84,6 @@ public class RegisterStep {
 			
 		}
 
-
-	
 	@When("The User enter Invalid username and password then confirmPassword from sheet {string} and {int} and click register button")
 	public void the_user_enter_invalid_username_and_password_then_confirm_password_from_sheet_and_and_click_register_button(String sheetName, int rowNumber) throws EncryptedDocumentException, IOException {
 	  	
@@ -108,11 +100,10 @@ public class RegisterStep {
 		  unameValidateMsg= registerObj.setUsernameMsgAttribute();
 		  pwdValidateMsg= registerObj.setPasswordMsgAttribute();
 		  confirmPwdValidateMsg= registerObj.setConfirmPwdMsgAttribute();
-	//	 System.out.println("rownumber:"+ rowNumber);
-		 
+	 
 		 if(rowNumber==maxLengthOfRow) {
 			 tempRow=rowNumber+1;
-		//	 System.out.println("TESTING tempRow : "+tempRow);
+		
 		 }
 	
 		if(username != null || password != null || confirmPassword != null) 
@@ -120,7 +111,7 @@ public class RegisterStep {
 			registerObj.setUsername(username);
 			registerObj.setPassword(password);
 			registerObj.setConfirmPassword(confirmPassword);	
-			registerObj.registerBtn();		
+			registerObj.clickRegisterBtn();		
 		
 		try
 			{
@@ -138,13 +129,9 @@ public class RegisterStep {
 
 	}
 		 
-
-
 	@Then("The User validate the Excepted Output for Registration Page")
 	public void the_user_validate_the_excepted_output_for_registration_page() {
-		
-
-		
+				
 		if(password.isBlank() && confirmPassword.isBlank()) {
 			
 			Assert.assertEquals(unameValidateMsg, invalidExpectedOutput);             //Assert.assertEquals(validationMessage, "Please fill out this field");
@@ -193,7 +180,3 @@ public class RegisterStep {
 
 	
  
-
-
-
-

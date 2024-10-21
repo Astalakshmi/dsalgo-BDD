@@ -4,9 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import driverManager.WebdriverManager;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageObjects.GraphPage;
-import pageObjects.RegisterPage;
 import utilities.ConfigFileReader;
 import utilities.LoggerLoad;
 
@@ -15,9 +16,7 @@ public class GraphStep {
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	GraphPage graphObj = new GraphPage ();
-	RegisterPage registerObj =new RegisterPage();
 	
-
 	@When("The User clicks Get Started button in the Graph section")
 	public void the_user_clicks_get_started_button_in_the_graph_section() {
 	   graphObj.clickGraphStarted();
@@ -27,7 +26,7 @@ public class GraphStep {
 	@Then("The User should get navigated to the DsAlgo Portal Graph Page")
 	public void the_user_should_get_navigated_to_the_ds_algo_portal_graph_page() {
 	   
-		 Assert.assertEquals(registerObj.actualTitle(),configFileReader.getPageTitle("graphPage"));
+		 Assert.assertEquals(graphObj.getActualTitle(),configFileReader.getPageTitle("graphPage"));
 		 LoggerLoad.info("You are navigated to "+ driver.getTitle() +" Page.");
 	}
 	
@@ -39,14 +38,14 @@ public class GraphStep {
 	
 	@When("The User clicks Graph link")
 	public void the_user_clicks_graph_link() {
-	//	graphObj.graphStarted();
+	
 		graphObj.clickGraphLink();
 	}
 	
 	@Then("The User should get navigated to first Topic Graph Page")
 	public void the_user_should_get_navigated_to_first_topic_graph_page() {
 	   
-		Assert.assertEquals(registerObj.actualTitle(),configFileReader.getPageTitle("graph"));
+		Assert.assertEquals(graphObj.getActualTitle(),configFileReader.getPageTitle("graph"));
 		LoggerLoad.info("You are navigated to first link of "+ driver.getTitle() +" Page.");
 	}
 	
@@ -60,7 +59,7 @@ public class GraphStep {
 	
 	@When("The User clicks Try Here button in the first topic Graph Page")
 	public void the_user_clicks_try_here_button_in_the_first_topic_graph_page() {
-	//	graphObj.graphLink();
+	
 		graphObj.clickGraphTryHereBtn();
 		
 	}
@@ -76,7 +75,7 @@ public class GraphStep {
 	
 	@When("The User clicks Graph Representations link")
 	public void the_user_clicks_graph_representations_link() {
-		//graphObj.graphStarted();
+		
 		graphObj.clickGraphRepresent();
 	   
 	}
@@ -84,7 +83,7 @@ public class GraphStep {
 	@Then("The User should get navigated to Graph Representation Page")
 	public void the_user_should_get_navigated_to_graph_representation_page() {
 	   
-		Assert.assertEquals(registerObj.actualTitle(),configFileReader.getPageTitle("graphRep"));
+		Assert.assertEquals(graphObj.getActualTitle(),configFileReader.getPageTitle("graphRep"));
 		LoggerLoad.info("You are navigated to "+ driver.getTitle() +" Page.");
 	   
 	}
@@ -109,8 +108,6 @@ public class GraphStep {
 		graphObj.clickGraphRepresentTryHereBtn();
 	}
 
-	
-	
 	@When("The User clicks Practice Questions link")
 	public void the_user_clicks_practice_questions_link() {
 			

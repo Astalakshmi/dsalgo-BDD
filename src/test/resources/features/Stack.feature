@@ -25,15 +25,14 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get navigated to the Try Editor Page
   
   @TryEditorOperationsInStackPositive @StackTC_004  
-  Scenario Outline: validate the Try editor for positive input from Operations in stack page
+  Scenario: validate the Try editor for positive input from Operations in stack page
     Given the User is on the Try Editor page through the operations in stack page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-    
-   Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+     When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
+
       
    @TryEditorOperationsInStackNegative @StackTC_005  
   Scenario Outline: validate the Try editor for negative input from Operations in stack page
@@ -60,17 +59,16 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get navigated to the Try Editor Page
   
   @TryEditorImplementationInStackPositive @StackTC_008   
-  Scenario Outline: validate the Try editor for positive input from Implementation in stack page
+  Scenario: validate the Try editor for positive input from Implementation in stack page
     Given the User is on the Try Editor page through the implementation in stack page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-    
-   Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
+
       
-    @TryEditorImplementationInStackNegative @StackTC_009   
+  @TryEditorImplementationInStackNegative @StackTC_009   
   Scenario Outline: validate the Try editor for negative input from Implementation in stack page
     Given the User is on the Try Editor page through the implementation in stack page
     When the User enters a sample code as "<code>" in the Editor section and click Run
@@ -95,17 +93,16 @@ Feature: DS Portal Stack Page Functionality
     Then the User should get navigated to the Try Editor Page
   
   @TryEditorApplicationsInStackPositive @StackTC_012  
-  Scenario Outline: validate the Try editor for positive input from Applications in stack page
+  Scenario: validate the Try editor for positive input from Applications in stack page
     Given the User is on the Try Editor page through the applications in stack page
-    When the User enters a sample code as "<code>" in the Editor section and click Run
-    Then the User should get the "<output>" in the screen
-    
-   Examples: 
-      | code             | output                                           |
-      | print\"Hello\"   | Hello                                            |
-      | print 1234       | 1234                                             |
+    When the User enters the following code in the Editor section and clicks Run
+      | code           | output |
+      | print("Hello") | Hello  |
+      | print(1234)    | 1234   |
+    Then the User should get the correct output on the screen
+
       
-   @TryEditorApplicationsInStackNegative @StackTC_013  
+  @TryEditorApplicationsInStackNegative @StackTC_013  
   Scenario Outline: validate the Try editor for negative input from Applications in stack page
     Given the User is on the Try Editor page through the applications in stack page
     When the User enters a sample code as "<code>" in the Editor section and click Run

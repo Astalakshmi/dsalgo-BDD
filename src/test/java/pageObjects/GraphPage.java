@@ -44,7 +44,6 @@ public class GraphPage {
 	WebElement graphRepresentRunbtn;
 			   //Practice Questions
 	@FindBy(xpath="//a[normalize-space()='Practice Questions']")
-//	@FindBy(linkText="Practice Questions")
 	WebElement graphPracticeQuestion;
 	
 	
@@ -84,7 +83,11 @@ public class GraphPage {
 	public int getPracticeQuestionsCount() {
 		return practiceQuestions.size();
 	}
-	//consructor
+	
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
+	//constructor
 	public GraphPage() 
 	{ 
 		PageFactory.initElements(driver, this);
