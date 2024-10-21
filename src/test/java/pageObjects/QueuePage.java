@@ -14,7 +14,6 @@ public class QueuePage {
 	
 	WebDriver driver = WebdriverManager.getDriver();
 	
-	
 	//locator
 	
 				//Get_Started_Queue

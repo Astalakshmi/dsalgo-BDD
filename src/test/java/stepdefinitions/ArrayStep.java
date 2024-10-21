@@ -30,7 +30,7 @@ public class ArrayStep {
 	public LinkedListPage lp=new LinkedListPage();
 	
 	ConfigFileReader configFileReader= new ConfigFileReader();
-	ExcelFileReader reader = new ExcelFileReader();
+	ExcelFileReader reader = ExcelFileReader.getInstance();
 	
 	String excelFilePath= "./src/test/resources/Excel/testData.xlsx";
 	String input;

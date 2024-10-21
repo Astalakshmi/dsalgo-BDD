@@ -60,37 +60,37 @@ public class ConfigFileReader {
 			throw new RuntimeException(pageName + " url not specified in the Configuration.properties file.");
 	}
 
-	public String getIndexUrl() {
-		String indexUrl = properties.getProperty("indexUrl");
-		if (indexUrl != null)
-			return indexUrl;
+	public String getHomeUrl() {
+		String homeUrl = properties.getProperty("homeUrl");
+		if (homeUrl != null)
+			return homeUrl;
 		else
 			throw new RuntimeException(" Index url not specified in the Configuration.properties file.");
 	}
 
-	public String getHomeUrl() {
-		String homepageUrl = properties.getProperty("homepageUrl");
-		if (homepageUrl != null)
-			return homepageUrl;
+	public String getHomePageUrlAfterLogin() {
+		String homePageUrlAfterLogin = properties.getProperty("homePageUrlAfterLogin");
+		if (homePageUrlAfterLogin != null)
+			return homePageUrlAfterLogin;
 		else
 			throw new RuntimeException(" homepage url not specified in the Configuration.properties file.");
 	}
 
-	public String getLoginUrl() {
-		String loginUrl = properties.getProperty("loginUrl");
-		if (loginUrl != null)
-			return loginUrl;
-		else
-			throw new RuntimeException(" login url not specified in the Configuration.properties file.");
-	}
+//	public String getLoginUrl() {
+//		String loginUrl = properties.getProperty("loginUrl");
+//		if (loginUrl != null)
+//			return loginUrl;
+//		else
+//			throw new RuntimeException(" login url not specified in the Configuration.properties file.");
+//	}
 
-	public String getRegisterUrl() {
-		String registerUrl = properties.getProperty("registerUrl");
-		if (registerUrl != null)
-			return registerUrl;
-		else
-			throw new RuntimeException(" register url not specified in the Configuration.properties file.");
-	}
+//	public String getRegisterUrl() {
+//		String registerUrl = properties.getProperty("registerUrl");
+//		if (registerUrl != null)
+//			return registerUrl;
+//		else
+//			throw new RuntimeException(" register url not specified in the Configuration.properties file.");
+//	}
 
 
 	public String getAlert(String alertNames) {

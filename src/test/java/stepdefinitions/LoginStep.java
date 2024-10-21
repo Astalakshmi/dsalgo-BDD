@@ -23,7 +23,7 @@ public class LoginStep {
 	RegisterPage registerObj = new RegisterPage();
 	HomePage homeObj = new HomePage();
 	LoginPage loginObj = new LoginPage();
-	String excelFilepath;
+	String excelFilepath="./src/test/resources/Excel/TestData.xlsx";
 	String ExpectedMessage;
 	String ExpectedResultsValidcred;
 	String username;
@@ -31,6 +31,7 @@ public class LoginStep {
 	String userNameValidationMessage;
 	String passwordValidationMessage;
 	String invalidgetMessage;
+	ExcelFileReader reader = ExcelFileReader.getInstance();
 
 	@Given("The User is on the login page")
 	public void the_user_is_on_the_login_page() {
@@ -52,8 +53,8 @@ public class LoginStep {
 	@When("The User enters the valid username and password {string}")
 	public void the_user_enters_the_valid_username_and_password(String LoginCredentials)
 			throws EncryptedDocumentException, IOException {
-		excelFilepath = "./src/test/resources/Excel/TestData.xlsx";
-		ExcelFileReader reader = new ExcelFileReader();
+		//excelFilepath = "./src/test/resources/Excel/TestData.xlsx";
+	//	ExcelFileReader reader = new ExcelFileReader();
 		List<Map<String, String>> testdata = reader.getData(excelFilepath, LoginCredentials);
 		username = testdata.get(0).get("username");
 		password = testdata.get(0).get("password");
@@ -77,8 +78,8 @@ public class LoginStep {
 	@When("The User enters the username {string} password {int} and clicks on login button")
 	public void the_user_enter_the_username_password_and_clicks_on_login_button(String sheetName, int RowNumber)
 			throws EncryptedDocumentException, IOException {
-		excelFilepath = "./src/test/resources/Excel/TestData.xlsx";
-		ExcelFileReader reader = new ExcelFileReader();
+		//excelFilepath = "./src/test/resources/Excel/TestData.xlsx";
+	//	ExcelFileReader reader = new ExcelFileReader();
 		List<Map<String, String>> testdata = reader.getData(excelFilepath, sheetName);
 		username = testdata.get(RowNumber).get("username");
 		password = testdata.get(RowNumber).get("password");

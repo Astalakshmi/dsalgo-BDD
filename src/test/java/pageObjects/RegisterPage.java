@@ -13,7 +13,6 @@ public class RegisterPage {
 
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	
-
 	// locators
 	@FindBy(xpath="//a[normalize-space()='Register']")
 	WebElement registerLink;

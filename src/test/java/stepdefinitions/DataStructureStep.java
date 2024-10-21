@@ -14,8 +14,7 @@ public class DataStructureStep {
 	WebDriver driver = WebdriverManager.getDriver();
 	ConfigFileReader configFileReader = WebdriverManager.configReader();
 	DataStructurePage dataStructureObj = new DataStructurePage();
-	ExcelFileReader reader = new ExcelFileReader();
-
+	
 	@When("user clicked on the Data Structure Get Started link button")
 	public void user_clicked_on_the_data_structure_get_started_link_button() {
 		dataStructureObj.getStartedclick();

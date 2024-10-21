@@ -20,6 +20,20 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelFileReader {
 	private int totalRow;
+	private static ExcelFileReader excelFileReader = null;
+
+	private ExcelFileReader() {
+
+	}
+
+	public static ExcelFileReader getInstance() {
+		if (excelFileReader != null) {
+			return excelFileReader;
+		} else {
+			excelFileReader = new ExcelFileReader();
+			return excelFileReader;
+		}
+	}
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName) {
 		File tempFile = null;
 		Workbook workbook = null;
