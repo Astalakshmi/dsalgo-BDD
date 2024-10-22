@@ -24,7 +24,7 @@ public class CommonStepDefinitions {
 	LinkedListPage linkedlistObj = new LinkedListPage();
 	String code;
 	String expectedOutput;
-	String outputText;
+//	String outputText;
 	String actualCodeOutput;
 
 	List<String> actualCodeOutputs = new ArrayList<>(); // To store actual outputs
@@ -40,7 +40,6 @@ public class CommonStepDefinitions {
 	public void the_user_should_get_navigated_to_the_try_editor_page() {
 		String tryEditorPageTitle = linkedlistObj.getActualTitle();
 		Assert.assertEquals(tryEditorPageTitle, configFileReader.getPageTitle("tryEditor"));
-
 	}
 
 	@When("the User enters a sample code as {string} in the Editor section and click Run")
@@ -48,7 +47,6 @@ public class CommonStepDefinitions {
 		System.out.println(input);
 		linkedlistObj.setCodeNegative(input);
 		linkedlistObj.clickRunBtn();
-
 	}
 
 	@Then("the User should get the {string} in the alert")
@@ -56,7 +54,6 @@ public class CommonStepDefinitions {
 		Alert alert = driver.switchTo().alert();
 		Assert.assertEquals(alert.getText(), errorOutput);
 		LoggerLoad.info("actual error " + alert.getText());
-
 	}
 
 	@When("the User enters the following code in the Editor section and clicks Run")
@@ -72,7 +69,6 @@ public class CommonStepDefinitions {
 			expectedOutputs.add(expectedOutput);
 			linkedlistObj.clearFormText();
 		}
-
 	}
 
 	@Then("the User should get the correct output on the screen")

@@ -91,14 +91,6 @@ public class RegisterStep {
 			registerObj.setPassword(password);
 			registerObj.setConfirmPassword(confirmPassword);
 			registerObj.clickRegisterBtn();
-//			try {
-//				Alert alert = driver.switchTo().alert();
-//				String actualAlertText = alert.getText();
-//				System.out.println("The alert message: " + actualAlertText);
-//				Assert.assertEquals(actualAlertText, invalidExpectedOutput);
-//			} catch (NoAlertPresentException e) {
-//				System.out.println("No alert was present during the Register process.");
-//			}
 		}
 
 	}
