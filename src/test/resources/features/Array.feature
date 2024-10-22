@@ -111,7 +111,7 @@ Feature: DsPortal Array Page Functionality
   Scenario: Validating Practice Questions link in Arrays using List Page
     Given the User is on the Arrays using List page
     When the User clicks Practice Questions link in the Arrays using List Page
-   Then the User should get navigated to the Try Editor Page
+   Then the User should get navigated to the Practice Questions Page from Arrays using List
 
   @BOL @Array_TC_016
   Scenario: Validating the Basic Operations in Lists link in Array Module Page
