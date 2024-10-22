@@ -14,7 +14,8 @@ public class LoginPage {
 
 	WebDriver driver = WebdriverManager.getDriver();
 
-	@FindBy(xpath = "//a[normalize-space()='Sign in']")
+	//@FindBy(xpath = "//a[normalize-space()='Sign in']")
+	@FindBy(xpath = "//a[text()='Sign in']")
 	WebElement signIn;
 
 	@FindBy(xpath = "//input[@id='id_username']")
