@@ -32,7 +32,7 @@ public class HooksBase {
 	@After
 	public void quitbrowser(Scenario scenario) {
 
-		WebdriverManager.closeDriver();
+		//WebdriverManager.closeDriver();
 
 	}
 }

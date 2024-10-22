@@ -17,8 +17,7 @@ public class ArrayPage {
 
 WebDriver driver=WebdriverManager.getDriver();
 
-	//Array Page
-	@FindBy(xpath="//div[@class='card-body d-flex flex-column']/*[contains(text(),'Array')]/../a")
+	@FindBy(xpath="//h5[text()='Array']/../a")
 	WebElement arrGetStarted;
 	@FindBy(xpath="//a[text()='Arrays in Python']")
 	WebElement arrArrInPy;
@@ -28,7 +27,6 @@ WebDriver driver=WebdriverManager.getDriver();
 	WebElement arrBaseOperInList;
 	@FindBy(xpath="//a[text()='Applications of Array']")
 	WebElement arrAppOfArr;
-	
 	@FindBy(xpath="//a[text()='Practice Questions']")
 	WebElement practiceQnsLink;
 	@FindBy(xpath="//a[text()='Search the array']")
@@ -47,7 +45,6 @@ WebDriver driver=WebdriverManager.getDriver();
 	WebElement tryHereRun;
 	@FindBy(id="output")
 	WebElement tryHereOutput;
-
 	@FindBy(xpath="//input[@class='button']")
 	WebElement clickSubmitBtn;
 	@FindBy(id="answer_form")
@@ -122,7 +119,6 @@ WebDriver driver=WebdriverManager.getDriver();
 		}
 		
 	}
-	
 
 	public void clickTryHereRunBtn() {
 		WebDriverWait w1= new WebDriverWait(driver, Duration.ofSeconds(40));
@@ -134,7 +130,10 @@ WebDriver driver=WebdriverManager.getDriver();
 		w1.until(ExpectedConditions.visibilityOf(tryHereOutput));
 		return tryHereOutput.getText().trim();
 	}
-	
+
+	public String getActualTitle() {
+		return driver.getTitle();
+	}
 
 	public ArrayPage() {
 	PageFactory.initElements(driver, this);
