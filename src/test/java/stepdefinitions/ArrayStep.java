@@ -147,8 +147,8 @@ public class ArrayStep {
 	@When("the User clicks the Try here in Arrays using List Page")
 	public void the_user_clicks_the_try_here_in_arrays_using_list_page() {
 	   arrayObj.clickArrTryHereBtn();
-	   
-	}
+	   System.out.println("Actual Title-------------->"+arrayObj.getActualTitle());
+		}
 	
 	@Given("the User is on the Try Editor page through the Arrays using List")
 	public void the_user_is_on_the_try_editor_page_through_the_arrays_using_list() {

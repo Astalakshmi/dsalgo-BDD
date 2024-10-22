@@ -82,10 +82,10 @@ Feature: DsPortal Array Page Functionality
     
   @AULTryEditor @Array_TC_012
   Scenario: Validating Try here button in Arrays using List Page
-    Given the User is on the Arrays using List page
+   Given the User is on the Arrays using List page
     When the User clicks the Try here in Arrays using List Page
     Then the User should get navigated to the Try Editor Page
-                                           |
+    										
   @AULTryEditorPagePositive @Array_TC_013
   Scenario: Validating Try here Page for positive input through the Arrays using List Page
     Given the User is on the Try Editor page through the Arrays using List
@@ -124,7 +124,7 @@ Feature: DsPortal Array Page Functionality
     Given the User is on the Basic Operations in Lists page
     When the User clicks the Try here in Basic Operations in Lists Page
     Then the User should get navigated to the Try Editor Page
-                                           |
+    
   @BOLTryEditorPagePositive @Array_TC_018
   Scenario: Validating Try here Page for positive input through the Basic Operations in Lists Page
     Given the User is on the Try Editor page through the Basic Operations in Lists Page
