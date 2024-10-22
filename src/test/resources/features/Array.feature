@@ -135,7 +135,7 @@ Feature: DsPortal Array Page Functionality
     Then the User should get the correct output on the screen
 
 	@BOLTryEditorPageNegative @Array_TC_019
-  Scenario Outline: Validating Try here Page for negative input through the Arrays using List Page
+  Scenario Outline: Validating Try here Page for negative input through the Basic Operations in Lists Page
     Given the User is on the Try Editor page through the Basic Operations in Lists Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<error>" in the alert
