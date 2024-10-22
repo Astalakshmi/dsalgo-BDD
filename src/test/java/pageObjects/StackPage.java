@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
