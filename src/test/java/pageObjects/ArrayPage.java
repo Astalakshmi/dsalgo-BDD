@@ -15,7 +15,7 @@ import driverManager.WebdriverManager;
 public class ArrayPage {
 	
 
-WebDriver driver=WebdriverManager.getDriver();
+	WebDriver driver = WebdriverManager.getDriver();
 
 	@FindBy(xpath="//h5[text()='Array']/../a")
 	WebElement arrGetStarted;
