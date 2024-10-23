@@ -5,7 +5,6 @@ Feature: DsPortal Array Page Functionality
    Given The User is on the login page
     When The User enters the valid username and password "LoginCredentials"
     
-
   @Array_GetStarted @Array_TC_001
   Scenario: Validating Array Module
     Given the user is in homepage and logged in 
@@ -22,8 +21,7 @@ Feature: DsPortal Array Page Functionality
   Scenario: Validating Try here button in Arrays in Python
     Given the User is on the Arrays in Python page
     When the User clicks the Try here in Arrays in Python Page
-    Then the User should get navigated to the Try Editor Page through the Arrays in Python Page
-
+    Then the User should get navigated to the Try Editor Page
 
   @AIPTryEditorPagePositive @Array_TC_004
   Scenario: Validating Try here Page for positive input through the Arrays in Python Page
@@ -58,36 +56,36 @@ Feature: DsPortal Array Page Functionality
     When the User clicks the Search the array link in Practice Questions Page
     Then the User should get navigated to the Search the Array Page
 
-  @AIPPracQns2 @AIPPracQns2TC_008
+  @AIPPracQns2 @Array_TC_008
   Scenario: Validating the Max Consecutive Ones in Array in Python Page
     Given the User is on the Practice Questions page
     When the User clicks the Max Consecutive Ones link in Practice Questions Page
     Then the User should get navigated to the Max Consecutive Ones Page
 
-  @AIPPracQns3 @AIPPracQns3TC_009
+  @AIPPracQns3 @Array_TC_009
   Scenario: Validating the Find Numbers with Even Number of Digits in Array in Python Page
     Given the User is on the Practice Questions page
     When the User clicks the Find Numbers with Even Number of Digits link in Practice Questions Page
     Then the User should get navigated to the Find Numbers with Even Number of Digits Page
 
-  @AIPPracQns4 @AIPPracQns4TC_010
+  @AIPPracQns4 @Array_TC_010
   Scenario: Validating the Squares of a Sorted Array in Array in Python Page
     Given the User is on the Practice Questions page
     When the User clicks the Squares of a Sorted Array link in Practice Questions Page
     Then the User should get navigated to the Squares of a Sorted Array Page
 
-  @AUL @AULTC_011
+  @AUL @Array_TC_011
   Scenario: Validating the Arrays using List link in Array Module Page
     Given the User is on the Array Module page
     When the User clicks Arrays using List link in the Array Module Page
     Then the User should get navigated to the Arrays using List Page
-
-  @AULTryEditor @AULEditorTC_012
+    
+  @AULTryEditor @Array_TC_012
   Scenario: Validating Try here button in Arrays using List Page
-    Given the User is on the Arrays using List page
+   Given the User is on the Arrays using List page
     When the User clicks the Try here in Arrays using List Page
-    Then the User should get navigated to the Try Editor Page from Arrays using List
-                                           |
+    Then the User should get navigated to the Try Editor Page
+    										
   @AULTryEditorPagePositive @Array_TC_013
   Scenario: Validating Try here Page for positive input through the Arrays using List Page
     Given the User is on the Try Editor page through the Arrays using List
@@ -109,24 +107,24 @@ Feature: DsPortal Array Page Functionality
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
 
-  @AULPracQns @AULPracQnsTC_015
+  @AULPracQns @Array_TC_015
   Scenario: Validating Practice Questions link in Arrays using List Page
     Given the User is on the Arrays using List page
     When the User clicks Practice Questions link in the Arrays using List Page
-    Then the User should get navigated to the Practice Questions Page from Arrays using List
+   Then the User should get navigated to the Practice Questions Page from Arrays using List
 
-  @BOL @BOLTC_016
+  @BOL @Array_TC_016
   Scenario: Validating the Basic Operations in Lists link in Array Module Page
     Given the User is on the Array Module page
     When the User clicks Basic Operations in Lists link in the Array Module Page
     Then the User should get navigated to the Basic Operations in Lists Page
 
-  @BOLTryEditor @BOLEditorTC_017
+  @BOLTryEditor @Array_TC_017
   Scenario: Validating Try here button in Basic Operations in Lists Page
     Given the User is on the Basic Operations in Lists page
     When the User clicks the Try here in Basic Operations in Lists Page
-    Then the User should get navigated to the Try Editor Page from the Basic Operations in Lists
-                                           |
+    Then the User should get navigated to the Try Editor Page
+    
   @BOLTryEditorPagePositive @Array_TC_018
   Scenario: Validating Try here Page for positive input through the Basic Operations in Lists Page
     Given the User is on the Try Editor page through the Basic Operations in Lists Page
@@ -137,7 +135,7 @@ Feature: DsPortal Array Page Functionality
     Then the User should get the correct output on the screen
 
 	@BOLTryEditorPageNegative @Array_TC_019
-  Scenario Outline: Validating Try here Page for negative input through the Arrays using List Page
+  Scenario Outline: Validating Try here Page for negative input through the Basic Operations in Lists Page
     Given the User is on the Try Editor page through the Basic Operations in Lists Page
     When the User enters a sample code as "<code>" in the Editor section and click Run
     Then the User should get the "<error>" in the alert
@@ -147,23 +145,23 @@ Feature: DsPortal Array Page Functionality
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            | 
        
-  @BOLPracQns @BOLPracQnsTC_020
+  @BOLPracQns @Array_TC_020
   Scenario: Validating Practice Questions link in Basic Operations in Lists Page
     Given the User is on the Basic Operations in Lists page
     When the User clicks Practice Questions link in the Basic Operations in Lists Page
     Then the User should get navigated to the Practice Questions Page from the Basic Operations in Lists
 
-  @AOA @AOATC_021
+  @AOA @Array_TC_021
   Scenario: Validating the Applications of Array link in Array Module Page
     Given the User is on the Array Module page
     When the User clicks Applications of Array link in the Array Module Page
     Then the User should get navigated to the Applications of Array Page
 
-  @AOATryEditor @AOAEditorTC_022
+  @AOATryEditor @Array_TC_022
   Scenario: Validating Try here button in Applications of Array Page
     Given the User is on the Applications of Array page
     When the User clicks the Try here in Applications of Array Page
-    Then the User should get navigated to the Try Editor Page from Applications of Array
+   Then the User should get navigated to the Try Editor Page
 
   @AOATryEditorPagePositive @Array_TC_023
   Scenario: Validating Try here Page for positive input through the Applications of Array Page
@@ -186,7 +184,7 @@ Feature: DsPortal Array Page Functionality
       | print hello      | NameError: name 'hello' is not defined on line 1 |
       | aer234@$         | SyntaxError: bad token T_OP on line 1            |  
       
-  @AOAPracQns @AOAPracQnsTC_025
+  @AOAPracQns @Array_TC_025
   Scenario: Validating Practice Questions link in Applications of Array Page
     Given the User is on the Applications of Array page
     When the User clicks Practice Questions link in the Applications of Array Page
@@ -268,7 +266,7 @@ Feature: DsPortal Array Page Functionality
       | PracticeQns |   7       |
       | PracticeQns |   8       |
       
-  @PracQns4SubmitButton @Array_TC_0233
+  @PracQns4SubmitButton @Array_TC_033
   Scenario Outline: Validating Submit button with valid and invalid code in Squares of a Sorted Array Page
     Given the User is on the Squares of a Sorted Page
     When the User enters code from "<sheetName>" in <rowNumber> in the Editor section and click Submit

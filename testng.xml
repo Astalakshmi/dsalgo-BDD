@@ -16,7 +16,7 @@
   </test>
 
 
- <!-- 
+  
   <test name="FirefoxTest" >
   	<parameter name="browser" value="FIREFOX"></parameter>
     <classes>
@@ -35,6 +35,6 @@
       </class>
     </classes>
   </test> 
-  -->
+  
 
 </suite> <!-- Suite -->

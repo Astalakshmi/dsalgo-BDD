@@ -8,7 +8,7 @@ import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.TreePage;
 import utilities.ConfigFileReader;
-import utilities.ExcelFileReader;
+//import utilities.ExcelFileReader;
 import utilities.LoggerLoad;
 
 public class TreeStep {
@@ -18,7 +18,6 @@ public class TreeStep {
 	TreePage treeObj = new TreePage();
 	RegisterPage registerObj = new RegisterPage();
 	HomePage homeObj = new HomePage();
-	ExcelFileReader reader = new ExcelFileReader();
 
 	@When("user clicked on the Tree Get Started link button")
 	public void user_clicked_on_the_tree_get_started_link_button() {
@@ -149,8 +148,6 @@ public class TreeStep {
 		treeObj.tryHereclick();
 		LoggerLoad.info("You are in " + driver.getTitle() + " page.");
 	}
-
-	// -----------------@TypeTreesPractQues @TreeTC_013------------------
 
 	@When("user clicked the Practice Questions from Type of Trees page")
 	public void user_clicked_the_practice_questions_from_type_of_trees_page() {

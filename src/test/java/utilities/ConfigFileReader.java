@@ -8,7 +8,6 @@ import java.util.Properties;
 
 public class ConfigFileReader {
 	private Properties properties;
-	private static ConfigFileReader configReader;
 
 	private final String propertyFilePath = "src//test//resources//config//Configuration.properties";
 
@@ -30,13 +29,6 @@ public class ConfigFileReader {
 
 	}
 
-	public static ConfigFileReader getInstance() {
-		if (configReader == null) {
-			configReader = new ConfigFileReader();
-		}
-		return configReader;
-	}
-
 	private static String browserType = null;
 
 	public static void setBrowserType(String browser) {
@@ -51,7 +43,6 @@ public class ConfigFileReader {
 			throw new RuntimeException("browser not specified in the testng.xml");
 
 	}
-
 
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");
@@ -69,62 +60,38 @@ public class ConfigFileReader {
 			throw new RuntimeException(pageName + " url not specified in the Configuration.properties file.");
 	}
 
-	public String getIndexUrl() {
-		String indexUrl = properties.getProperty("indexUrl");
-		if (indexUrl != null)
-			return indexUrl;
+	public String getHomeUrl() {
+		String homeUrl = properties.getProperty("homeUrl");
+		if (homeUrl != null)
+			return homeUrl;
 		else
 			throw new RuntimeException(" Index url not specified in the Configuration.properties file.");
 	}
 
-	public String getHomeUrl() {
-		String homepageUrl = properties.getProperty("homepageUrl");
-		if (homepageUrl != null)
-			return homepageUrl;
+	public String getHomePageUrlAfterLogin() {
+		String homePageUrlAfterLogin = properties.getProperty("homePageUrlAfterLogin");
+		if (homePageUrlAfterLogin != null)
+			return homePageUrlAfterLogin;
 		else
 			throw new RuntimeException(" homepage url not specified in the Configuration.properties file.");
 	}
 
-	public String getLoginUrl() {
-		String loginUrl = properties.getProperty("loginUrl");
-		if (loginUrl != null)
-			return loginUrl;
-		else
-			throw new RuntimeException(" login url not specified in the Configuration.properties file.");
-	}
+//	public String getLoginUrl() {
+//		String loginUrl = properties.getProperty("loginUrl");
+//		if (loginUrl != null)
+//			return loginUrl;
+//		else
+//			throw new RuntimeException(" login url not specified in the Configuration.properties file.");
+//	}
 
-	public String getRegisterUrl() {
-		String registerUrl = properties.getProperty("registerUrl");
-		if (registerUrl != null)
-			return registerUrl;
-		else
-			throw new RuntimeException(" register url not specified in the Configuration.properties file.");
-	}
+//	public String getRegisterUrl() {
+//		String registerUrl = properties.getProperty("registerUrl");
+//		if (registerUrl != null)
+//			return registerUrl;
+//		else
+//			throw new RuntimeException(" register url not specified in the Configuration.properties file.");
+//	}
 
-	public String geWaitTime(String wait) {
-		String waitTime = properties.getProperty(wait);
-		if (waitTime != null)
-			return wait;
-		else
-			throw new RuntimeException(wait + " not specified in the Configuration.properties file.");
-	}
-
-	public String getUsername() {
-		String username = properties.getProperty("username");
-		if (username != null)
-			return username;
-		else
-			throw new RuntimeException("username  not specified in the Configuration.properties file.");
-	}
-
-	public String getPassword() {
-		String password = properties.getProperty("password");
-		if (password != null)
-			return password;
-		else
-			throw new RuntimeException("password not specified in the Configuration.properties file.");
-
-	}
 
 	public String getAlert(String alertNames) {
 		String alertName = properties.getProperty(alertNames);
