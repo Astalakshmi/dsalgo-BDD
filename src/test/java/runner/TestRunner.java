@@ -27,7 +27,7 @@ import utilities.ConfigFileReader;
 		ConfigFileReader.setBrowserType(browser);
 	}
 	@Override
-    @DataProvider(parallel = false)//true means execute parallely false mean not execute parallely
+    @DataProvider(parallel = true)//true means execute parallely false mean not execute parallely
 	
     public Object[][] scenarios() {
 				
